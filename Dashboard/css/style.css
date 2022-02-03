@@ -1,13 +1,22 @@
+:root{
+  --Zoom:95%;
+  --noti-lado:100px:
+}
+
+
 
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
-    font-stretch: extra-condensed
+    font-stretch: extra-condensed;
+    zoom: var(--Zoom);
 }
 
 html{
   height: 100%;
+
+
 
 }
 
@@ -124,13 +133,20 @@ header.logo{
     display: none !important;
     cursor: pointer;
   }
+.custom{
+  position:fixed;
 
+}
   
   @media screen and (max-width:700px) {
     .menu-toggle-btn{
       display: block !important;
     }
   
+    .Publicaciones{
+      display: block !important;
+
+    }
     .navigation-menu{
       position: fixed;
       width: 60%;
@@ -207,16 +223,22 @@ header.logo{
             
     
   }
+
+
   #sidebar{
-    position: relative;
+    position: fixed;
     width: 280px;
     height: 50%;
-    top: 0px; 
+    top: 90px; 
     background:#58b196;
     left:-280px;
     transition: 250ms;
-    font-family:'Poppins',sans-serif ;
+  
 
+}
+#sidebar h1{
+  position: fixed;
+  font-family:'Poppins',sans-serif ;
 }
 
 #sidebar.active{
@@ -252,9 +274,8 @@ header.logo{
   margin-left: 0px;
   float:left;
   font-weight:bolder;
- 
   height: 60px;
-  width: 270px;
+  width: 333px;
   font-size: 27px;
   margin-bottom: 0px;
   color:#28380e;
@@ -270,7 +291,7 @@ header.logo{
   height: 500px;
   overflow-y: scroll;
   margin-bottom: 25px;
-  width: 280px;
+  width: 325px;
   background: #58b196;
 }
 
@@ -316,8 +337,8 @@ cursor: pointer;
   }
 
 #sidebar .toggle-btn{
-  position:absolute;
-  left: 290px;
+  position:relative;
+  left: 320px;
   top: 10px;
   cursor: pointer;
   
@@ -333,30 +354,31 @@ cursor: pointer;
 
 
 .Publicaciones {
- 
-  
   position:absolute; 
-  top:-190px; 
-  left:500px;
-  border-radius: 20px;
-  Width: 450px;
-  height: 320px;
+  justify-content: space-between;
 
+  left:400px;
+
+  margin-top: 0em;
  }
+ .ConjuntoImg{
+  margin-left: 115px; 
+}
 
- .imagenPublic img{
-  height:200px;
-  object-fit: cover;
-  width: 40%;
-  height: 20%;    
-  object-fit: cover;
+ .ConjuntoImg .imagenPublic img{
+
+  object-fit:cover;
   border-radius: 20px;
+  width:70%;
+  height: 600px;
  }
 
  .imagenPublic img:hover{
-  height:20%;
-  width: 60%;
-
+ 
+ 
+  object-fit:cover;
+  -webkit-transform:scale(1.3);
+  transform:scale(1.1);
   transition:0.6s;
 
  }
@@ -366,13 +388,16 @@ cursor: pointer;
   color: #2b7245;
 }
 
+
+
+
 .CasillaTitulo{
-  overflow: hidden;
+  margin-right: lado;
   text-align:justify;
-  padding: 3%;
-  font-size:47px;
-  font-family: Impact ;
-;}
+  padding: 2%;
+  font-size:60px;
+  font-family: Impact;
+}
 
 .CasillaFecha{
   font-size:10px;
@@ -383,72 +408,69 @@ cursor: pointer;
 .Casilla{
   background: rgba(196, 220, 76);
   border-radius: 20px;
-  Width: 600px;
-  height: 600px;
-  margin-top: 14em;
+  Width: 850px;
+  height: 950px;
+  margin-top: 2em;
+  
 }
 
 #Etiquetas{
   background: rgb(195, 125, 92);
   border-radius: 20px;
   margin-top: 14em;
+  
   float:right;
   padding: 10px;
   
 }
-
-
-}
-
- 
-
-
 
  
 .large-3 a{
 
 
   font-weight:bolder;
-  display: block;
-  font-size: 17px;
-  margin-bottom: 0px;
-  transition: 250ms;
+  font-weight:500
+
 
 }
 
 
 .large-3 {
-  padding: 3%;
+  padding: 7px;
   float: left;
-  height: 80px;
+  font-size: 20px;
+
+  height: 100px;
   overflow-y: scroll;
   margin-bottom: 25px;
-  width: 600px;
+  width: 890px;
+ 
 }
 
 .force-overflow3 {
-
+ 
   min-height: 450px;
 }
 
 .large-3::-webkit-scrollbar-track {
-  
+   display: none;
   border: 1px solid #000;
   padding: 2px 0;
   background-color: #404040;
+ 
 }
 
 .large-3::-webkit-scrollbar {
-  
+  display: block;
   width: 10px;
 }
 
 .large-3::-webkit-scrollbar-thumb {
   
   border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #737272;
-  border: 1px solid #000;
+  box-shadow: inset 0 0 6px rgba(255, 219, 18, 0.3);
+  background-color: #d38810;
+  border: 1px solid rgb(117, 33, 33);
 }
 
  
