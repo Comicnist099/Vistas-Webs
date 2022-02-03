@@ -142,11 +142,10 @@ header.logo{
     .menu-toggle-btn{
       display: block !important;
     }
+  .Publicaciones{
+    display: none;
+  }
   
-    .Publicaciones{
-      display: block !important;
-
-    }
     .navigation-menu{
       position: fixed;
       width: 60%;
@@ -354,23 +353,25 @@ cursor: pointer;
 
 
 .Publicaciones {
-  position:absolute; 
+  position:relative; 
   justify-content: space-between;
-
   left:400px;
-
-  margin-top: 0em;
+  margin-top: -200px;
+  top:-80px;
  }
+
  .ConjuntoImg{
-  margin-left: 115px; 
+  margin-left: 320px;
+  margin-top: 50px;
+
 }
 
  .ConjuntoImg .imagenPublic img{
 
   object-fit:cover;
   border-radius: 20px;
-  width:70%;
-  height: 600px;
+  width:300px;
+  height: 300px;
  }
 
  .imagenPublic img:hover{
@@ -392,7 +393,6 @@ cursor: pointer;
 
 
 .CasillaTitulo{
-  margin-right: lado;
   text-align:justify;
   padding: 2%;
   font-size:60px;
@@ -400,7 +400,7 @@ cursor: pointer;
 }
 
 .CasillaFecha{
-  font-size:10px;
+  font-size:20px;
   float: center;
   padding: 1%;
 }
@@ -409,15 +409,14 @@ cursor: pointer;
   background: rgba(196, 220, 76);
   border-radius: 20px;
   Width: 850px;
-  height: 950px;
-  margin-top: 2em;
-  
+  height: 400px;
+  margin-left:260px;
 }
 
 #Etiquetas{
   background: rgb(195, 125, 92);
   border-radius: 20px;
-  margin-top: 14em;
+  margin-top: 0em;
   
   float:right;
   padding: 10px;
