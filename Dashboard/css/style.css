@@ -3,6 +3,10 @@
   --noti-lado: 100px:
 }
 
+body{
+
+}
+
 
 
 * {
@@ -144,6 +148,13 @@ header.logo {
 
 }
 
+@media screen and (max-width:1240px){
+  .Reciente{
+    display:none
+  }
+}
+
+
 @media screen and (max-width:700px) {
   .menu-toggle-btn {
     display: block !important;
@@ -152,6 +163,10 @@ header.logo {
   .Publicaciones {
     display: none;
     position: absolute;
+    
+  }
+  .imagenPublic{
+    display: none;
   }
 
   .navigation-menu {
@@ -243,7 +258,7 @@ header.logo {
   position: fixed;
   width: 200px;
   height: 50%;
-  top: 90px;
+  top: 40px;
   background: #58b196;
   left: -200px;
   transition: 250ms;
@@ -276,7 +291,7 @@ header.logo {
 
   background: rgba(136, 120, 26, 0.611);
   color: #28380e;
-  font-size: 35px;
+  font-size: 25px;
   height: 80px;
   font-weight: 900;
 
@@ -290,7 +305,7 @@ header.logo {
   float: left;
   font-weight: bolder;
   height: 60px;
-  width: 333px;
+  width: 238px;
   font-size: 17px;
   margin-bottom: 0px;
   color: #28380e;
@@ -303,7 +318,7 @@ header.logo {
 .large-2 {
 
   float: left;
-  height: 500px;
+  height: 465px;
   overflow-y: scroll;
   margin-bottom: 25px;
   width: 235px;
@@ -417,6 +432,7 @@ header.logo {
 
 .CasillaTitulo {
   text-align: justify;
+  font-weight:900;
   padding: 2%;
   font-size: 40px;
   font-family: Impact;
@@ -507,24 +523,110 @@ width: 100%;
 }
 
 
-.Reciente .Reciente-Box{
-  width: 30px;
-  position:fixed;
-  
-  height: 50px;
-  background-color: rgb(35, 97, 32);
+.Reciente h1{
+text-align: center;
+margin-top: 40px;
+}
+.Noticia3:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+  transition: .3s;
+  font-weight:900;
 }
 
-.Reciente span{
-  position:absolute;
+.Noticia2:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+  transition: .3s;
+  font-weight:900;
 }
+
+
+.Noticia1:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+  transition: .3s;
+  font-weight:900;
+}
+
+.Noticia1{
+  transition: .3s;
+  position:absolute;
+  background-color: #c1e686;
+  border-radius: 10px;
+  left: 30px;
+  top:130px;
+  font-size: 20px;
+  width: 300px;
+  height: 150px;
+  font-weight:600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 8px;
+  text-align: justify;
+
+
+}
+
+
+.Noticia2{
+  transition: .3s;
+  position:absolute;
+  background-color: #c1e686;
+  border-radius: 10px;
+  left: 30px;
+  top:300px;
+  font-size: 20px;
+  width: 300px;
+  height: 150px;
+  font-weight:600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 8px;
+  text-align: justify;
+
+
+}
+
+
+.Noticia3{
+  transition: .3s;
+  position:absolute;
+  background-color: #c1e686;
+  border-radius: 10px;
+  left: 30px;
+  top:480px;
+  font-size: 20px;
+  width: 300px;
+  height: 150px;
+  font-weight:600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 20px;
+  text-align: justify;
+
+
+}
+
+
+
 .Reciente{
   border-radius: 10px;
-  position:fixed;
+  position:absolute;
   left: 79%;
-  top:110px;
-  width: 300px;
+  top:80px;
+  width: 320px;
   height: 650px;
   background-color: rgb(108, 173, 104);
+}
+
+
+.Fot_Copy{
+  padding: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  background-color: rgb(108, 173, 104);
+
 }
 
