@@ -19,7 +19,7 @@
 <em>Fecha de Creacion</em><br>
 <input type="text" placeholder="Fecha de Creacion" readonly><br>
 
-<img src="img/perrito.jfif">
+<img src="im/perrito.jfif">
 
 </div>
 
