@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
   --Zoom: 95%;
   --noti-lado: 100px:
 }
@@ -8,21 +9,38 @@ html {
   height: 100%;
 
 
+=======
+    --Zoom: 95%;
+    --noti-lado: 100px:
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-stretch: extra-condensed;
+    zoom: var(--Zoom);
+}
+
+html {
+    height: 100%;
+>>>>>>> nueva-viko
 }
 
 
 
 
 .Publicaciones .scroll {
-  background-color: #fed9ff;
-  width: 600px;
-  height: 150px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: center;
-  padding: 20px;
+    background-color: #fed9ff;
+    width: 600px;
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -57,10 +75,222 @@ html {
   border-bottom: 1px solid rgba(100, 100, 100, .3);
 
 
+=======
+header {
+    height: 90px;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
 }
 
+#Casa {
+    color: hsl(0, 0%, 100%);
+    background: #2b7245;
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+}
 
+#Perfil {
+    color: #ffffff;
+    background: #2b7245;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
 
+#Nosotros {
+    color: #ffffff;
+    background: #2b7245;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+#Notas {
+    color: #ffffff;
+    background: #2b7245;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+.inner-width {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+header.logo {
+    position: relative;
+    size: 2em;
+    text-transform: uppercase;
+}
+
+.logo img {
+    float: left;
+    height: 90px;
+}
+
+.navigation-menu {
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+}
+
+.navigation-menu a {
+    margin-left: 10px;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 12px 20px;
+    transition: 250ms;
+}
+
+.navigation-menu a:hover {
+    background: #98ffb2;
+    color: #2f3640;
+    transform: scale(1.1);
+}
+
+.navigation-menu i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.menu-toggle-btn {
+    float: right;
+    height: 90px;
+    line-height: 90px !important;
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    display: none !important;
+    cursor: pointer;
+}
+
+.custom {
+    position: fixed;
+}
+
+@media screen and (max-width:700px) {
+    .menu-toggle-btn {
+        display: block !important;
+    }
+    .Publicaciones {
+        display: none;
+    }
+    .navigation-menu {
+        position: fixed;
+        width: 60%;
+        max-width: 400px;
+        background: #2b7245;
+        top: 90px;
+        right: 0;
+        display: none;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+    .navigation-menu::before {
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #3C7A15;
+    }
+    .navigation-menu a {
+        display: block;
+        margin: 10px 0;
+    }
+    .navigation-menu.active {
+        display: block;
+    }
+    #Casa {
+        color: #1EFD57;
+        background-color: #1f572d;
+    }
+    #Perfil {
+        color: #1EFD57;
+        background-color: #1f572d;
+    }
+    #Nosotros {
+        color: #1EFD57;
+        background-color: #1f572d;
+    }
+    #Notas {
+        color: #1EFD57;
+        background-color: #1f572d;
+    }
+    #Casa::after {
+        content: "Inicio";
+        font-family: "Open Sans", sans-serif;
+        color: #1EFD57;
+    }
+    #Perfil::after {
+        content: "Perfil";
+        font-family: "Open Sans", sans-serif;
+        color: #1EFD57;
+    }
+    #Notas::after {
+        content: "Noticias";
+        font-family: "Open Sans", sans-serif;
+        color: #1EFD57;
+    }
+    #Nosotros::after {
+        content: "Nosotros";
+        position: absolute;
+        font-family: "Open Sans", sans-serif;
+        color: #1EFD57;
+    }
+}
+
+#sidebar {
+    position: fixed;
+    width: 280px;
+    height: 50%;
+    top: 90px;
+    background: #58b196;
+    left: -280px;
+    transition: 250ms;
+}
+
+#sidebar h1 {
+    position: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul a {
+    color: rba(230, 230, 230.9);
+    text-align: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+>>>>>>> nueva-viko
+}
+
+.large-2 a:hover {
+    background: rgba(136, 120, 26, 0.611);
+    color: #28380e;
+    font-size: 35px;
+    height: 80px;
+    font-weight: 900;
+}
+
+.large-2 a {
+    margin-left: 0px;
+    float: left;
+    font-weight: bolder;
+    height: 60px;
+    width: 333px;
+    font-size: 27px;
+    margin-bottom: 0px;
+    color: #28380e;
+    transition: 250ms;
+    background: rgb(201, 193, 75);
+    cursor: pointer;
+}
+
+<<<<<<< HEAD
 .large-2 a:hover {
 
   background: rgba(136, 120, 26, 0.611);
@@ -69,11 +299,35 @@ html {
   height: 80px;
   font-weight: 900;
 
+=======
+.large-2 {
+    float: left;
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+    width: 325px;
+    background: #58b196;
+}
+>>>>>>> nueva-viko
 
-
+.force-overflow {
+    min-height: 450px;
 }
 
+<<<<<<< HEAD
+=======
+.large-2::-webkit-scrollbar-track {
+    border: 1px solid #000;
+    padding: 2px 0;
+    background-color: #404040;
+>>>>>>> nueva-viko
+}
 
+.large-2::-webkit-scrollbar {
+    width: 10px;
+}
+
+<<<<<<< HEAD
 .large-2 a {
   margin-left: 0px;
   float: left;
@@ -86,51 +340,135 @@ html {
   transition: 250ms;
   background: rgb(201, 193, 75);
   cursor: pointer;
+=======
+.large-2::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #737272;
+    border: 1px solid #000;
+>>>>>>> nueva-viko
 }
 
+.Logo_Secciones {
+    margin: 0 auto;
+    cursor: pointer;
+}
 
-.large-2 {
+.Logo_Secciones.active {
+    margin: 0 auto;
+    cursor: pointer;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+}
 
+<<<<<<< HEAD
   float: left;
   height: 465px;
   overflow-y: scroll;
   margin-bottom: 25px;
   width: 235px;
   background: #58b196;
+=======
+#sidebar .toggle-btn {
+    position: relative;
+    left: 320px;
+    top: 10px;
+    cursor: pointer;
+>>>>>>> nueva-viko
 }
 
-.force-overflow {
-  min-height: 450px;
+#sidebar .toggle-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid;
 }
 
-.large-2::-webkit-scrollbar-track {
-  border: 1px solid #000;
-  padding: 2px 0;
-  background-color: #404040;
+.Publicaciones {
+    position: relative;
+    left: 400px;
+    margin-top: -200px;
+    top: -80px;
 }
 
-.large-2::-webkit-scrollbar {
-  width: 10px;
+.ConjuntoImg {
+    margin-left: 330px;
+    margin-top: 30px;
 }
 
+<<<<<<< HEAD
 .large-2::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   background-color: #737272;
   border: 1px solid #000;
+=======
+.ConjuntoImg .imagenPublic img {
+    object-fit: cover;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+>>>>>>> nueva-viko
 }
 
+.imagenPublic img:hover {
+    object-fit: cover;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+    transition: 0.6s;
+}
 
+.Publicaciones .Casilla span {
+    color: #2b7245;
+}
 
+.CasillaTitulo {
+    text-align: justify;
+    padding: 2%;
+    font-size: 60px;
+    font-family: Impact;
+    width: 800px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
+<<<<<<< HEAD
 .Logo_Secciones {
 
   margin: 0 auto;
   cursor: pointer;
-
-
+=======
+.CasillaFecha {
+    font-size: 20px;
+    float: center;
+    padding: 1%;
 }
 
+.Casilla {
+    background: rgba(196, 220, 76);
+    border-radius: 20px;
+    Width: 770px;
+    height: 380px;
+    margin-left: 200px;
+}
+>>>>>>> nueva-viko
+
+#Etiquetas {
+    background: rgb(195, 125, 92);
+    border-radius: 20px;
+    margin-top: 0em;
+    float: right;
+    padding: 10px;
+}
+
+.large-3 a {
+    font-weight: bolder;
+    font-weight: 500
+}
+
+<<<<<<< HEAD
 .Logo_Secciones.active {
 
   margin: 0 auto;
@@ -155,9 +493,42 @@ html {
   font-size: 30px;
   border: 1px solid;
   left: 20px;
+=======
+.large-3 {
+    padding: 7px;
+    float: left;
+    font-size: 20px;
+    height: 130px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+    width: 800px;
 }
 
+.force-overflow3 {
+    min-height: 450px;
+}
 
+.large-3::-webkit-scrollbar-track {
+    display: none;
+    border: 1px solid #000;
+    padding: 2px 0;
+    background-color: #404040;
+}
+
+.large-3::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+>>>>>>> nueva-viko
+}
+
+.large-3::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(255, 219, 18, 0.3);
+    background-color: #d38810;
+    border: 1px solid rgb(117, 33, 33);
+}
+
+<<<<<<< HEAD
 .Publicaciones {
   position: static;
   left: 400px;
@@ -404,3 +775,18 @@ margin-top: 40px;
 
 }
 
+=======
+.large-4 span {
+    font-weight: 700;
+    background-color: rgb(108, 173, 104);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+border-style:none;
+border-width:40px;
+position:relative;
+top:-400px;
+left:400px;
+color: #000;
+>>>>>>> nueva-viko

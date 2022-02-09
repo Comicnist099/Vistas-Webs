@@ -8,6 +8,7 @@
     <title>Pagina login</title>
     <link rel="stylesheet" href="css/sidebar.css">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
                         <input type="text" name="" placeholder="user">
                         <input type="password" name="" placeholder="Contraseña">
                         <input type="submit" name="" value="Login">
+                        <!-----------------------------------REGISTRO--------------------------------------------------------->
                         <p class="signup">No tienes cuenta aún?<a href="#" onclick="toggleForm();
                             ">Registrate aqui </a></p>
                     </form>
@@ -32,14 +34,27 @@
             </div>
             <div class="user2 singupBx">
                 <div class="formBx">
-<form>
-                        <h2>Crear una cuenta</h2>
+                    <form class="form" id="form_registro" action="/" method="GET">
+                        <h2>Crear una </h2>
 
-                        <input type="text" name="" placeholder="user">
-                        <input type="email" name="" placeholder="correo electronico">
-                        <input type="password" name="" placeholder="Crear contraseña">
+                        <input type="text" id="user" name="" placeholder="user">
+                        <input type="email" id="email" name="" placeholder="correo electronico">
+                        <input type="password" id="password" name="" placeholder="Crear contraseña">
                         <input type="password" name="" placeholder="Confirmar contraseña">
-                        <input type="submit" name="" value="Sign Up">
+                        <input type="text" name="" placeholder="alias">
+
+                        <!---------------------------------------COMENTARIO A VER SI SI JALA-------------------------------------------------------->>
+                        <input type="date" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
+
+                        <div class="profile-pic-div">
+                            <img src="img/avatar.png" id="photo">
+                            <input type="file" id="file">
+                            <label for="file" id="uploadBtn">Subir foto</label>
+                        </div>
+
+                        <script src="js/SubirFoto.js"></script>
+
+                        <button type="submit">Registrarse</button>
                         <p class="signup">Ya tienes cuenta?<a href="#" onclick="toggleForm();
                             ">Entra aqui 
                         </a></p>
@@ -51,7 +66,8 @@
         </div>
 
     </section>
-    <script src="js/traslacion.js"> </script>
+    <script src="js/traslacion.js">
+    </script>
 
 </body>
 
