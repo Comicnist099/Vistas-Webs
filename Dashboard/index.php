@@ -2,8 +2,10 @@
 
 
 <html lang="en">
-
+<link rel="stylesheet" href="css/style.css">
 <?php include('./Templates/Nav_bar.php') ?>
+
+
 <body>
  
   <section class="Reciente">
@@ -219,7 +221,7 @@
 
   <?php include('./Templates/Footer.php')?>
 
-  <script src="js/abrir.js"> </script>
+ 
   <script src="js/Sidebar.js"> </script>
 </body>
 

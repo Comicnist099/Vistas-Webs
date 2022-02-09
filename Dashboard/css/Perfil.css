@@ -1,0 +1,41 @@
+:root{
+    --Left-Perfil:100px;
+    --Top-Perfil:20px;
+    --Color-Fondo:   #f8f67a;;
+    --Zoom:
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-stretch: extra-condensed;
+    zoom: var(--Zoom);
+  }
+
+.Columnas {
+ 
+    margin-top:var(--Top-Perfil);
+    margin-left:var(--Left-Perfil);
+    background-color: var(--Color-Fondo);
+    border-radius: 50px;
+    height: 600px;
+    width: 500px;
+}
+.Columnas h1{
+    padding: 10px;
+    margin-left:70px;
+}
+
+.Columnas em{
+    margin-left:70px;
+}
+
+
+.Columnas input{
+    margin-left:var(--Left-Perfil);
+    padding: 10px;
+    font-size: 20px;
+}
+
+
