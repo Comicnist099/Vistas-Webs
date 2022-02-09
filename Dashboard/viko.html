@@ -8,6 +8,7 @@
     <title>Pagina login</title>
     <link rel="stylesheet" href="css/sidebar.css">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/validaciones.js"></script>
 </head>
 
 <body>
@@ -33,17 +34,17 @@
             </div>
             <div class="user2 singupBx">
                 <div class="formBx">
-                    <form>
+                    <form class="form" id="form_registro" action="/" method="GET">
                         <h2>Crear una </h2>
 
-                        <input type="text" name="" placeholder="user">
-                        <input type="email" name="" placeholder="correo electronico">
-                        <input type="password" name="" placeholder="Crear contraseña">
+                        <input type="text" id="user" name="" placeholder="user">
+                        <input type="email" id="email" name="" placeholder="correo electronico">
+                        <input type="password" id="password" name="" placeholder="Crear contraseña">
                         <input type="password" name="" placeholder="Confirmar contraseña">
                         <input type="text" name="" placeholder="alias">
 
-
-                        <input type="date" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01" required>
+                        <!---------------------------------------COMENTARIO A VER SI SI JALA-------------------------------------------------------->>
+                        <input type="date" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
 
                         <div class="profile-pic-div">
                             <img src="img/avatar.png" id="photo">
@@ -53,7 +54,7 @@
 
                         <script src="js/SubirFoto.js"></script>
 
-                        <input type="submit" name="" value="Sign Up">
+                        <button type="submit">Registrarse</button>
                         <p class="signup">Ya tienes cuenta?<a href="#" onclick="toggleForm();
                             ">Entra aqui 
                         </a></p>
