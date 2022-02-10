@@ -25,7 +25,7 @@
 <em>Fecha de Creacion</em><br>
 <input type="text" placeholder="Fecha de Creacion" ><br>
 
-<button type="button" class="btn btn-primary btn-lg">Aceptar</button>
+<a type="button" href="Perfil.php" class="btn btn-primary btn-lg">Aceptar</a>
 </div>
 
 

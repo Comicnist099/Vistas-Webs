@@ -25,7 +25,7 @@
 <em>Fecha de Creacion</em><br>
 <input type="text" placeholder="Fecha de Creacion" readonly><br>
 
-<button type="button" class="btn btn-primary btn-lg">Modificar Informacion</button>
+<a type="button" href="PerfilEditable.php" class="btn btn-primary btn-lg">Modificar Informacion</a>
 </div>
 
 

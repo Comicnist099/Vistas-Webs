@@ -13,7 +13,6 @@
 header {
 
     height: 50px;
-  
     top: 0;
     left: 0;
     justify-content: space-between;
@@ -72,6 +71,21 @@ header {
     float: left;
     height: 60px;
   }
+
+.a{
+  object-fit: fill;
+
+  height:50px;
+  width: 50px;
+  cursor:pointer;
+}
+
+  .navigation-menu img{
+   
+  object-fit: cover;
+  border-radius: 20px;
+
+  }
   
   .navigation-menu {
     float: right;
@@ -89,6 +103,7 @@ header {
     font-size: 10px;
     padding: 7px 14px;
     transition: 250ms;
+    
   
   }
   

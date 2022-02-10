@@ -17,16 +17,17 @@
 <header style="      background:rgb(185, 219, 91) !important">
 
 <div class="inner-width">
-<a href="#" title="NOTIPAPU!!!" class="logo bx-flashing-hover"><img src="img/logonotipapus.png" alt=""></a>
+<a href="index.php" title="NOTIPAPU!!!" class="logo bx-flashing-hover"><img src="img/logonotipapus.png" alt=""></a>
 <i class='menu-toggle-btn bx bx-menu bx-md'></i>
 <nav class="navigation-menu">
 
 
  <a href="#" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
- <a href="#" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
- <a href="#" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
  
- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>
+ <a href="#" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
+ <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
+ <!-- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>-->
+ <a href="Perfil.php" ><img class="a" src="img/perrito.jfif" alt=""></a>
 
 </nav>
 
