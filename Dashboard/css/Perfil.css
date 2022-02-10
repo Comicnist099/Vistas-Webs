@@ -1,6 +1,7 @@
 :root{
-    --Left-Perfil:100px;
+    --Left-Perfil:10%;
     --Top-Perfil:20px;
+    --Top-Foto:130px;
     --Color-Fondo:   #f8f67a;;
     --Zoom:
 }
@@ -13,22 +14,39 @@
     zoom: var(--Zoom);
   }
 
+.Perfil{
+    position:absolute;
+
+    left:55%;
+    top:var(--Top-Foto);
+    border-radius: 50px;
+    transition:.250ms;
+    width:500px;
+    height:500px;
+}
+
+#Cambiar-foto{
+    position: absolute;
+    margin-left:40%;
+    top:650px;
+    
+}
 .Columnas {
  
     margin-top:var(--Top-Perfil);
     margin-left:var(--Left-Perfil);
     background-color: var(--Color-Fondo);
     border-radius: 50px;
-    height: 600px;
-    width: 500px;
+    height: 700px;
+    width: 40%;
 }
 .Columnas h1{
     padding: 10px;
-    margin-left:70px;
+    margin-left:40px;
 }
 
 .Columnas em{
-    margin-left:70px;
+    margin-left:10%;
 }
 
 
@@ -36,6 +54,29 @@
     margin-left:var(--Left-Perfil);
     padding: 10px;
     font-size: 20px;
+    height: 7%;
+    width: 80%;
+}
+.Columnas button{
+    margin-left:40%;
+    margin-top:30px;
+}   
+
+@media screen and (max-width:800px){
+ 
+    .Columnas h1{
+        padding: 10px;
+        margin-left:20px;
+    }
+    #Cambiar-Foto {
+        top:100px;
+    }
 }
 
-
+@media screen and (max-width:1000px) {
+    .Perfil{
+        height:300px;
+        width:300px;
+        transition:.250ms;
+    }
+}

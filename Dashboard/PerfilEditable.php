@@ -13,19 +13,19 @@
 
 <h1>DATOS PERSONALES</h1><br><br>
 <em>Nombre</em><br>
-<input type="text" placeholder="Nombre" readonly><br>
+<input type="text" placeholder="Nombre" ><br>
 <em>Alias</em><br>
-<input type="text" placeholder="Alias" readonly><br>
+<input type="text" placeholder="Alias" ><br>
 <em>Correo Electronico</em><br>
-<input type="text" placeholder="Correo Electronico" readonly><br>
+<input type="text" placeholder="Correo Electronico" ><br>
 <em>Telefono</em><br>
-<input type="text" placeholder="Telefono" readonly><br>
+<input type="text" placeholder="Telefono" ><br>
 <em>Nacimiento</em><br>
-<input type="text" placeholder="Nacimiento" readonly><br>
+<input type="text" placeholder="Nacimiento" ><br>
 <em>Fecha de Creacion</em><br>
-<input type="text" placeholder="Fecha de Creacion" readonly><br>
+<input type="text" placeholder="Fecha de Creacion" ><br>
 
-<button type="button" class="btn btn-primary btn-lg">Modificar Informacion</button>
+<button type="button" class="btn btn-primary btn-lg">Aceptar</button>
 </div>
 
 
