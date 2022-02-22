@@ -1,0 +1,264 @@
+:root{
+  --Comentarios-Top:30px;
+  --Comentarios-left:20px;
+}
+
+
+
+.{
+    position:absolute; 
+    justify-content: space-between;
+  
+    left:100px;
+  
+    margin-top: 0em;
+   }
+   .ConjuntoImg2{
+    margin-left: 115px; 
+  }
+  
+   .ConjuntoImg2 .imagenPublic2 img{
+  
+    object-fit:cover;
+    border-radius: 20px;
+    width:300px;
+    height: 300px;
+   }
+  
+   .imagenPublic2 img:hover{
+   
+   
+    object-fit:cover;
+    -webkit-transform:scale(1.3);
+    transform:scale(1.1);
+    transition:0.6s;
+  
+   }
+   
+  .Publicaciones2 .Casilla2 span{
+  
+    color: #2b7245;
+  }
+  
+  
+  
+  
+  .CasillaTitulo{
+    text-align:justify;
+    padding: 2%;
+    font-size:60px;
+    width: 1000px;
+    font-family: Impact;
+  }
+  
+  .CasillaFecha{
+    font-size:13px;
+    float: center;
+    padding: 1%;
+  }
+
+  
+  .Casilla2{
+
+    margin-top: 2em;
+  }
+  
+  .Publicaciones2{
+    margin-left: 100px;
+    background-color: rgb(125, 221, 119);
+    width: 70%;
+    margin-top: 20px;
+    border-radius: 20px;
+
+  }
+
+  #Etiquetas{
+    background: rgb(195, 125, 92);
+    border-radius: 20px;
+    margin-top: 14em;
+    
+    float:right;
+    padding: 10px;
+    
+  }
+  
+  
+  .large-3 {
+font-size: 20px;
+text-align: justify; 
+width: 96%;
+margin-left: 20px;
+}
+.bx{
+  cursor: pointer;
+}
+
+#Hola{
+  font-size:700px;
+}
+
+.Reciente h3{
+  text-align: center;
+  margin-top: 40px;
+  }
+  .Noticia3:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+    transition: .3s;
+    font-weight:900;
+  }
+  
+  .Noticia2:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+    transition: .3s;
+    font-weight:900;
+  }
+  
+  
+  .Noticia1:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+    transition: .3s;
+    font-weight:900;
+  }
+  
+  .Noticia1{
+    transition: .3s;
+    position:absolute;
+    background-color: #c1e686;
+    border-radius: 10px;
+    left: 30px;
+    top:130px;
+    font-size: 20px;
+    width: 300px;
+    height: 150px;
+    font-weight:600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 8px;
+    text-align: justify;
+  
+  
+  }
+  
+  
+  .Noticia2{
+    transition: .3s;
+    position:absolute;
+    background-color: #c1e686;
+    border-radius: 10px;
+    left: 30px;
+    top:300px;
+    font-size: 20px;
+    width: 300px;
+    height: 150px;
+    font-weight:600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 8px;
+    text-align: justify;
+  
+  
+  }
+  
+  
+  .Noticia3{
+    transition: .3s;
+    position:absolute;
+    background-color: #c1e686;
+    border-radius: 10px;
+    left: 30px;
+    top:480px;
+    font-size: 20px;
+    width: 300px;
+    height: 150px;
+    font-weight:600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 20px;
+    text-align: justify;
+  
+  
+  }
+  
+  
+  
+  .Reciente{
+    position:absolute;
+    left: 79%;
+    top:80px;
+    width: 320px;
+    height: 650px;
+    background-color: rgb(108, 173, 104);
+  }
+  .Comentarios{
+    background-color: rgb(117, 221, 126);
+    width: 60%;
+    border-radius: 20px;
+    margin-left: 20px;
+  }
+
+  .Comentarios h6{
+    margin-top:-80px;
+    margin-left:90px;
+    background-color: #4cb15d;
+    border-radius: 30px;
+    width: 50%;
+    padding: 10px;
+  }
+  .imagenComentarios img{
+    position:static;
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    border-radius: 20px;
+  }
+
+  .Contenido{
+    margin-left: 90px;
+    font-size: 20px;
+    text-align: justify; 
+    width: 96%;
+  }
+
+  .Comentarios p{
+    margin-left: 100px;
+    padding: 10px;
+  }
+
+  .btn{
+    margin-left:70%;
+  }
+
+  .Escribir input{
+    margin-left: 20px;
+    width: 60%;
+  }
+
+  .Escribir2 {
+    position: absolute;
+
+    margin-left: 60%;
+  }
+
+  .Comentarios2{
+    background-color: rgb(117, 221, 126);
+    width: 60%;
+    border-radius: 20px;
+    margin-left: 100px;
+  }
+
+  .Comentarios2 h6{
+    margin-top:-80px;
+    margin-left:90px;
+    background-color: #4cb15d;
+    border-radius: 30px;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .Comentarios2 p{
+    margin-left: 100px;
+    padding: 10px;
+  }
