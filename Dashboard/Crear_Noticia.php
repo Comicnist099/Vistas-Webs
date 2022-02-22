@@ -26,7 +26,7 @@
 
  <h6>Titulo de la noticia</h6>
 
-
+<br>
 
 <input class="form-control" type="text" placeholder="Default input"><br>
 <input class="form-control" type="text" placeholder="Default input"><br>
