@@ -24,8 +24,11 @@
   <a style="font-weight:900">Localización: </a><a>Colonia, </a><a>Ciudad, </a><a>Pais </a>   
   <a style="font-weight:900">PALABRAS CLAVES: </a>Musica, Reguetton<a>
 </div> 
-
-
+<div class="large-4">
+          <span>Deportes</span>
+          <span>Deportes</span>
+          <span>Deportes</span>
+        </div>
 <div class="CasillaTitulo">            
 <span style=" font-weight:900"> TUSA DOS CONFIRMADA NO PUEDE SER INCREIBLE!!!!!!!!!</span><br>
 

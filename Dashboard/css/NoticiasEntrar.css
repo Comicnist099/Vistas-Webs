@@ -65,8 +65,7 @@
   
   .Publicaciones2{
     margin-left: 100px;
-    background-color: rgb(125, 221, 119);
-    width: 70%;
+background: rgba(196, 220, 76);    width: 70%;
     margin-top: 20px;
     border-radius: 20px;
 
@@ -262,3 +261,11 @@ margin-left: 20px;
     margin-left: 100px;
     padding: 10px;
   }
+  
+.large-4 span {
+  font-weight: 700;
+  background-color: rgb(108, 173, 104);
+  border-radius: 10px;
+  padding: 5px;
+
+}

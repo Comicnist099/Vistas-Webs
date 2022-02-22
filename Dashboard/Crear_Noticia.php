@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Crear Noticias</title>
+
+
 <link rel="stylesheet" href="css/Crear_Noticias.css">
-<script type="text/javascript"></script>
+
 <?php include('./Templates/Nav_Bar.php')?>
 <body>
 <div class="Forms">
@@ -64,6 +66,8 @@
 </div>
 </div>
 <script src="js/etiquetas.js"> </script>
+
+
 
 </body>
 </html>

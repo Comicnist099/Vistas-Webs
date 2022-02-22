@@ -404,3 +404,36 @@ margin-top: 40px;
 
 }
 
+#reportrange {
+
+  background: #fff;
+   cursor: pointer; 
+   padding: 5px 10px;
+    border: 1px solid #ccc; 
+    width: 20%;
+    margin-left:850px;
+    margin-top:20px;
+}
+.Titulo h5 {
+  margin-left: 290px;
+  position:absolute;
+
+
+  padding: 6px;
+  background-color:#55c87f;
+  border-radius: 10px;
+}
+.ContenedorBus a{
+  background-color: #58b196;
+  width: 100px;
+  height: 100px;
+}
+.Titulo input{
+  
+  margin-left: 470px;
+  width: 400px;
+}
+.Titulo{
+  position:absolute;
+
+}

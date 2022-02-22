@@ -3,11 +3,53 @@
 
 <html lang="en">
 <link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.6.0.min.js"></script>
+
 <?php include('./Templates/Nav_bar.php') ?>
 
 
 <body>
- 
+  <br>
+  <div class="ContenedorBus">
+    
+<div class="Titulo">
+<h5>Buscadores </h5>
+
+<input class="form-control" type="text" placeholder="Palabras Claves"><br>
+</div>
+<div id="reportrange" >
+    <i class="fa fa-calendar"></i>&nbsp;
+    <span></span> <i class="fa fa-caret-down"></i>
+</div>
+</div>
+<script type="text/javascript">
+$(function() {
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Hoy': [moment(), moment()],
+           'ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Hace 7 días': [moment().subtract(6, 'days'), moment()],
+           'Hace 30 días': [moment().subtract(29, 'days'), moment()],
+           'Este Mes': [moment().startOf('month'), moment().endOf('month')],
+           'Ultimo mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    }, cb);
+
+    cb(start, end);
+
+});
+</script>
+
   <section class="Reciente">
     <h1>POPULARES</h1><br><br><br>
     <div class=ConjuntoNoticias>
@@ -17,6 +59,7 @@
     </div>
 
   </section>
+
   
 
 

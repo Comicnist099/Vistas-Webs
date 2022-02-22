@@ -11,8 +11,10 @@
 <meta charset="utf-8" />
 <title>Dashboard</title>
 <link rel="stylesheet" href="css/Nav_Bar.css">
-
-<script src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <header style="      background:rgb(185, 219, 91) !important">
 
@@ -28,6 +30,7 @@
  <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
  <!-- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>-->
  <a href="Perfil.php" ><img class="a" src="img/perrito.jfif" alt=""></a>
+ <a id="Cerrar">Cerrar sesión</a>
 
 </nav>
 
