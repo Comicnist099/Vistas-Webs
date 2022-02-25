@@ -7,7 +7,11 @@
 
 <?php include('./Templates/Nav_bar.php') ?>
 
-
+<script>
+        function mialerta() {  
+            alert("Bienvenido, Entra y conoce un mundo nuevo de noticias");
+        } 
+    </script>
 <body>
   <br>
   <div class="ContenedorBus">

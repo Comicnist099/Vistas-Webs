@@ -5,6 +5,12 @@
 <title>Crear Noticias</title>
 
 
+<script>
+        function mialerta() {  
+            alert("Se ha creado la noticia");
+        } 
+    </script>
+
 <link rel="stylesheet" href="css/Crear_Noticias.css">
 
 <?php include('./Templates/Nav_Bar.php')?>
@@ -21,16 +27,26 @@
   
 <textarea class="form-control" placeholder="Colocar contenido de la noticia"></textarea> 
 </div>
-
-
-
- <h6>Titulo de la noticia</h6>
-
 <br>
 
-<input class="form-control" type="text" placeholder="Default input"><br>
-<input class="form-control" type="text" placeholder="Default input"><br>
 
+
+ <h6>Palabras Claves</h6>
+
+
+<input class="form-control" type="text" placeholder="Fantasico, violin... etc"><br>
+
+<h6>Firma del Reportero</h6>
+
+<input class="form-control" type="text" placeholder="Coloca un alias o como quieres que te reconzcan"><br>
+
+<div class="form-control">
+      <label for="username">Fecha de la noticia</label>
+        <input type="date" placeholder="Fecha de la notica" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
+    <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+                           
+  </div>
 
 <h3>CATEGORIAS</h3>
 <div class="container">
@@ -63,6 +79,7 @@
 <br>
 <br>
 
+<button href="index.php"  onclick="mialerta();"   type="button" class="btn btn-dark">Aceptar noticia</button>
 </div>
 </div>
 <script src="js/etiquetas.js"> </script>

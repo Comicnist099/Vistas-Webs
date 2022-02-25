@@ -11,26 +11,31 @@
 <meta charset="utf-8" />
 <title>Dashboard</title>
 <link rel="stylesheet" href="css/Nav_Bar.css">
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
-<header style="      background:rgb(185, 219, 91) !important">
 
+<header style="background:rgb(185, 219, 91) !important">
 <div class="inner-width">
 <a href="index.php" title="NOTIPAPU!!!" class="logo bx-flashing-hover"><img src="img/logonotipapus.png" alt=""></a>
 <i class='menu-toggle-btn bx bx-menu bx-md'></i>
 <nav class="navigation-menu">
-
-
- <a href="#" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
  
- <a href="#" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
+
+ <a href="ListaUsuarios.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
+
+<a href="secciones.php" title="Secciones" id="Nosotros" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
+
+ <a href="nosotros.php" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
+ 
+ <a href="Crear_Noticia.php" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
  <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
  <!-- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>-->
  <a href="Perfil.php" ><img class="a" src="img/perrito.jfif" alt=""></a>
- <a id="Cerrar">Cerrar sesión</a>
+ <a href="viko.php" id="Cerrar">Cerrar sesión</a>
 
 </nav>
 

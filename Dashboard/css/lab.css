@@ -1,0 +1,51 @@
+h1 {
+    color: red;
+}
+
+h2 {
+    color: rgb(66, 32, 255);
+}
+
+li:nth-child(2) {
+    letter-spacing: 10px;
+    color: rgb(0, 0, 0);
+}
+
+li a {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    color: rgb(67, 0, 70);
+}
+
+td,
+th {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #999;
+    padding: 0.5rem;
+}
+
+li a:hover {
+    font-weight: bold;
+    color: rgb(25, 0, 255);
+}
+
+link a:link {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+li a:visited {
+    color: chartreuse;
+}
+
+li:nth-child(2):hover {
+    color: rgb(14, 255, 175);
+}
+
+li:last-child {
+    letter-spacing: 10px;
+    font-weight: normal;
+}
+
+li:last-child:hover {
+    font-weight: bold;
+}

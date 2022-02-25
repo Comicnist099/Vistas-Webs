@@ -62,6 +62,9 @@
 
 <i id="Hola" class='bx bx-like bx-lg' ></i>
 <p>100</p>
+<button type="button" class="btn btn-dark">Modificar</button>
+<button type="button" class="btn btn-dark">Validar</button>
+<button type="button" class="btn btn-dark">Eliminar</button>
 
 
 
