@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 
+
 <html lang="en">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -30,6 +31,35 @@ background-attachment: fixed;
     <span></span> <i class="fa fa-caret-down"></i>
 </div>
 </div>
+<form class="form" action="./includes/register_inc.php" method="post" enctype="multipart/form-data">
+                <h1 class="title">Registrarse</h1>
+
+                    <label for="">Nombre de Usuario</label>
+                    <input type="text" name="username" onkeypress="return Letra(event);" required>
+
+                    <label for="">Email</label>
+                    <input type="email" name="email" size="20" required>
+
+                    <div>
+                      <label for="">Contraseña</label>
+                      <input type="password"  id="pass1" name="pass1" placeholder="Contraseña" minlength="8"  required>
+                    </div> 
+
+
+                   <!-- <div ng-controller="PasswordController">
+                        <div style="float: left; width: 400px">
+                        <label for="">Contraseña</label>
+                            <input type="text" ng-model="password" ng-change="analyze(password)" style="width: 200px; height: 25px" minlength="8" required/> 
+                        </div>
+                        <div ng-style="passwordStrength"></div>
+                    </div>
+                    -->
+                    <label for="">Foto de perfil</label> 
+                    <input id="file"  name="load_image" type="file" required/><hr><div id="preview"></div>
+                    <input type="submit" name="submit" value="Registrarse" class="submit_button">
+
+
+            </form>
 <script type="text/javascript">
 $(function() {
 

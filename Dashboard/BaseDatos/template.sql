@@ -1,0 +1,27 @@
+DROP PROCEDURE IF EXISTS PROC_USER;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_USER`(
+    IN opcion            char(20),
+	IN pNAME       		 VARCHAR(200),
+	IN pALIAS            VARCHAR(100),
+    IN pCORREO		     VARCHAR(100),
+    IN pPASS             VARCHAR(200),
+	IN pPROFILE_PIC      MEDIUMBLOB,
+    IN pUSER_TYPE        VARCHAR(50),
+    IN pSTATE			 VARCHAR(50),
+    IN pBIRTHDAY    	 DATE
+    )
+BEGIN
+IF opcion = 'Insertar'
+THEN
+INSERT INTO user(NAME, ALIAS, CORREO, PASSWORD, CREATION_DATE, AVATAR_PIC, USER_TYPE, STATE,BIRTHDAY)
+        VALUES (pNAME, pALIAS, pCORREO, pPASS,  sysdate(), pPROFILE_PIC, pUSER_TYPE,pSTATE, pBIRTHDAY);
+END IF;
+IF opcion='Activo'
+THEN
+UPDATE user 
+SET 
+    STATE = "Desconectado"
+WHERE
+    CORREO = pCORREO;
+END IF;
+END
