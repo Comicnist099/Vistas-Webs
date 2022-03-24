@@ -8,7 +8,6 @@
 section {
     position: relative;
     min-height: 100vh;
-    background: #9ec9b1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +19,7 @@ section .container {
     width: 800px;
     height: 740px;
     background: #fff;
+    border-radius: 10px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }

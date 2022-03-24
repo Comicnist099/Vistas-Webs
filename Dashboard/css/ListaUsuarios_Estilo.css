@@ -1,18 +1,19 @@
 * {
     margin: 0;
     padding: 0;
-    font-stretch: extra-condensed;
-    font-family: 'poppins', sans-serif;
 }
 
-.header h1 {
-    font-family: 'poppins', sans-serif;
+.boxes {
+    display: flex;
+}
+
+h1 {
     text-align: center;
     position: relative;
     padding: 30px;
     height: 100px;
-    font-size: 50px;
-    color: #2b7245;
+    font-size: 200px;
+    color: #254932;
 }
 
 .container {
@@ -28,10 +29,11 @@
 .outer .card {
     position: relative;
     margin: 5px 0;
-    border: solid rgb(10, 22, 8);
-    background: rgb(113, 185, 65);
-    width: 430px;
-    padding: 20px;
+    background-color: rgba(107, 197, 107, 0.575);
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+    border: solid rgb(233, 245, 231);
+    width: 530px;
+    padding: 30px;
     opacity: 1;
     border-radius: 100px 20px 20px 100px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
@@ -78,7 +80,6 @@
     padding: 7px 18px;
     border-radius: 25px;
     color: rgb(255, 255, 255);
-}
 }
 
 .card:hover {

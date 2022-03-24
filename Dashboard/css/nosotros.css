@@ -13,21 +13,23 @@
 }
 
 .header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     position: relative;
     padding: 30px;
     height: 100px;
-    font-size: 35px;
-    color: #2b7245;
+    font-size: 30px;
+    color: #2a6168;
 }
 
 .card_nombre {
     text-align: center;
     font-size: 20px;
-    color: #16301f;
+    color: white;
 }
 
 .card {
+    margin-top: 100px;
     width: 100%;
     display: flex;
     gap: 50px;
@@ -36,11 +38,11 @@
 }
 
 .card_perfil {
-    background: rgba(196, 220, 76);
+    background-color: rgba(107, 197, 107, 0.575);
     width: 310px;
     padding: 20px;
     box-shadow: 2px;
-    box-shadow: 2px 2px 5px rgb(201, 201, 201);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
     border-radius: 10px;
     transition: all .3s;
 }
@@ -53,7 +55,7 @@
 .card_nombre img {
     position: relative;
     width: 65%;
-    height: 230px;
+    height: 260px;
     border-radius: 6px;
     box-shadow: 2px 2px 5px rgb(10, 10, 10);
     transition: all .3s;
@@ -70,7 +72,8 @@
 
 .card_perfil .card_descripcion {
     padding: 50px;
-    text-align: justify;
+    color: #353535;
+    text-align: center;
     text-justify: inter-word;
     font-size: 20px;
 }

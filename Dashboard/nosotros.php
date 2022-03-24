@@ -13,7 +13,10 @@
     <script src="js/jquery-3.6.0.min.js"></script>
 
 
-    <body>
+    <body style="background-image:  url('./img/bg.jpg'); background-size: 100% 100%; 
+background-attachment: fixed;
+
+">
 
 
 </head>
@@ -44,6 +47,8 @@
 
 <header class="header">
     <h1>Acerca de nosotros</h1>
+<img src="./img/banner3.png" alt="Italian Trulli" style="align-items: center;">
+
 
 
 </header>
@@ -58,7 +63,7 @@
                 <p>Diseñador web</p>
             </div>
             <hr>
-            <div class="card_descripcion">
+            <div class="card_descripcion"style="font-weight:700">
                 <p>Programador backend, jugador profesional de roblox, fundo notitpapus en el 2022 con el fin de informar a la comunidad de los escandalos del momento, en sus gustos se ncuentran el jugar videojuejos asi como desarrollarlos, escuchar
                     musica y ver memes de minions</p>
             </div>
@@ -71,7 +76,7 @@
                 <p>Diseñador web</p>
             </div>
             <hr>
-            <div class="card_descripcion">
+            <div class="card_descripcion"style="font-weight:700">
                 <p>Diseñador web,simpeadora de Jojos, socio de Marco Cantu desde Vicosita ahora en notipapus 2022 con la mision de hacer llegar el chisme mas rapido, entre sus gustos esta dibujar, acariciar perritos y jugar pou</p>
             </div>
             <hr>

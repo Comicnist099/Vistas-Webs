@@ -2,7 +2,8 @@
 <html lang="en">
 <link rel="stylesheet" href="css/Perfil.css">
 <?php include('./Templates/Nav_Bar.php') ?>
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-repeat: no-repeat;  background-size: cover;
+">
 <img  class="Perfil" src="img/perrito.jfif">
 
 
@@ -25,7 +26,7 @@
 <em>Fecha de Creacion</em><br>
 <input type="text" placeholder="Fecha de Creacion" readonly><br>
 
-<a type="button" href="PerfilEditable.php" class="btn btn-primary btn-lg">Modificar Informacion</a>
+<a type="button"id="subir" href="PerfilEditable.php" class="btn btn-primary btn-lg">Modificar Informacion</a>
 </div>
 
 

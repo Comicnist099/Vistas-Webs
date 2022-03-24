@@ -14,11 +14,12 @@
 <title>Document</title>
 
 
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-repeat: no-repeat;  background-size: cover;
+">
     
 <?php include('./Templates/Nav_Bar.php')?>
     <header class="header">
-        <h1>Lista de usuarios</h1>
+    <h1>Lista de usuarios</h1>
 
 
     </header>

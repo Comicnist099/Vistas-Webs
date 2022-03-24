@@ -9,18 +9,22 @@
 <link rel="stylesheet" href="css/Nav_Bar.css">
 <script src="js/jquery-3.6.0.min.js"></script>
 
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-repeat: no-repeat;  background-size: cover;
+">
 <script src="js/abrir.js">
 
 
     </script>
 <?php include('./Templates/Nav_Bar.php')?>
+<div class="inside">
 
     <header class="header">
-        <h1>Categorias</h1>
+        <h3>CATEGORIAS</h3>
+        <img  class="imagen" src="./img/banner4.png" alt="Italian Trulli" style="align-items: center;">
 
 
     </header>
+
     <div class="cont">
         <input type="text" id="txt">
         <div class="btns">
@@ -35,6 +39,8 @@
         </ul>
 
     </div>
+    </div>
+
     <script>
         var inputText = document.getElementById("txt"),
             items = document.querySelectorAll("#list li"),

@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="css/Crear_Noticias.css">
 
 <?php include('./Templates/Nav_Bar.php')?>
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-repeat: no-repeat;  background-size: cover;
+">
 <div class="Forms">
+<img src="./img/banner.png" alt="Italian Trulli" style="align-items: center;">
 <h1>CREACION DE NOTICIA</h1>
 <h3>COSAS PRINCIPALES</h3>
 
@@ -65,12 +67,12 @@
             </ul>
         </div>
         <div class="empty">
-            <p>Ho haz añadido elementos a la lista aún.</p>
+            <p>No haz añadido elementos a la lista aún.</p>
         </div>
     </div>
   </div>
 
-  <h3>Añade archivos multimedia</h3>
+  <h3>AÑADE FOTOS O VIDEOS</h3>
 
 <input class="form-control" name="uploadedfile" type="file" />
 <input class="form-control" name="uploadedfile" type="file" />
@@ -82,7 +84,9 @@
 <button href="index.php"  onclick="mialerta();"   type="button" class="btn btn-dark">Aceptar noticia</button>
 </div>
 </div>
+
 <script src="js/etiquetas.js"> </script>
+<?php include('./Templates/Footer.php')?>
 
 
 

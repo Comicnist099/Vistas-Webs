@@ -12,7 +12,10 @@
             alert("Bienvenido, Entra y conoce un mundo nuevo de noticias");
         } 
     </script>
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-size: 100% 100%; 
+background-attachment: fixed;
+
+">
   <br>
   <div class="ContenedorBus">
     
@@ -75,7 +78,7 @@ $(function() {
       </div>
     </div>
 
-    <h1 style="font-weight:400">SECCIONES</h1><br><br>
+    <h1 >SECCIONES</h1><br><br>
     <a>
       <div class="Logo_Secciones">
         <img src="img/ranita.png" style="height:150px" alt="logotipo">

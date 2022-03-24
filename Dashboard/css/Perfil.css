@@ -1,8 +1,9 @@
-:root{
-    --Left-Perfil:10%;
-    --Top-Perfil:20px;
-    --Top-Foto:130px;
-    --Color-Fondo:   #f8f67a;;
+:root {
+    --Left-Perfil: 10%;
+    --Top-Perfil: 20px;
+    --Top-Foto: 130px;
+    --Color-Fondo: #b5f85d96;
+    ;
     --Zoom:
 }
 
@@ -12,71 +13,86 @@
     text-decoration: none;
     font-stretch: extra-condensed;
     zoom: var(--Zoom);
-  }
-
-.Perfil{
-    position:absolute;
-
-    left:55%;
-    top:var(--Top-Foto);
-    border-radius: 50px;
-    transition:.250ms;
-    width:500px;
-    height:500px;
 }
 
-#Cambiar-foto{
-    position: absolute;
-    margin-left:40%;
-    top:650px;
-    
+.Columnas h1 {
+    text-align: center;
 }
+
 .Columnas {
- 
-    margin-top:var(--Top-Perfil);
-    margin-left:var(--Left-Perfil);
+    align-items: center;
+}
+
+.Perfil {
+    position: absolute;
+    left: 55%;
+    top: var(--Top-Foto);
+    border-radius: 50px;
+    transition: .250ms;
+    width: 500px;
+    height: 500px;
+}
+
+#Cambiar-foto {
+    position: absolute;
+    margin-left: 40%;
+    top: 650px;
+}
+
+.Columnas {
+    margin-top: var(--Top-Perfil);
+    margin-left: var(--Left-Perfil);
     background-color: var(--Color-Fondo);
     border-radius: 50px;
     height: 700px;
     width: 40%;
 }
-.Columnas h1{
+
+.Columnas h1 {
     padding: 10px;
-    margin-left:40px;
+    margin-left: 40px;
 }
 
-.Columnas em{
-    margin-left:10%;
+.Columnas em {
+    margin-left: 10%;
 }
 
-
-.Columnas input{
-    margin-left:var(--Left-Perfil);
+.Columnas input {
+    margin-left: var(--Left-Perfil);
     padding: 10px;
     font-size: 20px;
     height: 7%;
     width: 80%;
 }
-.Columnas button{
-    margin-left:40%;
-    margin-top:30px;
-}   
 
-@media screen and (max-width:800px){
- 
-    .Columnas h1{
+.Columnas button {
+    margin-left: 40%;
+    margin-top: 100px;
+}
+
+.btn-primary btn-lg {
+    background-color: aquamarine;
+}
+
+@media screen and (max-width:800px) {
+    .Columnas h1 {
         padding: 10px;
-        margin-left:20px;
+        margin-left: 20px;
     }
     #Cambiar-Foto {
-        top:100px;
+        top: 100px;
     }
 }
 
+#subir {
+    margin-top: 20px;
+    margin-left: 230px;
+}
+
 @media screen and (max-width:1000px) {
-    .Perfil{
-        height:300px;
-        width:300px;
-        transition:.250ms;
+    .Perfil {
+        height: 300px;
+        width: 300px;
+        transition: .250ms;
     }
 }

@@ -13,7 +13,10 @@
             alert("Si tienes cuenta ya registrada presiona 'Registrarte aquí' ");
         } 
     </script>
-<body>
+<body style="background-image:  url('./img/bg.jpg'); background-size: 100% 100%; 
+background-attachment: fixed;
+
+">
 
     <section>
         <div class="container">
@@ -44,28 +47,28 @@
 
                         <div class="form-control">
                             <label for="username">Usuario</label>
-                            <input type="text" placeholder="florinpop17" id="username" />
+                            <input type="text" name="username" placeholder="florinpop17"  id="username" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="username">Alias</label>
-                            <input type="text" placeholder="alias" id="alias" />
+                            <input type="text" name="alias" placeholder="alias" id="alias" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="username">Email</label>
-                            <input type="email" placeholder="a@florin-pop.com" id="email" />
+                            <input type="email" name="email" placeholder="a@florin-pop.com" id="email" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="username">Contraseña</label>
-                            <input type="password" placeholder="********" id="password" />
+                            <input type="password" name="password" placeholder="********" id="password" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -80,7 +83,7 @@
 
                         <div class="form-control">
                             <label for="username">Fecha de nacimiento</label>
-                            <input type="date" placeholder="Fecha de nacimiento" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
+                            <input type="date" placeholder="Fecha de nacimiento" name="birthday" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -88,7 +91,7 @@
           
                         <div class="profile-pic-div">
                             <img src="img/avatar.png" id="photo">
-                            <input type="file" id="file">
+                            <input type="file" name="photo" id="file">
                             <label for="file" id="uploadBtn">Subir foto</label>
                         </div>
 
