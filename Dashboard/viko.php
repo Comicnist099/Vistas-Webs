@@ -70,7 +70,7 @@ background-attachment: fixed;
             </div>
             <div class="user2 singupBx">
                 <div class="formBx">
-                <form class="form" action="./classes/register_inc.php" method="post" enctype="multipart/form-data">
+                <form class="form" action="./Temp/register_inc.php" method="post" enctype="multipart/form-data">
                         <h2>Registrate</h2>
 
                         <div class="form-control">

@@ -31,31 +31,6 @@ background-attachment: fixed;
     <span></span> <i class="fa fa-caret-down"></i>
 </div>
 </div>
-<form class="form" action="./classes/register_inc.php" method="post" enctype="multipart/form-data">
-                <h1 class="title">Registrarse</h1>
-
-                    <label for="">Nombre de Usuario</label>
-                    <input type="text" name="username" required>
-
-                    <label for="">Alias</label>
-                    <input type="text" name="Alias" required>
-
-                    <label for="">Email</label>
-                    <input type="email" name="email" size="20" required>
-
-                    <div>
-                      <label for="">Contraseña</label>
-                      <input type="password"  id="pass1" name="pass1" placeholder="Contraseña" minlength="8"  required>
-                    </div> 
-                    <div class="profile-pic-div">
-  
-                            <input type="file" name="photo" id="file">
-                            <label for="file" id="uploadBtn">Subir foto</label>
-                        </div>
-
-                    <input type="submit" name="submit" value="Registrarse" class="submit_button">
-                
-            </form>
 <script type="text/javascript">
 $(function() {
 

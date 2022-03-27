@@ -7,16 +7,44 @@ include "../classes/register.classes.php";
         private $user;
         private $email;
         private $pwd;
-        private $blob_img;
+        private $image;
+        private $imageId;
 
-        public function __construct($Name,$Alias,$email, $pwd,$blob_img){
+        public function __construct($Name,$Alias,$email, $pwd,$Image){
             $this->email = $email;
             $this->pwd = $pwd;
             $this->Alias = $Alias;
             $this->user = $Name;
-            $this->blob_img=$blob_img;
+            $this->image=$Image;
         }
-    
+        
+        public static function withImage($image){
+            $instance = new self();
+            $instance->fillWithImage($image);
+            return $instance;
+        }
+
+        public static function withImageId($imageId){
+            $instance = new self();
+            $instance->fillWithImageId($imageId);
+            return $instance;
+        }
+
+        protected function fillWithImage($image){
+            $this->image = $image;
+        }
+
+        protected function fillWithImageId($imageId){
+            $this->imageId = $imageId;
+        }
+
+        public function uploadImage(){
+            $this->upload($this->image);
+        }
+
+        public function searchImage(){
+            $this->search($this->imageId);
+        }
 
         public function registerUser(){
 
@@ -49,12 +77,11 @@ include "../classes/register.classes.php";
 
             //Registro de usuario
 
-            $this->register($this->user,$this->Alias,$this->email, $this->pwd,$this->blob_img);
+            $this->register($this->user,$this->Alias,$this->email, $this->pwd,$this->image);
 
 
-            function set_img($blob_img) { $this->blob_img = $blob_img; }
-            
-            function get_img() { return $this->blob_img; }
+
+           
         }
 
         private function emptyInputs(){
