@@ -7,14 +7,16 @@ include "../classes/register.classes.php";
         private $user;
         private $email;
         private $pwd;
-        private $imageId;
+        private $blob_img;
 
-        public function __construct($Name,$Alias,$email, $pwd){
+        public function __construct($Name,$Alias,$email, $pwd,$blob_img){
             $this->email = $email;
             $this->pwd = $pwd;
             $this->Alias = $Alias;
             $this->user = $Name;
+            $this->blob_img=$blob_img;
         }
+    
 
         public function registerUser(){
 
@@ -47,7 +49,12 @@ include "../classes/register.classes.php";
 
             //Registro de usuario
 
-            $this->register($this->user,$this->Alias,$this->email, $this->pwd);
+            $this->register($this->user,$this->Alias,$this->email, $this->pwd,$this->blob_img);
+
+
+            function set_img($blob_img) { $this->blob_img = $blob_img; }
+            
+            function get_img() { return $this->blob_img; }
         }
 
         private function emptyInputs(){

@@ -47,6 +47,12 @@ background-attachment: fixed;
                       <label for="">Contraseña</label>
                       <input type="password"  id="pass1" name="pass1" placeholder="Contraseña" minlength="8"  required>
                     </div> 
+                    <div class="profile-pic-div">
+  
+                            <input type="file" name="photo" id="file">
+                            <label for="file" id="uploadBtn">Subir foto</label>
+                        </div>
+
                     <input type="submit" name="submit" value="Registrarse" class="submit_button">
                 
             </form>

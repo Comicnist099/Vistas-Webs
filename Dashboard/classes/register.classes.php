@@ -28,15 +28,14 @@ class Register extends Dbh{
 
     }
 
-    protected function register($Name,$Alias,$email, $password){
+    protected function register($Name,$Alias,$email, $password,$blob_img){
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
-        $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?, ?)'); 
+        $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?)'); 
 
         $hashPwd = password_hash($password, PASSWORD_DEFAULT);
-        if(!$stmt->execute(array('Insertar',$Name,$Alias,$email,$hashPwd, null, 1, "Activo", 2011-12-18))){
+        if(!$stmt->execute(array('Insertar',$Name,$Alias,$email,$hashPwd, $blob_img, 1, "Activo"))){
             $stmt = null;
-
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';
             echo 'window.location.href = "../registro.php";';
