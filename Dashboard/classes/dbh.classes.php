@@ -16,6 +16,7 @@
                 die("Connection failed" . $error->getMessage());
             }
         }
+        
     }
 
 ?> 

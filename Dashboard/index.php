@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.6.0.min.js"></script>
 
-<?php include('./Templates/Nav_bar.php') ?>
+<?php  session_start();
+ include('./Templates/Nav_bar.php') ?>
 
 <script>
         function mialerta() {  
@@ -17,7 +18,30 @@
 background-attachment: fixed;
 
 ">
+<form class="form" action="./Temp/register_inc.php" method="post">
+                        <h3 class="text-center text-info">Busca por ID</h3>
+                        <div class="form-group">
+                            <label class="text-info">Image ID: </label><br>
+                            <input type="text" name="imageId" id="imageId" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="buscar" name="search" class="submit_button">
+                        </div>
+                    </form>
+                     
+ 
+
   <br>
+  <?php 
+    if(isset($_SESSION["IMAGE_SEARCH"])){
+        $image = $_SESSION["IMAGE_SEARCH"];
+?>
+
+        <img width=400 height=500 src='<?php echo $image; ?>'/>
+
+<?php 
+    }
+?>
   <div class="ContenedorBus">
     
 <div class="Titulo">
@@ -270,6 +294,7 @@ $(function() {
       </div>
     </section>
   </div>
+ 
 
   <?php include('./Templates/Footer.php')?>
 

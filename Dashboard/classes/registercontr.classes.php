@@ -1,50 +1,44 @@
 <?php
 
-include "../classes/register.classes.php";
+include_once("../classes/register.classes.php");
 
     class RegisterContr extends Register{
         private $Alias;
         private $user;
         private $email;
         private $pwd;
+        private $blob_img;
+        private $id_Usuario;
         private $image;
         private $imageId;
 
-        public function __construct($Name,$Alias,$email, $pwd,$Image){
+        public function __construct($Name,$Alias,$email, $pwd){
             $this->email = $email;
             $this->pwd = $pwd;
             $this->Alias = $Alias;
             $this->user = $Name;
-            $this->image=$Image;
         }
         
-        public static function withImage($image){
-            $instance = new self();
-            $instance->fillWithImage($image);
-            return $instance;
-        }
+        function set_idUsuario($id_Usuario) { $this->id_Usuario = $id_Usuario; }
+        function get_idUsuario() { return $this->id_Usuario; }
 
-        public static function withImageId($imageId){
-            $instance = new self();
-            $instance->fillWithImageId($imageId);
-            return $instance;
-        }
+        function set_user($user) { $this->user = $user; }
+        function get_user() { return $this->user; }
 
-        protected function fillWithImage($image){
-            $this->image = $image;
-        }
+        function set_Alias($Alias) { $this->Alias = $Alias; }
+        function get_Alias() { return $this->Alias; }
+        
+        function set_pwd($pass) { $this->pwd = $pass; }
+        function get_pwd() { return $this->pwd; }
 
-        protected function fillWithImageId($imageId){
-            $this->imageId = $imageId;
-        }
+        function set_Email($email) { $this->email = $email;}
+        function get_Email() { return $this->email; }
 
-        public function uploadImage(){
-            $this->upload($this->image);
-        }
+        function set_img($blob_img) { $this->blob_img = $blob_img; }
+        function get_img() { return $this->blob_img; }
 
-        public function searchImage(){
-            $this->search($this->imageId);
-        }
+        
+    
 
         public function registerUser(){
 
@@ -77,7 +71,7 @@ include "../classes/register.classes.php";
 
             //Registro de usuario
 
-            $this->register($this->user,$this->Alias,$this->email, $this->pwd,$this->image);
+            $this->register($this->user,$this->Alias,$this->email, $this->pwd);
 
 
 
