@@ -53,15 +53,15 @@ background-attachment: fixed;
                 <div class="imgBx"><img src="img/perrito.jfif"> </div>
                 <div class="formBx">
 
-                    <form>
+                <form class="form" action="./Temp/login_inc.php" method="post" enctype="multipart/form-data">
                         <h2>Entra</h2>
-                        <label for="username">Usuario</label>
+                        <label for="username">Correo</label>
 
-                        <input type="text" name="" placeholder="user">
+                        <input type="text" name="Correo" placeholder="user">
                         <label for="username">Contraseña</label>
 
-                        <input type="password" name="" placeholder="Contraseña">
-                        <input type="submit" name="" value="Login">
+                        <input type="password" name="pass" placeholder="Contraseña">
+                        <button type="submit" name="submit" >  login</button>
                         <!-----------------------------------REGISTRO--------------------------------------------------------->
                         <p class="signup">No tienes cuenta aún?<a href="#" onclick="toggleForm();
                             ">Registrate aqui </a></p>

@@ -35,7 +35,19 @@
  <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
  <!-- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>-->
  <a href="Perfil.php" >
-     <img class="a" src="img/perrito.jfif" alt="">
+
+    <?php 
+    session_start();
+    if(isset($_SESSION["IMAGE_SEARCH"])){
+        $image = $_SESSION["image"];
+?>
+
+        <img class="a"i src='<?php echo $image; ?>'/>
+
+<?php 
+    }
+?>
+ 
 
     
     </a>
