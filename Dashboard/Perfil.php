@@ -18,13 +18,15 @@
         $correo= $_SESSION["user_login"];
 
 ?>
+
+
 <div class="Columnas">
 
 <h1>DATOS PERSONALES</h1><br><br>
 <em>Nombre</em><br>
 <input type="text" placeholder=<?php echo $name; ?> readonly><br>
 <em>Alias</em><br>
-<input type="text" placeholder=<?php echo $username; ?>readonly><br>
+<input type="text" placeholder=<?php echo $username; ?> readonly><br>
 <em>Correo Electronico</em><br>
 <input type="text" placeholder=<?php echo $correo; ?> readonly><br>
 <em>Fecha de Creacion</em><br>
@@ -46,7 +48,7 @@
 </div>
 <a type="button"id="subir" href="PerfilEditable.php" class="btn btn-primary btn-lg">Modificar Informacion</a>
 </div>
-
+</form>
 
 </body>
     

@@ -112,8 +112,9 @@ background-attachment: fixed;
                         <div class="profile-pic-div">
 
                             <img src="img/avatar.png" id="Moni">
-                            <input type="file" name="photo" id="file">
-                            <label for="file" id="uploadBtn" onchange="readURL(this);">Subir foto</label>
+                            <input type="file" name="photo" id="uploadBtn" onchange="readURL(this);">
+
+                          
                           
                         </div>
 
