@@ -33,9 +33,6 @@
 <input type="text" placeholder=<?php echo $date; ?> readonly><br>
 <div class="profile-pic-div">
 
-
-
-
         <img class="Perfil"i src='<?php echo $image; ?>'/>
 
 <?php 

@@ -1,32 +1,37 @@
 <?php
-include "../classes/modify.class.php";
 
+include_once ("../classes/modify.class.php");
 
 class Modifycontr extends Modify {
 
-     
-    private $email;
+    private $name;
+    private $Alias;
+    private $correo;
     private $pwd;
 
-    public function __construct($email, $pwd){
-        $this->email = $email;
+
+    public function __construct($name,$Alias,$correo, $pwd){
+        $this->name = $name;
         $this->pwd = $pwd;
+        $this->Alias=$Alias;
+        $this->correo=$correo;
         
     }
 
-    public function loginUser(){
+    public function modifyUser(){
         if($this->emptyInputs() == false){
             //echo 'rip en los inputs';
             header("location: ../index.php?error=emptyInputs");
             exit();
         }
 
-        $this->Modificar($this->email, $this->pwd);
+        $this->Modificar($this->name,$this->Alias, $this->correo, $this->pwd);
     }
 
     private function emptyInputs(){
         $result;
-        if( empty($this->email) || empty($this->pwd)){
+        if( empty($this->name) || empty($this->Alias) ||empty($this->correo) || empty($this->pwd)){
+            
             $result = false;
         }else {
             $result = true;

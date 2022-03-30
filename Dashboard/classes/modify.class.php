@@ -1,14 +1,15 @@
 <?php
 
-include "../classes/dbh.classes.php";
+include_once( "../classes/dbh.classes.php");
 
 class Modify extends Dbh{
 
     
-    function Modificar($email, $password){
+    function Modificar($Nombre, $Alias,$correo,$password){
 
-        $stmt = $this->connect()->prepare('SELECT * FROM user WHERE CORREO =  ?;');
-        if(!$stmt->execute(array($email))){
+        $stmt = $this->connect()->prepare('call PROC_USER(?,?,?,?,?,?,?,?);');
+        $hashPwd = password_hash($password, PASSWORD_DEFAULT);
+        if(!$stmt->execute(array('Update',$Nombre,$Alias,$correo,$hashPwd,null, 1, "Activo"))){
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("salio algo mal en la base de datos");';
@@ -22,7 +23,7 @@ class Modify extends Dbh{
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Usuario no encontrado");';
-            echo 'window.location.href = "../login.php";';
+            echo 'window.location.href = "../PerfilEditable.php";';
             echo '</script>';
             exit();
         }

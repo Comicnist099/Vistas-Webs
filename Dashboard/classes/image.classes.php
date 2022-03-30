@@ -1,5 +1,5 @@
 <?php
-include "../classes/dbh.classes.php";
+include_once("../classes/dbh.classes.php");
 
 class Imagen extends Dbh{
 
