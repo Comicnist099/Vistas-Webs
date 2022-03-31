@@ -13,6 +13,7 @@ include "../classes/registercontr.classes.php";
         $register = new RegisterContr($user,$alias,$email, $pwd);
         $register->registerUser();
 
+
         if( !empty( $_FILES["photo"]["tmp_name"] ) ){
 
             $fileName = basename($_FILES["photo"]["tmp_name"]);

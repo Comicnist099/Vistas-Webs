@@ -17,7 +17,7 @@ class LoginContr extends Login {
     public function loginUser(){
         if($this->emptyInputs() == false){
             //echo 'rip en los inputs';
-            header("location: ../index.php?error=emptyInputs");
+            header("location: ../viko.php?error=emptyInputs");
             exit();
         }
 

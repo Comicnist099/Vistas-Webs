@@ -4,12 +4,17 @@ include_once("../classes/dbh.classes.php");
 class Imagen extends Dbh{
 
 protected function upload($image,$correo){
-    $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?)');
-    if(!$stmt->execute(array('UpdateFoto',null,null,$correo,null, $image, null, null))){
+    $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    if(!$stmt->execute(array('UpdateFoto',null,null,null,$correo,null, $image, null, null))){
         $stmt = null;
         header("location: ../index.php?error=stmtfailed");
         exit();
     }
+    $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC); //nos regresara todas las filas que encontro en el query, pero tenemos que darle una manera de como nos lo regresara
+
+    $_SESSION["image"] = $image;
+
+
     $stmt = null;
 }
 

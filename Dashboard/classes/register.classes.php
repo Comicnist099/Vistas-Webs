@@ -31,14 +31,14 @@ class Register extends Dbh{
     protected function register($Name,$Alias,$email, $password){
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
-        $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?)'); 
+        $stmt = $this->connect()->prepare('CALL PROC_USER(?, ?, ?, ?, ?, ?, ?, ?, ?)'); 
 
         $hashPwd = password_hash($password, PASSWORD_DEFAULT);
-        if(!$stmt->execute(array('Insertar',$Name,$Alias,$email,$hashPwd,null, 1, "Activo"))){
+        if(!$stmt->execute(array('Insertar',null,$Name,$Alias,$email,$hashPwd,null, 1, "Activo"))){
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';
-            echo 'window.location.href = "../registro.php";';
+            echo 'window.location.href = "../viko.php";';
             echo '</script>';
             exit();
         }

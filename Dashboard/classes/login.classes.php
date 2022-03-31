@@ -22,7 +22,7 @@ class Login extends Dbh{
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Usuario no encontrado");';
-            echo 'window.location.href = "../login.php";';
+            echo 'window.location.href = "../viko.php";';
             echo '</script>';
             exit();
         }
@@ -35,8 +35,8 @@ class Login extends Dbh{
 
             $stmt = null;
             echo '<script type="text/javascript">'; 
-            echo 'alert("Contraseña incorrecta");';
-            echo 'window.location.href = "../login.php";';
+            echo 'alert("Contraseña es incorrecta");';
+            echo 'window.location.href = "../viko.php";';
             echo '</script>';
             exit();
 
@@ -48,6 +48,7 @@ class Login extends Dbh{
 
                 $_SESSION["user_login"] = $email;
                 $_SESSION["username"] = $pwdHashed[0]["ALIAS"];
+                $_SESSION["user_id"] = $pwdHashed[0]["ID_USER"];
                 $_SESSION["image"] = $pwdHashed[0]["AVATAR_PIC"];
                 $_SESSION["name"] = $pwdHashed[0]["NAME"];
                 $_SESSION["date"] = $pwdHashed[0]["CREATION_DATE"];

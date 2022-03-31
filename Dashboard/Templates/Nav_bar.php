@@ -38,7 +38,7 @@
 
     <?php 
     session_start();
-    if(isset($_SESSION["IMAGE_SEARCH"])){
+    if(isset($_SESSION["image"])){
         $image = $_SESSION["image"];
 ?>
 
