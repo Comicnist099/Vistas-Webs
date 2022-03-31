@@ -7,7 +7,7 @@ include_once ('../classes/Image.classes.php');
         private $correo;
 
         public function __construct(){ }
-    
+            
         public static function withImage($image,$correo){
             $instance = new self();
             $instance->fillWithImage($image,$correo);

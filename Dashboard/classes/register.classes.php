@@ -43,7 +43,6 @@ class Register extends Dbh{
             exit();
         }
         $stmt = null;
-
     }
 }
 ?>
