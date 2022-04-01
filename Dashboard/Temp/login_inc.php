@@ -11,7 +11,7 @@ include "../classes/logincontr.classes.php";
 
         
         echo '<script type="text/javascript">'; 
-        echo 'alert("Inicio de sesion exitoso <3.");';
+        echo 'alert("Bienvenido!.");';
         echo 'window.location.href = "../index.php";';
         echo '</script>';
     }

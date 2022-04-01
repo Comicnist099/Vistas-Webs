@@ -22,13 +22,13 @@ protected function search($imageId){
     $stmt = $this->connect()->prepare('SELECT Avatar_PIC FROM user WHERE CORREO=?;');
     if(!$stmt->execute(array($imageId))){
         $stmt = null;
-        header("location: ../search.php?error=stmtfailed");
+        header("location: ../viko.php?error=stmtfailed");
         exit();
     }
 
     if($stmt->rowCount() == 0){
         $stmt = null;
-        header("location: ../search.php?error=imageNotFound");
+        header("location: ../viko.php?error=imageNotFound");
         exit();
     }
 

@@ -33,8 +33,8 @@ include_once("../classes/imagecontr.classes.php");
   
 
         echo '<script type="text/javascript">'; 
-        echo 'alert("Inicio de sesion exitoso <3.");';
-        echo 'window.location.href = "../index.php";';
+        echo 'alert("Se han modificado los datos.");';
+        echo 'window.location.href = "../perfil.php";';
         echo '</script>';
     }
 ?>

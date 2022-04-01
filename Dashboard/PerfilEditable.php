@@ -23,7 +23,7 @@ if (!allowedExtensions.exec(filePath)) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#Moni').attr('src', e.target.result);
+            $('#uploadBtn2').attr('src', e.target.result);
         }
 
         reader.readAsDataURL(input.files[0]);
@@ -55,9 +55,8 @@ if (!allowedExtensions.exec(filePath)) {
 <input name="Correo" type="email" value=<?php echo $correo; ?> required ><br>
 <em>Contraseña</em><br>
 <input name="pass" type="password"  required><br>
-<img class="Perfil"i src='<?php echo $image; ?>'/>
-<input type="file" name="photo" id="uploadBtn" onchange="readURL(this);">
-
+<img  id="uploadBtn2" class="Perfil"i src='<?php echo $image; ?>'/>
+<input type="file" name="photo" id="uploadBtn" onchange="readURL(this);" required>
 
 <input type="submit"  name="submit" value="Guardar cambios">
 </form>

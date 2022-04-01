@@ -12,7 +12,7 @@ class Register extends Dbh{
 
             echo '<script type="text/javascript">'; 
             echo 'alert("Error stmt fallo");';
-            echo 'window.location.href = "../registro.php";';
+            echo 'window.location.href = "../viko.php";';
             echo '</script>';
 
             exit();
