@@ -27,7 +27,7 @@
 
  <a href="ListaUsuarios.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
 
-<a href="secciones.php" title="Secciones" id="Nosotros" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
+<a href="secciones.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
 
  <a href="nosotros.php" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
  
