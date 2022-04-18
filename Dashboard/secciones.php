@@ -24,14 +24,43 @@
 
 
     </header>
-
+    <form class="form" action="./Temp/seccion_inc.php" method="post" enctype="multipart/form-data">
     <div class="cont">
-        <input type="text" id="txt">
-        <div class="btns">
-            <button onclick="addLI()">  Añadir</button>
-            <button onclick="editLI()">Editar</button>
-            <button onclick="deleteLI()">Eliminar</button>
+        <input type="text"  name="name" id="txt">
+
+    <div class="main">
+  
+        <!-- To select the color -->
+        Color Categoria <input type="color" id="colorPicker" value="#6a5acd">
+
+        <div style='display:none'>
+        Hex Code: <input type="text" name="box" id="box">
         </div>
+    </div>
+  
+    <script>
+        function myColor() {  
+            // Get the value return by color picker
+            var color = document.getElementById('colorPicker').value;
+            // Set the color as background
+            document.body.style.backgroundColor = color;
+  
+            // Take the hex code
+            document.getElementById('box').value = color;
+        }
+        // When user clicks over color picker,
+        // myColor() function is called
+        document.getElementById('colorPicker')
+            .addEventListener('input', myColor);
+    </script>
+
+
+        <div class="btns">
+            <button onclick="addLI()" type="submit" name="submit">  Añadir</button>
+            <button onclick="editLI()"type="submit" name="editar">Editar</button>
+            <button onclick="deleteLI()" type="Eliminar" name="Eliminar" >Eliminar</button>
+        </div>
+    </form>
         <ul id="list">
             <li>Noticias</li>
             <li>Deportes</li>

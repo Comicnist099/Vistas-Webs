@@ -52,6 +52,7 @@ class Login extends Dbh{
                 $_SESSION["image"] = $pwdHashed[0]["AVATAR_PIC"];
                 $_SESSION["name"] = $pwdHashed[0]["NAME"];
                 $_SESSION["date"] = $pwdHashed[0]["CREATION_DATE"];
+                $_SESSION["user_type"] = $pwdHashed[0]["USER_TYPE"];
 
 
                 //return $stmt;

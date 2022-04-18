@@ -14,7 +14,26 @@ body {
     font-size: 60px;
     color: #2a6168;
 }
+  
 
+          
+#colorPicker {
+    background-color: none;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 60px;
+    cursor: pointer;
+}
+  
+#box {
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 50px;
+    height: 40px;
+    width: 120px;
+    padding: 0 10px;
+}
 .imagen {
     position: absolute;
     margin-left: 300px;

@@ -23,6 +23,8 @@ background-attachment: fixed;
   <br>
 <h5>Buscadores </h5>
 
+ 
+</html>
 <input class="form-control" type="text" placeholder="Palabras Claves"><br>
 </div>
 <div id="reportrange" >
