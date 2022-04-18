@@ -25,6 +25,7 @@ include_once("../classes/seccion.classes.php");
                 echo '</script>';
                 exit();
             }  
+            $this->comprobarNombre($this->name);                                                                 
 
             $this->subirseccion($this->name,$this->color,$this->reportero);                                                                 
         }
@@ -33,7 +34,7 @@ include_once("../classes/seccion.classes.php");
         
         public function EliminarSeccion(){
             //validaciones
-            if($this->emptyInputs2() == false){
+            if($this->emptyInputs() == false){
    
                 echo '<script type="text/javascript">'; 
                 echo 'alert("Hay campos vacios");';

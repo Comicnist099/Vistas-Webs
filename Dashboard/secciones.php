@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+requiere "../classes/dbh.classes.php"
+?>
 <html>
 <title>Secciones</title>
 
@@ -27,7 +30,6 @@
     <form class="form" action="./Temp/seccion_inc.php" method="post" enctype="multipart/form-data">
     <div class="cont">
         <input type="text"  name="name" id="txt">
-
     <div class="main">
   
         <!-- To select the color -->
@@ -56,93 +58,18 @@
 
 
         <div class="btns">
-            <button onclick="addLI()" type="submit" name="submit">  Añadir</button>
-            <button onclick="editLI()"type="submit" name="editar">Editar</button>
-            <button onclick="deleteLI()" type="Eliminar" name="Eliminar" >Eliminar</button>
+            <button type="submit" name="submit">  Añadir</button>
+            <button type="submit" name="editar">Editar</button>
+            <button type="Eliminar" name="Eliminar" >Eliminar</button>
         </div>
     </form>
         <ul id="list">
-            <li>Noticias</li>
-            <li>Deportes</li>
-            <li>Entretenimiento</li>
         </ul>
 
     </div>
     </div>
 
-    <script>
-        var inputText = document.getElementById("txt"),
-            items = document.querySelectorAll("#list li"),
-            tab = [],
-            index;
-
-        // get the selected li index using array
-        // populate array with li values
-
-        for (var i = 0; i < items.length; i++) {
-            tab.push(items[i].innerHTML);
-        }
-
-        // get li index onclick
-        for (var i = 0; i < items.length; i++) {
-
-            items[i].onclick = function() {
-                index = tab.indexOf(this.innerHTML);
-                console.log(this.innerHTML + " INDEX = " + index);
-                // set the selected li value into input text
-                inputText.value = this.innerHTML;
-            };
-
-        }
-
-        function refreshArray() {
-            // clear array
-            tab.length = 0;
-            items = document.querySelectorAll("#list li");
-            // fill array
-            for (var i = 0; i < items.length; i++) {
-                tab.push(items[i].innerHTML);
-            }
-        }
-
-        function addLI() {
-
-            var listNode = document.getElementById("list"),
-                textNode = document.createTextNode(inputText.value),
-                liNode = document.createElement("LI");
-
-            liNode.appendChild(textNode);
-            listNode.appendChild(liNode);
-
-            refreshArray();
-
-            // add event to the new LI
-
-            liNode.onclick = function() {
-                index = tab.indexOf(liNode.innerHTML);
-                console.log(liNode.innerHTML + " INDEX = " + index);
-                // set the selected li value into input text
-                inputText.value = liNode.innerHTML;
-            };
-
-        }
-
-        function editLI() {
-            // edit the selected li using input text
-            items[index].innerHTML = inputText.value;
-            refreshArray();
-        }
-
-        function deleteLI() {
-
-            refreshArray();
-            if (items.length > 0) {
-                items[index].parentNode.removeChild(items[index]);
-                inputText.value = "";
-            }
-        }
-    </script>
-
+   
     <footer>
         <div class="footer-content">
             <h3>Colaboradores</h3>
