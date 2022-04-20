@@ -5,7 +5,10 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 
 <?php
+require "conection.php";
 include('./Templates/Nav_bar.php') ?>
+
+
 
 <script>
   function mialerta() {
@@ -87,25 +90,26 @@ background-attachment: fixed;
       <img src="img/ranita.png" style="height:150px" alt="logotipo">
   </a>
 </div>
+<?php
+$secciones = "select * from V_tag;";
+$categorias = $mysqli->query($secciones);
 
+?>
 <div class="custom">
   <div id="front_videos">
     <div class="large-2">
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
-      <a>Deportes <br> </a>
-      <a>Espectaculos <br> </a>
+      <?php
+      while ($row = mysqli_fetch_assoc($categorias)) {
 
+
+      ?>
+    
+        <a style=" background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
+      <?php
+      }
+      $categorias = null;
+
+      ?>
 
       <div class="force-overflow"></div>
     </div>

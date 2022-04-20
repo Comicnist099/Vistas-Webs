@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-requiere "../classes/dbh.classes.php"
-?>
 <html>
 <title>Secciones</title>
 
