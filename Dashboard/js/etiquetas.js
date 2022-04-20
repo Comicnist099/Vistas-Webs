@@ -1,47 +1,61 @@
 const Selectores = document.getElementById("Selectores");
+const SeccionUno = document.getElementById("uno");
+const SeccionDos = document.getElementById("dos");
+const SeccionTres = document.getElementById("tres");
 const addBtn = document.querySelector(".btn-add");
+const refresh = document.querySelector(".btn-add2");
+
 const ul = document.querySelector("ul");
-const empty = document.querySelector(".empty");
+var numero=0;
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const text = Selectores.value;
-  
   console.log(text);
-
-  if (text !== "") {
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    p.textContent = text;
-
-    li.appendChild(p);
-    li.appendChild(addDeleteBtn());
-    ul.appendChild(li);
+  if (text !== ""){
+    if(numero==2){
+      if( text!=SeccionUno.textContent&&text!=SeccionDos.textContent){
+      SeccionTres.textContent = text;
+      numero=numero+1;
+      }
+      else{
+        alert('Coloque una sección que no se haya puesto antes porfavor');
+      }
+      }
+      if(numero==1){
+        if( text!=SeccionUno.textContent){
+        SeccionDos.textContent = text;
+        numero=numero+1;
+        }
+        else{
+          alert('Coloque una sección que no se haya puesto antes porfavor');
+        }
+      }
+  
+    if(numero==0){
+    
+    SeccionUno.textContent = text;
+    numero=numero+1;
+      
+    
+    }
 
     Selectores.value = "";
-    empty.style.display = "none";
+    
+
+ 
   }
 });
 
-function addDeleteBtn() {
-  const deleteBtn = document.createElement("button");
+refresh.addEventListener("click", (e) => {
+  e.preventDefault();
+  SeccionUno.textContent = "VACIO";
+  SeccionDos.textContent = "VACIO";
+  SeccionTres.textContent = "VACIO";
+  numero=0;
+  }
+);
 
-  deleteBtn.textContent = "X";
-  deleteBtn.className = "btn-delete";
-
-  deleteBtn.addEventListener("click", (e) => {
-    const item = e.target.parentElement;
-    ul.removeChild(item);
-
-    const items = document.querySelectorAll("li");
-
-    if (items.length === 0) {
-      empty.style.display = "block";
-    }
-  });
-
-  return deleteBtn;
-}
 
 
 

@@ -6,7 +6,7 @@
   <title>Crear Noticias</title>
 
 
-<script>
+  <script>
     function mialerta() {
       alert("Se ha creado la noticia");
     }
@@ -35,9 +35,6 @@
         <textarea name="Contenido" class="form-control" placeholder="Colocar contenido de la noticia"></textarea>
       </div>
       <br>
-
-
-
       <h6>Palabras Claves</h6>
 
 
@@ -46,6 +43,12 @@
       <h6>Firma del Reportero</h6>
 
       <input name="Firma" class="form-control" type="text" placeholder="Coloca un alias o como quieres que te reconzcan"><br>
+
+      <h6>Lugar del suceso</h6>
+
+    <input name="Lugar" class="form-control" type="text" placeholder="Coloca un alias o como quieres que te reconzcan"><br>
+
+
 
       <div class="form-control">
         <label for="username">Fecha de la noticia</label>
@@ -66,46 +69,53 @@
               $categorias = $mysqli->query($secciones);
               $arraysecciones = array();
               while ($row = mysqli_fetch_assoc($categorias)) {
-              
-               
+
+
               ?>
                 <option value=<?php echo $row['NOMBRE'] ?>><?php echo $row['NOMBRE'] ?> </option>
               <?php
               }
-             
+
               $categorias = null;
               ?>
             </select>
 
-            
+
 
 
             <button class="btn-add">+</button>
+            <button class="btn-add2">Limpiar</button>
+
             <div class="li-container">
               <ul>
-
+                <li>
+                  <p name="uno" id="uno">VACIO</p>
+                </li>
+                <li>
+                  <p name="dos" id="dos">VACIO</p>
+                </li>
+                <li>
+                  <p name="tres"id="tres">VACIO</p>
+                </li>
               </ul>
-            </div>
-            <div class="empty">
-              <p>No haz añadido elementos a la lista aún.</p>
             </div>
           </div>
         </div>
 
         <h3>AÑADE FOTOS O VIDEOS</h3>
 
-        <input class="form-control" name="uploadedfile" type="file" />
-        <input class="form-control" name="uploadedfile" type="file" />
-        <input class="form-control" name="uploadedfile" type="file" />
-        <input class="form-control" name="uploadedfile" type="file" />
+        <input class="form-control" name="uploadedfile1" type="file" />
+        <input class="form-control" name="uploadedfile2" type="file" />
+        <input class="form-control" name="uploadedfile3" type="file" />
+        <input class="form-control" name="uploadedfile4" type="file" />
         <br>
         <br>
 
-        <button type="submit" name="submit"   class="btn btn-dark">Aceptar noticia</button>
+        <button type="submit" name="submit" class="btn btn-dark">Aceptar noticia</button>
       </div>
     </div>
   </form>
- 
+
   <script src="js/etiquetas.js"> </script>
   <?php include('./Templates/Footer.php') ?>
 
