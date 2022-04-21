@@ -1,26 +1,112 @@
 <?php
 include "../classes/noticiascontr.classes.php";
+include "../classes/SeccionNewscontr.classes.php";
+include "../classes/NewsImagecontr.classes.php";
 
 if (isset($_POST["submit"])) {
     session_start();
+    $seccionUno = $_POST["uno"];
+    $seccionDos = $_POST["dos"];
+    $seccionTres = $_POST["tres"];
     $Titulo = $_POST["Titulo"];
     $Contenido = $_POST["Contenido"];
     $Palabra = $_POST["Palabra"];
     $Firma = $_POST["Firma"];
     $Lugar = $_POST["Lugar"];
     $Fecha_Noticia = $_POST["Fecha_Noticia"];
+  
+
+    $Fecha_Noticia1 = substr($Fecha_Noticia, 0, 10);
+    $Hora = substr($Fecha_Noticia, -5);
+
+    if ($seccionUno == "VACIO" && $seccionDos == "VACIO" && $seccionTres == "VACIO") {
+        echo '<script type="text/javascript">';
+        echo 'alert("Es necesario al menos una seccion por noticia");';
+        echo 'window.location.href = "../Crear_Noticia.php";';
+        echo '</script>';
+    } else {
+        $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora);
+        $News->Noticiaup();
+        if ($seccionUno !== "VACIO") {
+            $NewsSeccion = new NoticiasSeccioncontr($seccionUno);
+            $NewsSeccion->NoticiasSeccion();
+        }
+        if ($seccionDos !== "VACIO") {
+            $NewsSeccion2 = new NoticiasSeccioncontr($seccionDos);
+            $NewsSeccion2->NoticiasSeccion();
+        }
+        if ($seccionTres !== "VACIO") {
+            $NewsSeccion3 = new NoticiasSeccioncontr($seccionTres);
+            $NewsSeccion3->NoticiasSeccion();
+        }
+    }
+
+    if( !empty( $_FILES["uploadedfile1"]["name"] ) ){
+
+        $fileName = basename($_FILES["uploadedfile1"]["tmp_name"]);
+        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
+        $allowedTypes = array('png','jpg','gif');
+            $imageName = $_FILES["uploadedfile1"]["tmp_name"];
+            $image64 = base64_encode(file_get_contents($imageName));
+            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
+            NewsImageContr::withImage($realImage)->uploadImage();
+           
+    }
+    else{
+        header("location: ../Crear_Noticia.php?error=no-file-selected");
+        exit();
+    }
+    
+    if( !empty( $_FILES["uploadedfile2"]["name"] ) ){
+
+        $fileName = basename($_FILES["uploadedfile2"]["tmp_name"]);
+        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
+        $allowedTypes = array('png','jpg','gif');
+            $imageName = $_FILES["uploadedfile2"]["tmp_name"];
+            $image64 = base64_encode(file_get_contents($imageName));
+            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
+            NewsImageContr::withImage($realImage)->uploadImage();
+           
+    }
+    else{
+        header("location: ../Crear_Noticia.php?error=no-file-selected");
+        exit();
+    }
+    
+    if( !empty( $_FILES["uploadedfile3"]["name"] ) ){
+
+        $fileName = basename($_FILES["uploadedfile3"]["tmp_name"]);
+        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
+        $allowedTypes = array('png','jpg','gif');
+            $imageName = $_FILES["uploadedfile3"]["tmp_name"];
+            $image64 = base64_encode(file_get_contents($imageName));
+            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
+            NewsImageContr::withImage($realImage)->uploadImage();
+           
+    }
+    else{
+        header("location: ../Crear_Noticia.php?error=no-file-selected");
+        exit();
+    }
+    
+    if( !empty( $_FILES["uploadedfile4"]["name"] ) ){
+
+        $fileName = basename($_FILES["uploadedfile4"]["tmp_name"]);
+        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
+        $allowedTypes = array('png','jpg','gif');
+            $imageName = $_FILES["uploadedfile4"]["tmp_name"];
+            $image64 = base64_encode(file_get_contents($imageName));
+            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
+            NewsImageContr::withImage($realImage)->uploadImage();
+           
+    }
+    else{
+        header("location: ../Crear_Noticia.php?error=no-file-selected");
+        exit();
+    }
 
 
-    $Fecha_Noticia1=substr($Fecha_Noticia,0,10);
-    $Hora=substr($Fecha_Noticia,-5);
 
 
-
-    $News = new Noticiacontr($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia1,$Hora);
-    $News->Noticiaup();
-
-    echo '<script type="text/javascript">';
-    echo 'alert("La ' .  $Fecha_Noticia1 . 'ha ");';
-    echo '</script>';
 }
 ?>

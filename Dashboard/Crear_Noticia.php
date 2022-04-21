@@ -89,13 +89,13 @@
             <div class="li-container">
               <ul>
                 <li>
-                  <p name="uno" id="uno">VACIO</p>
+                  <input value="VACIO" name="uno" id="uno" readonly>
                 </li>
                 <li>
-                  <p name="dos" id="dos">VACIO</p>
+                  <input value="VACIO" name="dos" id="dos" readonly>
                 </li>
                 <li>
-                  <p name="tres"id="tres">VACIO</p>
+                  <input value="VACIO" name="tres"id="tres" readonly>
                 </li>
               </ul>
             </div>
@@ -110,6 +110,12 @@
         <input class="form-control" name="uploadedfile4" type="file" />
         <br>
         <br>
+        <?php
+            $buffer=$_SESSION["Buffer"];
+        
+        ?>  
+      
+        <img  class="a" src='<?php echo $buffer; ?>'/>
 
         <button type="submit" name="submit" class="btn btn-dark">Aceptar noticia</button>
       </div>

@@ -91,7 +91,7 @@
      display: flex;
  }
  
- li p {
+ li input {
      margin: 0;
      padding: 15px;
      width: 100%;

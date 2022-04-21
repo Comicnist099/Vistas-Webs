@@ -14,8 +14,8 @@ addBtn.addEventListener("click", (e) => {
   console.log(text);
   if (text !== ""){
     if(numero==2){
-      if( text!=SeccionUno.textContent&&text!=SeccionDos.textContent){
-      SeccionTres.textContent = text;
+      if( text!=SeccionUno.value&&text!=SeccionDos.value){
+      SeccionTres.value = text;
       numero=numero+1;
       }
       else{
@@ -23,8 +23,8 @@ addBtn.addEventListener("click", (e) => {
       }
       }
       if(numero==1){
-        if( text!=SeccionUno.textContent){
-        SeccionDos.textContent = text;
+        if( text!=SeccionUno.value){
+        SeccionDos.value = text;
         numero=numero+1;
         }
         else{
@@ -34,7 +34,7 @@ addBtn.addEventListener("click", (e) => {
   
     if(numero==0){
     
-    SeccionUno.textContent = text;
+    SeccionUno.value = text;
     numero=numero+1;
       
     
@@ -49,9 +49,9 @@ addBtn.addEventListener("click", (e) => {
 
 refresh.addEventListener("click", (e) => {
   e.preventDefault();
-  SeccionUno.textContent = "VACIO";
-  SeccionDos.textContent = "VACIO";
-  SeccionTres.textContent = "VACIO";
+  SeccionUno.value = "VACIO";
+  SeccionDos.value= "VACIO";
+  SeccionTres.value = "VACIO";
   numero=0;
   }
 );
