@@ -52,7 +52,7 @@
 
       <div class="form-control">
         <label for="username">Fecha de la noticia</label>
-        <input name="Fecha_Noticia" type="date" placeholder="Fecha de la notica" id="date" size="50" class="form-control" min="1910-01-01" max="2020-01-01">
+        <input name="Fecha_Noticia" type="datetime-local" placeholder="Fecha de la notica" id="date" class="form-control" >
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
 

@@ -1,31 +1,43 @@
 <?php
 
-include_once("../classes/seccion.classes.php");
+include_once("../classes/noticias.classes.php");
 
-    class Sessioncontr extends Seccion{
-        private $name;
-        private $color;
-        private $reportero;
+    class Noticiacontr extends NoticiaUpMy{
+        private $Titulo;
+        private $Contenido;
+        private $Palabra;
+        private $Firma;
+        private $Lugar;
+        private $Fecha_Noticia;
+
+        private $Hora;
 
 
-        public function __construct($name,$color,$reportero){
-            $this->name = $name;
-            $this->color = $color;
-            $this->reportero=$reportero;
+
+
+        public function __construct($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora){
+            $this->Titulo=$Titulo;
+            $this->Contenido=$Contenido;
+            $this->Palabra=$Palabra;
+            $this->Firma=$Firma;
+            $this->Lugar=$Lugar;
+            $this->Fecha_Noticia=$Fecha_Noticia;
+            $this->Hora=$Hora;
 
         }
-        public function registerUser(){
+        public function Noticiaup(){
             //validaciones
             if($this->emptyInputs() == false){
    
                 echo '<script type="text/javascript">'; 
-                echo 'alert("Hay campos vacios");';
-                echo 'window.location.href = "../secciones.php";';
+                echo 'alert("Hay campos vacios, es necesario tener todos los campos llenos");';
                 echo '</script>';
                 exit();
-            }  
-            $this->comprobarNombre($this->name);                                                                 
-            $this->subirseccion($this->name,$this->color,$this->reportero);                                                                 
+            }   
+           
+        
+            $this->NoticiaUpB($this->Titulo,$this->Contenido,$this->Palabra,$this->Firma, $this->Lugar,$this->Fecha_Noticia,$this->Hora);
+
         }
 
 
@@ -34,7 +46,10 @@ include_once("../classes/seccion.classes.php");
 
         private function emptyInputs(){
             $result;
-            if( empty($this->name) || empty($this->color)){
+            if( empty($this->Titulo) || empty($this->Contenido)||  empty($this->Palabra)
+            || empty($this->Firma)|| empty($this->Lugar)|| empty($this->Fecha_Noticia)
+            || empty($this->Hora))
+            {
                 $result = false;
             }else {
                 $result = true;
@@ -43,6 +58,3 @@ include_once("../classes/seccion.classes.php");
         }
  
     }
-
-
-?>
