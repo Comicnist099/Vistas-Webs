@@ -5,7 +5,9 @@
 <link rel="stylesheet" href="css/style_noticia_revision.css">
 <script src="js/jquery-3.6.0.min.js"></script>
 
-<?php include('./Templates/Nav_bar.php') ?>
+<?php
+  require 'conection.php';
+  include('./Templates/Nav_Bar.php') ?>
 
 <script>
         function mialerta() {  
@@ -114,34 +116,68 @@ $(function() {
   </div>
 
  
+  <?php
+              $revision="Revision";
+              $NewsShorts = "Select *from V_News_short where STATE='$revision'";
+              $NoticiasShort = $mysqli->query($NewsShorts);
+       
+              while ($row = mysqli_fetch_assoc($NoticiasShort)) {
 
 
+              ?>
   <div class="Noticia">
-    <div class="ConjuntoImg">
-      <a class="imagenPublic"><img src="img/descarga.jpg" alt="logotipo"></a>
+  <div class="ConjuntoImg">
+    <?php 
+                 $id_News= $row['ID_NEWS'];
+                 $NewsMultimedia = "Select *from v_News_multimedia where idNoticia ='$id_News'";
+                 $NewsMultimediaShort = $mysqli->query($NewsMultimedia);
+                 $contador=0;
+                 while ($row3 = mysqli_fetch_assoc($NewsMultimediaShort)){
+                 ?>
+      
+      <a  href="NoticiasEntrar_revision.php?id=<?php echo $row['ID_NEWS'] ?>"  class="imagenPublic"><img src='<?php echo $row3['Multimedia'] ?>' alt="logotipo"></a>
+                <?php
+                break;
+                   
+          }
 
+          ?>
     </div>
     <section class="Publicaciones">
+   
       <div class="Casilla">
         <div class=CasillaFecha>
-          <a style="font-weight:700">Fecha de Publicacion: </a><a>28/21/2022</a> <br>
-          <a style="font-weight:700">Localización: </a><a>Colonia, </a><a>Ciudad, </a><a>Pais </a><br>
+          <a style="font-weight:700">Fecha de Publicacion: </a><a><?php echo $row['DATE_PUBLICACION'] ?></a> <br>
+          <a style="font-weight:700">Localización: </a><a><?php echo $row['LOCATION'] ?></a><br>
         </div>
         <div class="large-4">
-          <span>Deportes</span>
-          <span>Deportes</span>
-          <span>Deportes</span>
+          <?php 
+                $id_News= $row['ID_NEWS'];
+               
+                 $NewsTag = " Select *from V_News_tag where idNoticia ='$id_News'";
+                 $NewstagShort = $mysqli->query($NewsTag);
+
+              
+
+                 while ($row2 = mysqli_fetch_assoc($NewstagShort)){
+                  $NombreSeccion=$row2['Seccion'];
+                  $NewsTagColor = " Select * from tag where `NAME` ='$NombreSeccion'";
+                  $NewstagShortColor = $mysqli->query($NewsTagColor);
+                  $row4 = mysqli_fetch_array($NewstagShortColor)
+ 
+                 ?>
+          <span style="background-color:<?php echo $row4['COLOR'] ?>"><?php echo $row2['Seccion'] ?></span>
+          <?php
+                  
+          }
+          ?>
         </div>
         <div class="CasillaTitulo">
-          <span > TUSA DOS CONFIRMADA NO PUEDE SER INCREIBLE!!!!!!!!!</span><br>
+          <span > <?php echo $row['TITLE'] ?></span><br>
 
         </div>
         <div class="large-3" style="font-weight:700">
-          <a>Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora
-            tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser
-            el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela
-            Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene
-            una gran secuela</a>
+          <a><?php echo $row['CONTENIDO'] ?></a>
         </div>
 
         <br><br><br>
@@ -149,128 +185,13 @@ $(function() {
     </section>
   </div>
 
-  <div class="Noticia">
-    <div class="ConjuntoImg">
-      <a class="imagenPublic"><img src="img/descarga.jpg" alt="logotipo"></a>
 
-    </div>
-    <section class="Publicaciones">
+              <?php
+              }
 
-
-      <div class="Casilla">
-
-        <div class=CasillaFecha>
-
-          <a style="font-weight:700">Fecha de Publicacion: </a><a>28/21/2022</a> <br>
-          <a style="font-weight:700">Localización: </a><a>Colonia, </a><a>Ciudad, </a><a>Pais </a><br>
-
-        </div>
-        <div class="large-4">
-          <span>Deportes</span>
-          <span>Deportes</span>
-          <span>Deportes</span>
-
-        </div>
-
-
-        <div class="CasillaTitulo">
-          <span style=" font-weight:900"> TUSA DOS CONFIRMADA NO PUEDE SER INCREIBLE!!!!!!!!!</span><br>
-
-        </div>
-        <div class="large-3" style="font-weight:700">
-          <a>Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora
-            tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser
-            el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela
-            Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene
-            una gran secuela</a>
-        </div>
-
-        <br><br><br>
-
-      </div>
-    </section>
-  </div>
-  <div class="Noticia">
-    <div class="ConjuntoImg">
-      <a class="imagenPublic"><img src="img/descarga.jpg" alt="logotipo"></a>
-
-    </div>
-    <section class="Publicaciones">
-
-
-      <div class="Casilla">
-
-        <div class=CasillaFecha>
-
-          <a style="font-weight:700">Fecha de Publicacion: </a><a>28/21/2022</a> <br>
-          <a style="font-weight:700">Localización: </a><a>Colonia, </a><a>Ciudad, </a><a>Pais </a><br>
-
-        </div>
-        <div class="large-4">
-          <span>Deportes</span>
-          <span>Deportes</span>
-          <span>Deportes</span>
-
-        </div>
-
-
-        <div class="CasillaTitulo">
-          <span style=" font-weight:900"> TUSA DOS CONFIRMADA NO PUEDE SER INCREIBLE!!!!!!!!!</span><br>
-
-        </div>
-        <div class="large-3" style="font-weight:700">
-          <a>Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora
-            tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser
-            el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela
-            Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene
-            una gran secuela</a>
-        </div>
-
-        <br><br><br>
-
-      </div>
-    </section>
-  </div>
-  <div class="Noticia">
-    <div class="ConjuntoImg">
-      <a class="imagenPublic"><img src="img/descarga.jpg" alt="logotipo"></a>
-
-    </div>
-    <section class="Publicaciones">
-
-
-      <div class="Casilla">
-
-        <div class=CasillaFecha>
-
-          <a style="font-weight:700">Fecha de Publicacion: </a><a>28/21/2022</a> <br>
-          <a style="font-weight:700">Localización: </a><a>Colonia, </a><a>Ciudad, </a><a>Pais </a><br>
-
-        </div>
-        <div class="large-4">
-          <span>Deportes</span>
-          <span>Deportes</span>
-          <span>Deportes</span>
-
-        </div>
-
-
-        <div class="CasillaTitulo">
-          <span style=" font-weight:900"> TUSA DOS CONFIRMADA NO PUEDE SER INCREIBLE!!!!!!!!!</span><br>
-
-        </div>
-        <div class="large-3" style="font-weight:700">
-          <a>Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora
-            tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser
-            el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene una gran secuela
-            Escrible no puede ser el gran hit ahora tiene una gran secuela Escrible no puede ser el gran hit ahora tiene
-            una gran secuela</a>
-        </div>
-
-        <br><br><br>
-
-      </div>
-    </section>
+              $categorias = null;
+              ?>
+ 
   </div>
 
   <?php include('./Templates/Footer.php')?>

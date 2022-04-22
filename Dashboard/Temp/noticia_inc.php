@@ -52,10 +52,6 @@ if (isset($_POST["submit"])) {
             NewsImageContr::withImage($realImage)->uploadImage();
            
     }
-    else{
-        header("location: ../Crear_Noticia.php?error=no-file-selected");
-        exit();
-    }
     
     if( !empty( $_FILES["uploadedfile2"]["name"] ) ){
 
@@ -68,11 +64,6 @@ if (isset($_POST["submit"])) {
             NewsImageContr::withImage($realImage)->uploadImage();
            
     }
-    else{
-        header("location: ../Crear_Noticia.php?error=no-file-selected");
-        exit();
-    }
-    
     if( !empty( $_FILES["uploadedfile3"]["name"] ) ){
 
         $fileName = basename($_FILES["uploadedfile3"]["tmp_name"]);
@@ -83,10 +74,6 @@ if (isset($_POST["submit"])) {
             $realImage = 'data:image/'.$imageType.';base64,'.$image64;
             NewsImageContr::withImage($realImage)->uploadImage();
            
-    }
-    else{
-        header("location: ../Crear_Noticia.php?error=no-file-selected");
-        exit();
     }
     
     if( !empty( $_FILES["uploadedfile4"]["name"] ) ){
@@ -99,10 +86,6 @@ if (isset($_POST["submit"])) {
             $realImage = 'data:image/'.$imageType.';base64,'.$image64;
             NewsImageContr::withImage($realImage)->uploadImage();
            
-    }
-    else{
-        header("location: ../Crear_Noticia.php?error=no-file-selected");
-        exit();
     }
 
 
