@@ -46,13 +46,13 @@ class LikeNews extends Dbh{
                 echo 'alert("Salio algo mal en la base de datos");';
                 echo 'window.location.href = "../Crear_Noticia.php";';
                 echo '</script>';
-       
+                exit();
+            }
+            
                 echo '<script type="text/javascript">'; 
                 echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$NewsID.'";';
                 echo '</script>';
-                exit();
-
-            }
+            
             $stmt = null;
  
         }

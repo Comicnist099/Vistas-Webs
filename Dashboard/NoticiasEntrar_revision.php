@@ -122,7 +122,7 @@ include('./Templates/Nav_bar.php') ?>
           $NewsLikes =  "Select *from news_likes where fk_news='$idNoticia' AND fk_users='$Reportero'";
           $NewsLikesSql = $mysqli->query($NewsLikes);
           
-          if($row = mysqli_fetch_assoc($NewsLikesSql)){
+          if($row6= mysqli_fetch_assoc($NewsLikesSql)){
           
           ?>
                     <button type="like" name="like" id="Hola" class='bx bxs-like bx-lg'></button>
@@ -135,7 +135,7 @@ include('./Templates/Nav_bar.php') ?>
           <?php 
           }
           ?>
-          <p>100</p>
+          <p><?php echo $row['LIKES'] ?></p>
           <button type="button" class="btn btn-dark">Modificar</button>
           <button type="button" class="btn btn-dark">Validar</button>
           <button type="button" class="btn btn-dark">Eliminar</button>
