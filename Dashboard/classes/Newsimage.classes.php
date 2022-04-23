@@ -3,9 +3,9 @@ include_once("../classes/dbh.classes.php");
 
 class  NewsImage extends Dbh{
 
-protected function upload($image){
-    $stmt = $this->connect()->prepare('CALL PROC_NEWSFOTOS(?, ?)');
-    if(!$stmt->execute(array('Insertar',$image))){
+protected function upload($image,$extension){
+    $stmt = $this->connect()->prepare('CALL PROC_NEWSFOTOS(?, ?, ?)');
+    if(!$stmt->execute(array('Insertar',$image,$extension))){
         $stmt = null;
         header("location: ../index.php?error=stmtfailed");
         exit();

@@ -4,12 +4,13 @@ include_once ('../classes/Newsimage.classes.php');
 
         private $image;
         private $imageId;
+        private $extension;
 
         public function __construct(){ }
             
-        public static function withImage($image){
+        public static function withImage($image,$extension){
             $instance = new self();
-            $instance->fillWithImage($image);
+            $instance->fillWithImage($image,$extension);
             return $instance;
         }
 
@@ -19,8 +20,9 @@ include_once ('../classes/Newsimage.classes.php');
             return $instance;
         }
 
-        protected function fillWithImage($image){
+        protected function fillWithImage($image,$extension){
             $this->image = $image;
+            $this->extension =$extension;
         }
 
         protected function fillWithImageId($imageId){
@@ -28,7 +30,9 @@ include_once ('../classes/Newsimage.classes.php');
         }
 
         public function uploadImage(){
-            $this->upload($this->image);
+            $this->upload($this->image,$this->extension);
+
+
         }
 
         public function searchImage(){

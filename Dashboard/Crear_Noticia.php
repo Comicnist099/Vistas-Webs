@@ -103,8 +103,10 @@
         </div>
 
         <h3>AÑADE FOTOS O VIDEOS</h3>
-
+        <p>PORTADA DE LA NOTICIA</p>
         <input class="form-control" name="uploadedfile1" type="file" />
+        
+        <p>MINIMO UN VIDEO y fotos</p>
         <input class="form-control" name="uploadedfile2" type="file" />
         <input class="form-control" name="uploadedfile3" type="file" />
         <input class="form-control" name="uploadedfile4" type="file" />

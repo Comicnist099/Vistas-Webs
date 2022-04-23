@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
     $Firma = $_POST["Firma"];
     $Lugar = $_POST["Lugar"];
     $Fecha_Noticia = $_POST["Fecha_Noticia"];
-  
+
 
     $Fecha_Noticia1 = substr($Fecha_Noticia, 0, 10);
     $Hora = substr($Fecha_Noticia, -5);
@@ -40,62 +40,20 @@ if (isset($_POST["submit"])) {
             $NewsSeccion3->NoticiasSeccion();
         }
     }
-
-    if( !empty( $_FILES["uploadedfile1"]["name"] ) ){
-
+    if (!empty($_FILES["uploadedfile1"]["name"])) {
         $fileName = basename($_FILES["uploadedfile1"]["name"]);
         $imageType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-        $allowedTypes = array('png','jpg','gif');
-        echo "<script> alert('".$imageType."'); </script>";
-        $imageName = $_FILES["uploadedfile1"]["name"];
-        $image64 = base64_encode(file_get_contents($imageName));
-        $realImage = 'data:image/'.$imageType.';base64,'.$image64;
-        NewsImageContr::withImage($realImage)->uploadImage();
-        
+        $allowedTypes = array('png', 'jpg', 'gif');
+        if (in_array($imageType, $allowedTypes)) {
            
-    }
-    
-    if( !empty( $_FILES["uploadedfile2"]["name"] ) ){
-
-        $fileName = basename($_FILES["uploadedfile2"]["tmp_name"]);
-        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
-        $allowedTypes = array('png','jpg','gif','mp4');
-        echo "<script> alert('".$imageType."'); </script>";
-        if($imageType =="mp4"){
-            echo "<script> alert('".$imageType."'); </script>";
-            $imageName = $_FILES["uploadedfile2"]["tmp_name"];
-            $image64 = base64_encode(file_get_contents($imageName));
-            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
-            NewsImageContr::withImage($realImage)->uploadImage();
+                $fileName = basename($_FILES["uploadedfile1"]["tmp_name"]);
+                $imageTypeb = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+                $imageName = $_FILES["uploadedfile1"]["tmp_name"];
+                $image64 = base64_encode(file_get_contents($imageName));
+                $realImage = 'data:image/' . $imageTypeb . ';base64,' . $image64;
+                NewsImageContr::withImage($realImage, $imageType)->uploadImage();
+            
         }
-        
     }
-    if( !empty( $_FILES["uploadedfile3"]["name"] ) ){
-
-        $fileName = basename($_FILES["uploadedfile3"]["tmp_name"]);
-        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
-        $allowedTypes = array('png','jpg','gif','mp4');
-            $imageName = $_FILES["uploadedfile3"]["tmp_name"];
-            $image64 = base64_encode(file_get_contents($imageName));
-            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
-            NewsImageContr::withImage($realImage)->uploadImage();
-        
-    }
-    
-    if( !empty( $_FILES["uploadedfile4"]["name"] ) ){
-
-        $fileName = basename($_FILES["uploadedfile4"]["tmp_name"]);
-        $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
-        $allowedTypes = array('png','jpg','gif','mp4');
-            $imageName = $_FILES["uploadedfile4"]["tmp_name"];
-            $image64 = base64_encode(file_get_contents($imageName));
-            $realImage = 'data:image/'.$imageType.';base64,'.$image64;
-            NewsImageContr::withImage($realImage)->uploadImage();
-    
-    }
-
-
-
-
 }
 ?>
