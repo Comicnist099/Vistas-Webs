@@ -140,6 +140,7 @@ $(function() {
                 break;
                    
           }
+          $NewsShorts=null;
 
           ?>
     </div>
@@ -170,6 +171,8 @@ $(function() {
           <?php
                   
           }
+          $NewsTag=null;
+          $NewsTagColor=null;
           ?>
         </div>
         <div class="CasillaTitulo">
