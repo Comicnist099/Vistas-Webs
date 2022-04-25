@@ -32,8 +32,8 @@ class Seccion extends Dbh
     {
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
-        $stmt = $this->connect()->prepare('call PROC_TAG(?, ?, ?, ?)');
-        if (!$stmt->execute(array('Insertar', $name, $reportero, $color))) {
+        $stmt = $this->connect()->prepare('call PROC_TAG(?, ?, ?, ?,?)');
+        if (!$stmt->execute(array('Insertar', $name, $reportero, $color,null))) {
             $stmt = null;
             echo '<script type="text/javascript">';
             echo 'alert("Salio algo mal en la base de datos");';
@@ -44,12 +44,28 @@ class Seccion extends Dbh
         $stmt = null;
     }
 
-    function eliminar($name, $color, $reportero)
+    function SeccionUpdate($name, $color, $reportero,$idTag)
     {
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
-        $stmt = $this->connect()->prepare('call PROC_TAG(?, ?, ?, ?)');
-        if (!$stmt->execute(array('Eliminar', $name, $reportero, $color))) {
+        $stmt = $this->connect()->prepare('call PROC_TAG(?, ?, ?, ?, ?)');
+        if (!$stmt->execute(array('Update', $name, $reportero, $color,$idTag))) {
+            $stmt = null;
+            echo '<script type="text/javascript">';
+            echo 'alert("Salio algo mal en la base de datos");';
+            echo 'window.location.href = "../viko.php";';
+            echo '</script>';
+            exit();
+        }
+        $stmt = null;
+    }
+
+    function eliminar($id)
+    {
+        //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
+        //con un STORED PROCEDURE:
+        $stmt = $this->connect()->prepare('delete from tag where ID_TAG=?');
+        if (!$stmt->execute(array($id))) {
             $stmt = null;
             echo '<script type="text/javascript">';
             echo 'alert("Salio algo mal en la base de datos");';

@@ -6,12 +6,14 @@ include_once("../classes/seccion.classes.php");
         private $name;
         private $color;
         private $reportero;
+        private $idTag;
 
 
-        public function __construct($name,$color,$reportero){
+        public function __construct($name,$color,$reportero,$idTag){
             $this->name = $name;
             $this->color = $color;
             $this->reportero=$reportero;
+            $this->idTag=$idTag;
 
         }
 
@@ -27,7 +29,7 @@ include_once("../classes/seccion.classes.php");
             }  
             $this->comprobarNombre($this->name);                                                                 
 
-            $this->subirseccion($this->name,$this->color,$this->reportero);                                                                 
+            $this->subirseccion($this->name,$this->color,$this->reportero,$this->idTag);                                                                 
         }
 
 
