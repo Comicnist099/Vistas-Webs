@@ -5,7 +5,7 @@ if (isset($_POST["send"])) {
     $Comentario=$_POST["Comentario"];
     $news=$_POST["idNews"];
 
-    $ComentarioClass = new Comentariocontr($Comentario,$news);
+    $ComentarioClass = new Comentariocontr($Comentario,$news,0);
     $ComentarioClass->ComentarioUp();
 
 

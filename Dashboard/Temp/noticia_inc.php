@@ -116,5 +116,8 @@ if (isset($_POST["submit"])) {
             echo "<script> alert('Cada noticia necesita minimo un video'); </script>";
         }
     }
+    echo '<script type="text/javascript">'; 
+    echo 'window.location.href = "../noticia_revision.php";';
+    echo '</script>';
 }
 ?>

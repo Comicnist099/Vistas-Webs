@@ -5,11 +5,15 @@ include_once("../classes/comentario.classes.php");
     class Comentariocontr extends Comentario{
         private $contenido;
         private $newsId;
+        private $idComentario;
 
 
-        public function __construct($contenido,$newsId){
+
+        public function __construct($contenido,$newsId,$idComentario){
             $this->contenido = $contenido;
             $this->newsId = $newsId;
+            $this->idComentario = $idComentario;
+
 
         }
 
@@ -24,7 +28,7 @@ include_once("../classes/comentario.classes.php");
                 exit();
             }                                                              
 
-            $this->subirComentario($this->newsId,$this->contenido);                                                                 
+            $this->subirComentario($this->newsId,$this->contenido,$this->idComentario);                                                                 
         }
 
 
