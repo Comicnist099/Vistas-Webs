@@ -45,6 +45,24 @@ class Modify extends Dbh{
 
         $stmt = null; //mata toda conexion, no hay que dejar conexiones abiertas en php xq luego satura la memoria
     }
+    function eliminarUsuario($id_User)
+    {
+        //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
+        //con un STORED PROCEDURE:
+        $stmt = $this->connect()->prepare('delete from user where ID_USER=?;');
+        if (!$stmt->execute(array($id_User))) {
+            $stmt = null;
+            echo '<script type="text/javascript">';
+            echo 'alert("Salio algo mal en la base de datos");';
+            echo 'window.location.href = "../viko.php";';
+            echo '</script>';
+            exit();
+        }
+        $stmt = null;
+    }
+
+
+    
 }
 
 ?>

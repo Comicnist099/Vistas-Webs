@@ -58,8 +58,10 @@ if (!allowedExtensions.exec(filePath)) {
 <img  id="uploadBtn2" class="Perfil"i src='<?php echo $image; ?>'/>
 <input type="file" name="photo" id="uploadBtn" onchange="readURL(this);" required>
 
-<input type="submit"  name="submit" value="Guardar cambios">
+<input type="submit"  name="submit" value="Guardar cambios"><br><br><br><br><br>
+
 </form>
+<a href="http://localhost/Frontend/Dashboard/Temp/eliminarUsuario_inc.php" class="btn btn-danger" >Eliminar usuario</a>
 
 </body>
     
