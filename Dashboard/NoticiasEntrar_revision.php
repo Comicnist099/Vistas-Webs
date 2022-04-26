@@ -160,17 +160,32 @@ background-attachment: fixed;">
           <p><?php echo $row['LIKES'] ?></p>
           <div>
 
-        
+
             <div class="botones">
-              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Validar</a></span>
-              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Bajar</a></span>
-              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Eliminar</a></span>
-              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Editar</a></span>
+              <?php
+              $user2 = $row['FK_REPORTER'];
+              $NewsBtn =  "Select *from user where ID_USER='$user2'";
+              $NewsBtnSql = $mysqli->query($NewsBtn);
+              $row14 = mysqli_fetch_assoc($NewsBtnSql);
+              if ( $row['STATE']=="Revision" &&$row14['USER_TYPE'] == "2"&& $user2== $_SESSION["user_id"] ) {
+              ?>
+                <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Eliminar</a></span>
+                <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Editar</a></span>
+              <?php
+              }
+              if ($row14['USER_TYPE'] == "3") {
+              ?>
+                ?>
+                <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Validar</a></span>
+                <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Bajar</a></span>
+
+              <?php
+              } ?>
+            </div>
+
+            <br>
 
 
-            </div><br>
-
-     
           </div>
 
 
@@ -184,7 +199,13 @@ background-attachment: fixed;">
       $news = null;
   ?>
   </form>
-
+<?php
+  $idNoticia = $_GET["id"];
+  $newsRevision = " Select * from news where ID_NEWS ='$idNoticia'";
+  $newsRevisionSql = $mysqli->query($newsRevision);
+  $row18 = mysqli_fetch_assoc($newsRevisionSql);
+   if ( $row18['STATE']=="Aceptada"){
+?>
   <h2 style="background-color: #80e459;">SECCION COMENTARIOS</h2>
   <?php
   $idNoticia = $_GET["id"];
@@ -352,6 +373,7 @@ background-attachment: fixed;">
           </div>
         </div>
       </div>
+    
       <br>
       <br>
     </form>
@@ -377,6 +399,9 @@ background-attachment: fixed;">
 
     </div>
   </form>
+    <?php
+  }
+      ?>
   <script>
     var contador = 0;
     var contadorRespuesta = 0;

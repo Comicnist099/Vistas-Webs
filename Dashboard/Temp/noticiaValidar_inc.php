@@ -1,20 +1,15 @@
 <?php
 
-include "../classes/seccioncontr.classes.php";
+include "../classes/noticias.classes.php";
 
-if (isset($_POST["anadir"])) {
-    session_start();
-    $name = $_POST["name"];
-    $color = $_POST["box"];
-    $reportero =  $_SESSION["user_id"];
-
-    $seccion = new Sessioncontr($name, $color, $reportero,null);
-    $seccion->registerUser();
+    $id_Noticia = $_GET["idNoticia"];
+    
+    $seccion = new NoticiaUpMy();
+    $seccion->NoticiaDown($id_Noticia);
     
     echo '<script type="text/javascript">';
-    echo 'window.location.href = "../secciones2.php";';
+    echo 'window.location.href = "../noticia_revision.php";';
     echo '</script>';
 
-
-}
+?>
 
