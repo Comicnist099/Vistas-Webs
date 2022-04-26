@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .container {
+    position: relative;
+    width: 1200px;
+    height: 790px;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.formBx label {
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #1a5754;
+}
+
+section .container .user .formBx form input {
+    position: relative;
+    font-family: sans-serif;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(241, 255, 246, 0.733);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+section .container .user .formBx form input[type="submit"] {
+    width: 100%;
+    background: rgb(68, 100, 41);
+    color: #fff;
+    cursor: pointer;
+    font: size 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+section .container .user .formBx label {
+    font-family: sans-serif;
+    color: rgb(46, 43, 43);
+    font: size 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+section .container .user .formBx form .signup {
+    font-family: sans-serif;
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+section .container .user2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: 0.5s;
+}
+
+section .container .user2 .imgBx {
+    background-color: rgba(79, 163, 53, 0.575);
+    position: relative;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor {
+    width: 85%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 9px;
+    overflow: auto;
+}
+
+.imgBx .card {
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    height: 130px;
+    background: rgba(248, 250, 148, 0.781);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}
+
+.imgBx h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-top: 75px;
+    color: #1a5754;
+}
+
+.imgBx .card .content img {
+    margin-left: 20px;
+    margin-top: 30px;
+    height: 90px;
+    width: 90px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 3px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.imgBx .card .content {
+    display: flex;
+    align-content: flex-end;
+}
+
+.imgBx .card .content .details {
+    display: flex;
+}
+
+.card .content .botones {
+    display: flex;
+}
+
+span {
+    margin: 0 10px;
+}
+
+.imgBx .card .content .name {
+    margin-top: 50px;
+    color: #1a5754;
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+section .container .user2 .formBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(233, 235, 122, 0.856);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+section .container .user2 .formBx form h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #1a5754;
+}
+
+.user2.active {
+    transform: translate(-800px, 0);
+    transition: 0.5s;
+}
+
+.form-control input {
+    font-family: sans-serif;
+    border: none;
+    background-color: #f5ffdbd8;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.profile-pic-div label {
+    color: #074722;
+    font-weight: 600;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form feFuncA {
+    background: rgb(41, 100, 77);
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form button:hover {
+    background: rgb(23, 59, 56);
+    transform: scale(1.1);
+}
+
+
+/*--------------------------------subir foto-----------------------------------*/
+
+.profile-pic-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+#photo {
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+}
+
+#file {
+    display: none;
+}
+
+.card .botones a {
+    background: rgb(41, 100, 77);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.card .botones a:hover {
+    background: rgb(23, 59, 56);
+    transform: scale(1.1);
+}

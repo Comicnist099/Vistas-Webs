@@ -155,12 +155,22 @@ background-attachment: fixed;">
           <?php
           }
           $NewsLikes = NULL;
+          $idNoticia = $_GET["id"];
           ?>
           <p><?php echo $row['LIKES'] ?></p>
           <div>
-            <button type="button" class="btn btn-dark">Modificar</button>
-            <button type="button" class="btn btn-dark">Validar</button>
-            <button type="button" class="btn btn-dark">Eliminar</button>
+
+        
+            <div class="botones">
+              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Validar</a></span>
+              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Bajar</a></span>
+              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Eliminar</a></span>
+              <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Editar</a></span>
+
+
+            </div><br>
+
+     
           </div>
 
 
@@ -234,17 +244,16 @@ background-attachment: fixed;">
 
         <form class="form" action="./Temp/comentarioUpdate_inc.php" method="post" enctype="multipart/form-data">
 
-        <input name="EdicionNuevo" style="display:none" id='<?php echo $row10['ID_COMMENT']; ?>' class="form-control" type="text" name="Comentario" value="<?php echo $row10['CONTENT'] ?>" placeholder="Responder el comentario">
-        <input name="idComentario" style="display:none" id='<?php echo $row10['ID_COMMENT']; ?>Id' class="form-control" type="text" name="Comentario" value="<?php echo $row10['ID_COMMENT'] ?>">
-        <input name="id_News" style="display:none" value='<?php echo $id_News  ?>'>
+          <input name="EdicionNuevo" style="display:none" id='<?php echo $row10['ID_COMMENT']; ?>' class="form-control" type="text" name="Comentario" value="<?php echo $row10['CONTENT'] ?>" placeholder="Responder el comentario">
+          <input name="idComentario" style="display:none" id='<?php echo $row10['ID_COMMENT']; ?>Id' class="form-control" type="text" name="Comentario" value="<?php echo $row10['ID_COMMENT'] ?>">
+          <input name="id_News" style="display:none" value='<?php echo $id_News  ?>'>
 
 
-        <button id='<?php echo $row10['ID_COMMENT'];?>ButEditar'  type="sendEditar" name="sendEditar"  style="display:none">
-        <a        
-        class='bx bxs-right-arrow bx-md'>
-      </a>
-      </button>
-      </form>
+          <button id='<?php echo $row10['ID_COMMENT']; ?>ButEditar' type="sendEditar" name="sendEditar" style="display:none">
+            <a class='bx bxs-right-arrow bx-md'>
+            </a>
+          </button>
+        </form>
 
         <a style="font-weight:900">Fecha</a><a><?php echo $row10['DATE_CREATION'] ?></a><br>
         <a style="font-weight:900"></a><a></a><br>
@@ -302,17 +311,16 @@ background-attachment: fixed;">
 
           <form class="form" action="./Temp/comentarioUpdate_inc.php" method="post" enctype="multipart/form-data">
 
-        <input name="EdicionNuevo" style="display:none" id='<?php echo $row11['ID_COMMENT']; ?>' class="form-control" type="text" name="Comentario" value="<?php echo $row11['CONTENT'] ?>" placeholder="Responder el comentario">
-        <input name="idComentario" style="display:none" id='<?php echo $row11['ID_COMMENT']; ?>Id' class="form-control" type="text" name="Comentario" value="<?php echo $row11['ID_COMMENT'] ?>">
-        <input name="id_News" style="display:none" value='<?php echo $id_News  ?>'>
+            <input name="EdicionNuevo" style="display:none" id='<?php echo $row11['ID_COMMENT']; ?>' class="form-control" type="text" name="Comentario" value="<?php echo $row11['CONTENT'] ?>" placeholder="Responder el comentario">
+            <input name="idComentario" style="display:none" id='<?php echo $row11['ID_COMMENT']; ?>Id' class="form-control" type="text" name="Comentario" value="<?php echo $row11['ID_COMMENT'] ?>">
+            <input name="id_News" style="display:none" value='<?php echo $id_News  ?>'>
 
 
-        <button id='<?php echo $row11['ID_COMMENT'];?>ButEditar'  type="sendEditar" name="sendEditar"  style="display:none">
-        <a        
-        class='bx bxs-right-arrow bx-md'>
-      </a>
-      </button>
-      </form>
+            <button id='<?php echo $row11['ID_COMMENT']; ?>ButEditar' type="sendEditar" name="sendEditar" style="display:none">
+              <a class='bx bxs-right-arrow bx-md'>
+              </a>
+            </button>
+          </form>
 
 
           <a style="font-weight:900">Fecha</a><a><?php echo $row11['DATE_CREATION'] ?></a><br>
@@ -371,7 +379,7 @@ background-attachment: fixed;">
   </form>
   <script>
     var contador = 0;
-    var contadorRespuesta =0;
+    var contadorRespuesta = 0;
 
 
     function changeStyle() {

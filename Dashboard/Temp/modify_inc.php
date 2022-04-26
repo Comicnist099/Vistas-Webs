@@ -10,13 +10,14 @@ include_once("../classes/imagecontr.classes.php");
         $correo = $_POST["Correo"];
         $pass = $_POST["pass"];
 
-        $modify = new Modifycontr($name, $Alias, $correo, $pass);
-        $modify->modifyUser();
+       
        
 
     
         if( !empty( $_FILES["photo"]["tmp_name"] ) ){
-
+            $modify = new Modifycontr($name, $Alias, $correo, $pass);
+            $modify->modifyUser();
+            
             $fileName = basename($_FILES["photo"]["tmp_name"]);
             $imageType = strtolower( pathinfo($fileName,PATHINFO_EXTENSION) );
             $allowedTypes = array('png','jpg','gif');

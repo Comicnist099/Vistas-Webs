@@ -25,7 +25,7 @@
 <nav class="navigation-menu">
  
 
- <a href="ListaUsuarios.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
+ <a href="registro_reporteros.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
 
 
  <a href="nosotros.php" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
@@ -34,7 +34,7 @@
      $type_user = $_SESSION["user_type"];
      if($type_user==2){
 ?>
-<a href="secciones.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
+<a href="secciones2.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
 <a href="Crear_Noticia.php" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
 
 
