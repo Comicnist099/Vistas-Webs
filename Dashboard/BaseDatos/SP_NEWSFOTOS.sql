@@ -19,8 +19,11 @@ select*from news_histroy;
 select*from gallery_news;
 select*from tag_car;
 select*from news;
+Select *from comment;
 
-
+delete from comment;
+delete from news_histroy;
+delete from news_likes;
 delete from gallery_news;
 delete from tag_car;
 delete from news;

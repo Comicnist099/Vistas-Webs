@@ -3,7 +3,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_TAG`(
     IN opcion            char(20),
     IN nameTag			 char(20),
     IN reportero		 int,
-    IN color			char(20)
+    IN color			char(20),
+    IN idTag			int
     )
 BEGIN
 IF opcion = 'Insertar'
@@ -38,6 +39,18 @@ WHERE
 
 END IF;
 
+IF opcion = 'Update'
+THEN
+UPDATE tag 
+SET 
+NAME=nameTag,
+CREATE_BY=reportero,
+COLOR=color
+WHERE
+    ID_TAG =idTag ;  
+END IF;
+
+
 END$$
 DELIMITER ;
 
@@ -49,7 +62,7 @@ call PROC_TAG('Eliminar','espectaculos',56);
 
 
 #############Views
-select * from V_tag;
+select * from user;
 select * FROM V_tag_history;
 select * FROM gallery_news;
 select * FROM news;
@@ -65,4 +78,14 @@ delete from tag_history;
 delete from gallery_news;
 delete from tag_car;
 delete from news;
+
+UPDATE tag 
+SET 
+NAME=?,
+ALIAS=?,
+CORREO=?,
+PASSWORD=?
+
+WHERE
+    ID_USER =? ;  
 

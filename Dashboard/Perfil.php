@@ -129,13 +129,15 @@ include('./Templates/Nav_Bar.php') ?>
                                 <div class="botones">
                                     <?php
                                     $user2 = $row['FK_REPORTER'];
+                                    $idNews = $row['ID_NEWS'];
+
                                     $NewsBtn =  "Select *from user where ID_USER='$user2'";
                                     $NewsBtnSql = $mysqli->query($NewsBtn);
                                     $row14 = mysqli_fetch_assoc($NewsBtnSql);
                                     if ($row14['USER_TYPE'] == "2" && $user2 == $_SESSION["user_id"]) {
                                     ?>
-                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Eliminar</a></span>
-                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNoticia ?>">Editar</a></span>
+                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/eliminar_Noticia.php?idNoticia=<?php echo $idNews ?>">Eliminar</a></span>
+                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/noticiaValidar_inc.php?idNoticia=<?php echo $idNews ?>">Editar</a></span>
                                     <?php
                                     }
                                     ?>

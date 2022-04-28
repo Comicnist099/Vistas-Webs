@@ -64,9 +64,9 @@ class NoticiaUpMy extends Dbh{
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
 
-        $stmt = $this->connect()->prepare('DELETE from news WHERE ID_NEWS =?;'); 
+        $stmt = $this->connect()->prepare('PROC_ELIMINAR_NEWS(?,?)'); 
       
-        if(!$stmt->execute(array("Bajada",$id_Noticia))){                        
+        if(!$stmt->execute(array("Gusta",$id_Noticia))){                        
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';

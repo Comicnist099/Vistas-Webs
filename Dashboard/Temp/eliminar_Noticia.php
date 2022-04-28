@@ -1,14 +1,13 @@
 <?php
     include ('../classes/noticias.classes.php');
   
-        $idNews=$_GET["idComentario"];
-        $idComentario=$_GET["idNoticia"];
+        $idNews=$_GET["idNoticia"];
         
-        $eliminar= new Comentario();
-        $eliminar->eliminar($idComentario);
+        $eliminar= new NoticiaUpMy();
+        $eliminar->NoticiaEliminar($idNews);
 
         echo '<script type="text/javascript">'; 
-        echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$idNews.'";';
+        echo 'window.location.href = "../Perfil.php?";';
         echo '</script>';
 
 

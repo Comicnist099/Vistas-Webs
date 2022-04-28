@@ -20,7 +20,6 @@ IF opcion = 'NoGusta'
 THEN
 
 delete from news_likes where fk_news=news AND fk_users=Reportero;  
-call PROC_NEWS('likeMenos',News,null,null,null,null,null,null,null,null);        
 END IF;
 
 

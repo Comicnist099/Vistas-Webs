@@ -5,7 +5,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_NEWS`(
     IN title			 char(100),
 	IN news_date		 date,
     IN location		 	 char(200),
-    IN contenido 		 varchar(1000),
+    IN contenido 		 varchar(2000),
     IN fk_reporter		 int,
     IN keyword			 char(200),
     IN firma			 char(100),
@@ -14,8 +14,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_NEWS`(
 BEGIN
 IF opcion = 'Insertar'
 THEN
-INSERT INTO news(TITLE,NEWS_DATE,DATE_PUBLICACION,LOCATION,CONTENIDO,LIKES,FK_REPORTER,STATE,KEYWORD,SIGN_REPORTER,HORA)
-        VALUES (title,news_date,sysdate(),location,contenido,0,fk_reporter,'Revision',keyword,firma,Hora);
+INSERT INTO news(TITLE,NEWS_DATE,DATE_PUBLICACION,LOCATION,CONTENIDO,LIKES,FK_REPORTER,STATE,KEYWORD,SIGN_REPORTER,HORA,Comentario)
+        VALUES (title,news_date,sysdate(),location,contenido,0,fk_reporter,'Revision',keyword,firma,Hora,'...');
 
 END IF;
 

@@ -42,7 +42,7 @@ drop trigger T_History_News;
 ################ VIEWS
 CREATE VIEW V_tag_history AS select accion as Accion, reportero as 'REGISTRO',date,Seccion from tag_history;
 
-CREATE VIEW V_News_short AS select ID_NEWS,TITLE,LOCATION,CONTENIDO,DATE_PUBLICACION,STATE from news;
+CREATE VIEW V_News_short AS select ID_NEWS,TITLE,LOCATION,CONTENIDO,DATE_PUBLICACION,STATE,FK_REPORTER,Comentario from news;
 
 CREATE VIEW V_News_tag As select Fk_NEWS as 'IdNoticia', nombreSeccion as 'Seccion' from tag_car;
 
