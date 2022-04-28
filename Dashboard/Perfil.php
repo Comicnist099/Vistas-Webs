@@ -44,12 +44,12 @@ include('./Templates/Nav_Bar.php') ?>
             </div>
             <a type="button" id="subir" href="PerfilEditable.php" class="btn btn-primary btn-lg">Modificar Informacion</a>
         </div>
-        </form>
+        </form><br><br><br><br><br>
 
 
 
 
-
+<h2 style="float:cente">NOTICIAS NO APROBADAS</h2>
         <?php
         $revision = "Bajada";
         $NewsShorts = "Select *from V_News_short where STATE='$revision'";
@@ -113,6 +113,9 @@ include('./Templates/Nav_Bar.php') ?>
                             </div>
                             <div class="large-3" style="font-weight:700">
                                 <a><?php echo $row['CONTENIDO'] ?></a>
+                         
+
+                                </div>
                                 <?php
                                 $buffer=$row['Comentario'];
                                 if ( $buffer!== "") {
@@ -136,14 +139,13 @@ include('./Templates/Nav_Bar.php') ?>
                                     <?php
                                     }
                                     ?>
-
-                                </div>
                             </div>
 
                             <br><br><br>
                         </div>
                     </section>
                 </div>
+                <br><br><br>
         <?php
             }
         }

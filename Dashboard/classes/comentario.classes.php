@@ -1,7 +1,6 @@
-
 <?php
 
-include_once("../classes/dbh.classes.php");
+include("../classes/dbh.classes.php");
 session_start();
 class Comentario extends Dbh
 {
