@@ -6,57 +6,51 @@ const addBtn = document.querySelector(".btn-add");
 const refresh = document.querySelector(".btn-add2");
 
 const ul = document.querySelector("ul");
-var numero=0;
+var numero = 0;
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const text = Selectores.value;
   console.log(text);
-  if (text !== ""){
-    if(numero==2){
-      if( text!=SeccionUno.value&&text!=SeccionDos.value){
-      SeccionTres.value = text;
-      numero=numero+1;
-      }
-      else{
-        alert('Coloque una sección que no se haya puesto antes porfavor');
-      }
-      }
-      if(numero==1){
-        if( text!=SeccionUno.value){
-        SeccionDos.value = text;
-        numero=numero+1;
-        }
-        else{
+  if (text !== "") {
+
+    if (SeccionUno.value == "VACIO") {
+
+      SeccionUno.value = text;
+
+    } else {
+
+      if (SeccionDos.value == "VACIO") {
+        if (text != SeccionUno.value) {
+          SeccionDos.value = text;
+
+        } else {
           alert('Coloque una sección que no se haya puesto antes porfavor');
         }
+      } else {
+        if (SeccionTres.value == "VACIO") {
+          console.log("HOLA");
+
+          if (text != SeccionUno.value && text != SeccionDos.value) {
+            SeccionTres.value = text;
+            console.log("a");
+          } else {
+            alert('Coloque una sección que no se haya puesto antes porfavor');
+          }
+        }
       }
-  
-    if(numero==0){
-    
-    SeccionUno.value = text;
-    numero=numero+1;
-      
-    
     }
-
     Selectores.value = "";
-    
 
- 
+
+
   }
 });
 
 refresh.addEventListener("click", (e) => {
   e.preventDefault();
   SeccionUno.value = "VACIO";
-  SeccionDos.value= "VACIO";
+  SeccionDos.value = "VACIO";
   SeccionTres.value = "VACIO";
-  numero=0;
-  }
-);
-
-
-
-
-
+  numero = 0;
+});

@@ -64,7 +64,7 @@ class NoticiaUpMy extends Dbh{
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
 
-        $stmt = $this->connect()->prepare('PROC_ELIMINAR_NEWS(?,?)'); 
+        $stmt = $this->connect()->prepare('call PROC_ELIMINAR_NEWS(?,?)'); 
       
         if(!$stmt->execute(array("Gusta",$id_Noticia))){                        
             $stmt = null;
