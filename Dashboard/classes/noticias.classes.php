@@ -42,6 +42,25 @@ class NoticiaUpMy extends Dbh{
         $stmt = null;
     }
 
+    
+    function NoticiaBajar($Comentario,$id_Noticia){
+        //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
+        //con un STORED PROCEDURE:
+
+        $stmt = $this->connect()->prepare('UPDATE news SET STATE=?, Comentario=? WHERE ID_NEWS =?;'); 
+      
+        if(!$stmt->execute(array("Bajada",$Comentario,$id_Noticia))){                        
+            $stmt = null;
+            echo '<script type="text/javascript">'; 
+            echo 'alert("Salio algo mal en la base de datos");';
+            echo 'window.location.href = "../Crear_Noticia.php";';
+            echo '</script>';
+            exit();
+        }
+        $stmt = null;
+    }
+
+
 
 
 }

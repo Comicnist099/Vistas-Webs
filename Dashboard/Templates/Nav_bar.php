@@ -28,18 +28,32 @@
  <a href="registro_reporteros.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
 
 
- <a href="nosotros.php" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
  <?php 
  session_start();
      $type_user = $_SESSION["user_type"];
+     
+     if($type_user==1){
+
+        ?>
+        <a href="nosotros.php" title="Sobre Nosotros" id="Nosotros" class='bx bx-align-left bx-md bx-tada-hover bx-border'></i></a>
+
+        <?php
+     }
+
      if($type_user==2){
 ?>
 <a href="secciones2.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
 <a href="Crear_Noticia.php" title="Crear Nota" id="Notas" class='bx bxs-note bx-md bx-tada-hover bx-border '></i></a>
 
-
  <?php 
      }
+     if($type_user==3){
+        ?>
+        <a href="secciones2.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
+        <a href="noticia_revision.php" title="Noticias no aprobadas" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
+        
+         <?php 
+             }
     
 ?>
  <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
