@@ -60,6 +60,24 @@ class NoticiaUpMy extends Dbh{
         $stmt = null;
     }
 
+    function NoticiaEliminar($id_Noticia){
+        //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
+        //con un STORED PROCEDURE:
+
+        $stmt = $this->connect()->prepare('DELETE from news WHERE ID_NEWS =?;'); 
+      
+        if(!$stmt->execute(array("Bajada",$id_Noticia))){                        
+            $stmt = null;
+            echo '<script type="text/javascript">'; 
+            echo 'alert("Salio algo mal en la base de datos");';
+            echo 'window.location.href = "../Perfil.php";';
+            echo '</script>';
+            exit();
+        }
+        $stmt = null;
+    }
+
+
 
 
 
