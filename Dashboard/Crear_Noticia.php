@@ -90,12 +90,15 @@
               <ul>
                 <li>
                   <input value="VACIO" name="uno" id="uno" readonly>
+                  <button class="btn-add3 bx bxs-trash"></button>
                 </li>
                 <li>
                   <input value="VACIO" name="dos" id="dos" readonly>
+                  <button class="btn-add4 bx bxs-trash"></button>
                 </li>
                 <li>
                   <input value="VACIO" name="tres"id="tres" readonly>
+                  <button class="btn-add5 bx bxs-trash"></button>
                 </li>
               </ul>
             </div>

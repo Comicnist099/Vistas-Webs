@@ -45,7 +45,16 @@
      margin-left: 40px;
      padding-bottom: 30px;
  }
- 
+
+
+ .Miniatura{
+
+    padding: 3px;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+
+ }
  .Contenido textarea {
      width: 90%;
      margin-top: 30px;
@@ -83,6 +92,50 @@
      background-color: darkcyan;
  }
  
+
+ .btn-add3  {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: teal;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.btn-add3:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+}
+.btn-add4 {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: teal;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.btn-add4:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+}
+.btn-add5 {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: teal;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.btn-add5:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+}
+
  li {
      list-style: none;
      background-color: rgb(255, 255, 255);

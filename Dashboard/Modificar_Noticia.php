@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Crear Noticias</title>
+  <title>Modificar Noticia</title>
 
 
   <script>
@@ -34,7 +34,8 @@
 
       ?>
 
-
+<h7>COMENTARIO</h7>
+<p><?php echo $row['Comentario'] ?></p><br><br>
         <h6>Titulo de la noticia</h6>
         <input value=<?php echo $row['TITLE'] ?> name="Titulo" class="form-control" type="text" placeholder="Noticia con un titulo emocionante"><br>
         <h6>Contenido</h6>
@@ -61,8 +62,7 @@
 
         <div class="form-control">
           <label for="username">Fecha de la noticia</label>
-          <p>Fecha anterior: <?php echo $row['NEWS_DATE'] ?> <?php echo $row['HORA'] ?> </p>
-          <input name="Fecha_Noticia" type="datetime-local" placeholder="Fecha de la notica" id="date" class="form-control">
+          <input name="Fecha_Noticia" type="datetime-local"  value="<?php echo $row['NEWS_DATE'] ?>T<?php echo $row['HORA'] ?>" placeholder="Fecha de la notica" id="date" class="form-control">
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
 
@@ -104,9 +104,9 @@
                   $categorias = $mysqli->query($secciones);
                   $numeroFilas = mysqli_num_rows($categorias);
                   $contador = 1;
-                  $primero="VACIO";
-                  $segundo="VACIO";
-                  $tercero="VACIO";
+                  $primero = "VACIO";
+                  $segundo = "VACIO";
+                  $tercero = "VACIO";
 
                   while ($row2 = mysqli_fetch_assoc($categorias)) {
 
@@ -116,26 +116,28 @@
 
                     if ($contador == 2) {
                       $segundo = $row2['nombreSeccion'];
-                      
                     }
 
                     if ($contador == 3) {
                       $tercero = $row2['nombreSeccion'];
-                      
                     }
                     $contador++;
-
                   }
                   ?>
                   <li>
 
                     <input value=<?php echo $primero ?> name="uno" id="uno" readonly>
+                    <button class="btn-add3 bx bxs-trash"></button>
                   </li>
                   < <li>
                     <input value=<?php echo $segundo ?> name="dos" id="dos" readonly>
+                    <button class="btn-add4 bx bxs-trash"></button>
+
                     </li>
                     <li>
                       <input value=<?php echo $tercero ?> name="tres" id="tres" readonly>
+                      <button class="btn-add5 bx bxs-trash"></button>
+
                     </li>
                 </ul>
               </div>
@@ -144,27 +146,80 @@
 
           <h3>AÑADE FOTOS O VIDEOS</h3>
           <p>PORTADA DE LA NOTICIA</p>
-          <input class="form-control" name="uploadedfile1" type="file" />
 
-          <p>MINIMO UN VIDEO y fotos</p>
-          <input class="form-control" name="uploadedfile2" type="file" />
-          <input class="form-control" name="uploadedfile3" type="file" />
-          <input class="form-control" name="uploadedfile4" type="file" />
-          <br>
-          <br>
           <?php
-          $buffer = $_SESSION["Buffer"];
+          $Multimedia = "select * from gallery_news where FK_NEWS='$idNoticia';";
+          $MultimediaSql = $mysqli->query($Multimedia);
+          $contador = 0;
+          while ($row3 = mysqli_fetch_assoc($MultimediaSql)) {
+
+            if ($contador == 0) {
 
           ?>
 
-          <img class="a" src='<?php echo $buffer; ?>' />
+              <img class="Miniatura" src="<?php echo $row3['MULTIMEDIA'] ?> " />
 
-          <button type="submit" name="submit" class="btn btn-dark">Aceptar noticia</button>
+
+              <input class="form-control" name="uploadedfile1" type="file" />
+          <?php
+            }
+            $contador++;
+          }
+          ?>
+
+          <p>MINIMO UN VIDEO y fotos</p>
+          <?php
+          $Multimedia2 = "select * from gallery_news where FK_NEWS='$idNoticia';";
+          $MultimediaSql2 = $mysqli->query($Multimedia2);
+          $contador = 1;
+          $numrows = mysqli_num_rows($MultimediaSql2);
+
+          while ($row4 = mysqli_fetch_assoc($MultimediaSql2)) {
+
+            if ($contador >= 2) {
+              $allowedTypes = array('png', 'jpg', 'gif');
+              $allowedTypes2 = array('png', 'jpg', 'gif', 'mp4');
+              if (in_array($row4['EXTENSION'], $allowedTypes)) {
+          ?>
+                <img class="Miniatura" src="<?php echo $row4['MULTIMEDIA'] ?> " />
+                <input class="form-control" name="uploadedfile<?php echo $contador ?> " type="file" />
+
+              <?php
+              } else {
+              ?>
+                <video style=" margin: auto;" class="Miniatura" controls>
+                  <source src="<?php echo $row4['MULTIMEDIA'] ?> " type="video/mp4">
+                  Your browser does not support HTML video.
+                </video>
+                <input class="form-control" name="uploadedfile<?php echo $contador ?> " type="file" />
+
+            <?php
+              }
+            }
+            $contador++;
+          }
+          if ($numrows == 2) {
+            ?>
+            <input class="form-control" name="uploadedfile3" type="file" />
+            <input class="form-control" name="uploadedfile4" type="file" />
+          <?php
+          }
+          if ($numrows == 3) {
+          ?>
+            <input class="form-control" name="uploadedfile4" type="file" />
+
+        <?php
+          }
+        }
+        ?>
+
+        <br>
+        <br>
+
+        <button type="submit" name="submit" class="btn btn-dark">Aceptar noticia</button>
         </div>
     </div>
-  <?php
-      }
-  ?>
+
   </form>
 
   <script src="js/etiquetas.js"> </script>
