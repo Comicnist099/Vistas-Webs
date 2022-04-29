@@ -15,6 +15,19 @@ protected function upload($image,$extension){
     $stmt = null;
 }
 
+
+protected function UpdateImageFin($image,$extension,$fk_news,$id_multimedia){
+    $stmt = $this->connect()->prepare('UPDATE gallery_news  SET FK_NEWS=?, MULTIMEDIA=?,EXTENSION=? where id_multimedia=?');
+    if(!$stmt->execute(array($fk_news,$image,$extension,$id_multimedia))){
+        $stmt = null;
+        header("location: ../index.php?error=stmtfailed");
+        exit();
+    }
+
+    $stmt = null;
+}
+
+
 protected function search($imageId){
     $stmt = $this->connect()->prepare('SELECT Avatar_PIC FROM user WHERE CORREO=?;');
     if(!$stmt->execute(array($imageId))){

@@ -46,18 +46,18 @@ if (isset($_POST["submit"])) {
                     echo 'window.location.href = "../Crear_Noticia.php";';
                     echo '</script>';
                 } else {
-                    $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora);
+                    $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora,null);
                     $News->Noticiaup();
                     if ($seccionUno !== "VACIO") {
-                        $NewsSeccion = new NoticiasSeccioncontr($seccionUno);
+                        $NewsSeccion = new NoticiasSeccioncontr($seccionUno,null);
                         $NewsSeccion->NoticiasSeccion();
                     }
                     if ($seccionDos !== "VACIO") {
-                        $NewsSeccion2 = new NoticiasSeccioncontr($seccionDos);
+                        $NewsSeccion2 = new NoticiasSeccioncontr($seccionDos,null);
                         $NewsSeccion2->NoticiasSeccion();
                     }
                     if ($seccionTres !== "VACIO") {
-                        $NewsSeccion3 = new NoticiasSeccioncontr($seccionTres);
+                        $NewsSeccion3 = new NoticiasSeccioncontr($seccionTres,null);
                         $NewsSeccion3->NoticiasSeccion();
                     }
                 }

@@ -20,7 +20,7 @@
 
 <body style="background-image:  url('./img/bg.jpg'); background-repeat: no-repeat;  background-size: cover;
 ">
-  <form class="form" action="./Temp/noticia_inc.php" method="post" enctype="multipart/form-data">
+  <form class="form" action="./Temp/noticia_modificar_inc.php" method="post" enctype="multipart/form-data">
     <div class="Forms">
       <img src="./img/banner5.png" alt="Italian Trulli" style="align-items: center;">
       <h1>MODIFICAR NOTICIAS</h1>
@@ -34,8 +34,8 @@
 
       ?>
 
-<h7>COMENTARIO</h7>
-<p><?php echo $row['Comentario'] ?></p><br><br>
+        <h7>COMENTARIO</h7>
+        <p><?php echo $row['Comentario'] ?></p><br><br>
         <h6>Titulo de la noticia</h6>
         <input value=<?php echo $row['TITLE'] ?> name="Titulo" class="form-control" type="text" placeholder="Noticia con un titulo emocionante"><br>
         <h6>Contenido</h6>
@@ -62,7 +62,7 @@
 
         <div class="form-control">
           <label for="username">Fecha de la noticia</label>
-          <input name="Fecha_Noticia" type="datetime-local"  value="<?php echo $row['NEWS_DATE'] ?>T<?php echo $row['HORA'] ?>" placeholder="Fecha de la notica" id="date" class="form-control">
+          <input name="Fecha_Noticia" type="datetime-local" value="<?php echo $row['NEWS_DATE'] ?>T<?php echo $row['HORA'] ?>" placeholder="Fecha de la notica" id="date" class="form-control">
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
 
@@ -144,6 +144,8 @@
             </div>
           </div>
 
+          <input class="form-control" value="<?php echo $idNoticia ?> " name="idNoticia" />
+
           <h3>AÑADE FOTOS O VIDEOS</h3>
           <p>PORTADA DE LA NOTICIA</p>
 
@@ -158,8 +160,8 @@
           ?>
 
               <img class="Miniatura" src="<?php echo $row3['MULTIMEDIA'] ?> " />
-
-
+              <input style="display:none" class="form-control" value="<?php echo $row3['EXTENSION'] ?> " name="Extension" />
+              <input style="display:none" class="form-control" value="<?php echo $row3['id_multimedia'] ?> " name="id" />
               <input class="form-control" name="uploadedfile1" type="file" />
           <?php
             }
@@ -181,8 +183,12 @@
               $allowedTypes2 = array('png', 'jpg', 'gif', 'mp4');
               if (in_array($row4['EXTENSION'], $allowedTypes)) {
           ?>
-                <img class="Miniatura" src="<?php echo $row4['MULTIMEDIA'] ?> " />
-                <input class="form-control" name="uploadedfile<?php echo $contador ?> " type="file" />
+                <img class="Miniatura" src="<?php echo $row4['MULTIMEDIA'] ?>" />
+                <input style="display:none" class="form-control" value="<?php echo $row4['EXTENSION'] ?> " name="Extension<?php echo $contador ?>" />
+                <input style="display:none"class="form-control" value="<?php echo $row4['id_multimedia'] ?> " name="id<?php echo $contador ?>" />
+
+
+
 
               <?php
               } else {
@@ -191,27 +197,22 @@
                   <source src="<?php echo $row4['MULTIMEDIA'] ?> " type="video/mp4">
                   Your browser does not support HTML video.
                 </video>
-                <input class="form-control" name="uploadedfile<?php echo $contador ?> " type="file" />
+                <input style="display:none" class="form-control" value="<?php echo $row4['EXTENSION'] ?> " name="Extension<?php echo $contador ?>" />
+                <input style="display:none" class="form-control" value="<?php echo $row4['id_multimedia'] ?> " name="id<?php echo $contador ?>" />
 
-            <?php
+
+
+        <?php
               }
             }
             $contador++;
           }
-          if ($numrows == 2) {
-            ?>
-            <input class="form-control" name="uploadedfile3" type="file" />
-            <input class="form-control" name="uploadedfile4" type="file" />
-          <?php
-          }
-          if ($numrows == 3) {
-          ?>
-            <input class="form-control" name="uploadedfile4" type="file" />
-
-        <?php
-          }
         }
         ?>
+        <input class="form-control" name="uploadedfile2" type="file" />+
+        <input class="form-control" name="uploadedfile3" type="file" />+
+        <input class="form-control" name="uploadedfile4" type="file" />+
+
 
         <br>
         <br>

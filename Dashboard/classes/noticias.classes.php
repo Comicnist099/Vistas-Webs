@@ -23,15 +23,11 @@ class NoticiaUpMy extends Dbh{
         $stmt = null;
     }
 
-
-     function NoticiaDown($id_Noticia){
+     function NoticiaUpdateSql2($id_Noticia,$Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora){
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
-
-        $Reportero= $_SESSION["user_id"];
-        $stmt = $this->connect()->prepare('UPDATE news SET STATE=? WHERE ID_NEWS =?;'); 
-      
-        if(!$stmt->execute(array("Aceptada",$id_Noticia))){                        
+        $stmt = $this->connect()->prepare('UPDATE news SET TITLE=?,CONTENIDO=?,KEYWORD=?, SIGN_REPORTER=?,LOCATION=?,NEWS_DATE=?,HORA=?,Comentario=? ,STATE=? WHERE ID_NEWS =?;'); 
+        if(!$stmt->execute(array($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,'',"Revision",$id_Noticia,))){                        
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';
