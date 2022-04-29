@@ -8,9 +8,8 @@
         $eliminar->eliminar($idComentario);
 
         echo '<script type="text/javascript">'; 
-        echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$idNews.'";';
+        echo 'window.location.href = "../Noticias_index.php?id='.$idNews.'";';
         echo '</script>';
-
 
 
 ?>

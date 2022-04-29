@@ -9,7 +9,9 @@
         $login = new LikeNews();
         $login->BuscarLike($news);
 
-       
+         echo '<script type="text/javascript">';
+        echo 'window.location.href = "../noticia_revision.php";';
+        echo '</script>';
 
 
     }

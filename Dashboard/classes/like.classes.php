@@ -32,7 +32,7 @@ class LikeNews extends Dbh{
                 exit();
             }
             echo '<script type="text/javascript">'; 
-            echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$NewsID.'";';
+            echo 'window.location.href = "../Noticias_index.php?id='.$NewsID.'";';
             echo '</script>';
             $stmt = null;
 
@@ -50,7 +50,7 @@ class LikeNews extends Dbh{
             }
             
                 echo '<script type="text/javascript">'; 
-                echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$NewsID.'";';
+                echo 'window.location.href = "../Noticias_index.php?id='.$NewsID.'";';
                 echo '</script>';
             
             $stmt = null;

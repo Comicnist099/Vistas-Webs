@@ -11,7 +11,7 @@
         $UpdateComentario->UpdateComentario($idComentario,$ContenidoEditado);
 
         echo '<script type="text/javascript">'; 
-        echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$news.'";';
+        echo 'window.location.href = "../Noticias_index.php?id='.$news.'";';
         echo '</script>';
     
 

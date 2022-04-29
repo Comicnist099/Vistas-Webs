@@ -6,6 +6,7 @@
 
 <?php
 require "conection.php";
+
 include('./Templates/Nav_bar.php') ?>
 
 
@@ -74,7 +75,7 @@ $categorias = $mysqli->query($secciones);
 
 
       ?>
-    
+
         <a style=" background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
       <?php
       }
@@ -90,66 +91,75 @@ $categorias = $mysqli->query($secciones);
 
 
 <?php
-              $revision="Aceptada";
-              $NewsShorts = "Select *from V_News_short where STATE='$revision'";
-              $NoticiasShort = $mysqli->query($NewsShorts);
-       
-              while ($row = mysqli_fetch_assoc($NoticiasShort)) {
+$revision = "Aceptada";
+$NewsShorts = "Select *from V_News_short where STATE='$revision'";
+$NoticiasShort = $mysqli->query($NewsShorts);
 
+while ($row = mysqli_fetch_assoc($NoticiasShort)) {
 
-              ?>
+  ?>
+
   <div class="Noticia">
-  <div class="ConjuntoImg">
-    <?php 
-                 $id_News= $row['ID_NEWS'];
-                 $NewsMultimedia = "Select *from v_News_multimedia where idNoticia ='$id_News'";
-                 $NewsMultimediaShort = $mysqli->query($NewsMultimedia);
-                 $contador=0;
-                 while ($row3 = mysqli_fetch_assoc($NewsMultimediaShort)){
-                 ?>
-      
-      <a  href="NoticiasEntrar_revision.php?id=<?php echo $row['ID_NEWS'] ?>"  class="imagenPublic"><img src='<?php echo $row3['Multimedia'] ?>' alt="logotipo"></a>
-                <?php
-                break;
-                   
-          }
-          $NewsShorts=null;
 
-          ?>
+    <div class="ConjuntoImg">
+      <?php
+      $id_News = $row['ID_NEWS'];
+      $NewsMultimedia = "Select *from v_News_multimedia where idNoticia ='$id_News'";
+      $NewsMultimediaShort = $mysqli->query($NewsMultimedia);
+      $contador = 0;
+      while ($row3 = mysqli_fetch_assoc($NewsMultimediaShort)) {
+      ?>
+
+        <a href="Noticias_index.php?id=<?php echo $row['ID_NEWS'] ?>" class="imagenPublic"><img src='<?php echo $row3['Multimedia'] ?>' alt="logotipo"></a>
+      <?php
+        break;
+      }
+      $NewsShorts = null;
+
+      ?>
     </div>
     <section class="Publicaciones">
-   
+
       <div class="Casilla">
+      <?php
+  if (isset($_SESSION["user_id"])) {
+    $idNoticia2 = $row["ID_NEWS"];
+
+    if ($row['FK_REPORTER'] == $_SESSION["user_id"]) {
+?>
+
+      <img style="display:block; margin:auto;   height: 50px; " src="./img/separador2.png" alt="">
+  <?php
+    }
+  }
+  ?>
         <div class=CasillaFecha>
           <a style="font-weight:700">Fecha de Publicacion: </a><a><?php echo $row['DATE_PUBLICACION'] ?></a> <br>
           <a style="font-weight:700">Localización: </a><a><?php echo $row['LOCATION'] ?></a><br>
         </div>
         <div class="large-4">
-          <?php 
-                $id_News= $row['ID_NEWS'];
-               
-                 $NewsTag = " Select *from V_News_tag where idNoticia ='$id_News'";
-                 $NewstagShort = $mysqli->query($NewsTag);
-
-              
-
-                 while ($row2 = mysqli_fetch_assoc($NewstagShort)){
-                  $NombreSeccion=$row2['Seccion'];
-                  $NewsTagColor = " Select * from tag where `NAME` ='$NombreSeccion'";
-                  $NewstagShortColor = $mysqli->query($NewsTagColor);
-                  $row4 = mysqli_fetch_array($NewstagShortColor)
- 
-                 ?>
-          <span style="background-color:<?php echo $row4['COLOR'] ?>"><?php echo $row2['Seccion'] ?></span>
           <?php
-                  
+          $id_News = $row['ID_NEWS'];
+
+          $NewsTag = " Select *from V_News_tag where idNoticia ='$id_News'";
+          $NewstagShort = $mysqli->query($NewsTag);
+          while ($row2 = mysqli_fetch_assoc($NewstagShort)) {
+            $NombreSeccion = $row2['Seccion'];
+            $NewsTagColor = " Select * from tag where `NAME` ='$NombreSeccion'";
+            $NewstagShortColor = $mysqli->query($NewsTagColor);
+            $row4 = mysqli_fetch_array($NewstagShortColor)
+
+          ?>
+            <span style="background-color:<?php echo $row4['COLOR'] ?>"><?php echo $row2['Seccion'] ?></span>
+          <?php
+
           }
-          $NewsTag=null;
-          $NewsTagColor=null;
+          $NewsTag = null;
+          $NewsTagColor = null;
           ?>
         </div>
         <div class="CasillaTitulo">
-          <span > <?php echo $row['TITLE'] ?></span><br>
+          <span> <?php echo $row['TITLE'] ?></span><br>
 
         </div>
         <div class="large-3" style="font-weight:700">
@@ -162,13 +172,13 @@ $categorias = $mysqli->query($secciones);
   </div>
 
 
-              <?php
-              }
+<?php
+}
 
-              $categorias = null;
-              ?>
- 
-  </div>
+$categorias = null;
+?>
+
+</div>
 
 
 <?php include('./Templates/Footer.php') ?>

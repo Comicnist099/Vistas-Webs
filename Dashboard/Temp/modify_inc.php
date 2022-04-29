@@ -9,10 +9,6 @@ include_once("../classes/imagecontr.classes.php");
         $Alias = $_POST["Alias"];
         $correo = $_POST["Correo"];
         $pass = $_POST["pass"];
-
-       
-       
-
     
         if( !empty( $_FILES["photo"]["tmp_name"] ) ){
             $modify = new Modifycontr($name, $Alias, $correo, $pass);
@@ -25,7 +21,7 @@ include_once("../classes/imagecontr.classes.php");
                 $image64 = base64_encode(file_get_contents($imageName));
                 $realImage = 'data:image/'.$imageType.';base64,'.$image64;
                 ImageContr::withImage($realImage,$correo)->uploadImage();
-               
+                               
         }
         else{
             header("location: ../viko.php?error=no-file-selected");

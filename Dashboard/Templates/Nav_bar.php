@@ -25,11 +25,11 @@
 <nav class="navigation-menu">
  
 
- <a href="registro_reporteros.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
 
 
  <?php 
  session_start();
+ if (isset($_SESSION["user_type"])) {
      $type_user = $_SESSION["user_type"];
      
      if($type_user==1){
@@ -51,30 +51,35 @@
         ?>
         <a href="secciones2.php" title="Secciones" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
         <a href="noticia_revision.php" title="Noticias no aprobadas" id="Notas" class='bx bx-list-ol bx-md bx-tada-hover bx-border'></i></a>
-        
+        <a href="registro_reporteros.php" title="Lista Usuarios" id="Nosotros" class='bx bxs-user-detail bx-md bx-tada-hover bx-border'></i></a>
+
          <?php 
-             }
+             
+ }}
     
 ?>
  <a href="index.php" title="Inicio" id="Casa" class='crear bx bxs-home bx-md bx-tada-hover bx-border'></i></a>
  <!-- <a href="Perfil.php" title="Perfil" id="Perfil" class='bx bxs-user-circle bx-md bx-tada-hover bx-border'></i></a>-->
- <a href="Perfil.php" >
-
-    <?php 
-    if(isset($_SESSION["image"])){
-        $image = $_SESSION["image"];
+ <?php 
+ if(isset($_SESSION["user_type"])){
+     $image = $_SESSION["image"];
 ?>
-
+        <a href="Perfil.php" >
         <img class="a"i src='<?php echo $image; ?>'/>
+    </a>
+    <a href="viko.php" id="Cerrar">Cerrar sesión</a>
 
 <?php 
+    }else{
+        ?>
+        <a style=" -webkit-text-stroke: 1px black;" href="viko.php" id="Cerrar">REGISTRATE</a>
+        <?php
     }
 ?>
  
 
     
-    </a>
- <a href="viko.php" id="Cerrar">Cerrar sesión</a>
+
 
 </nav>
 

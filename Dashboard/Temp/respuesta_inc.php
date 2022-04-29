@@ -11,9 +11,8 @@ if (isset($_POST["send"])) {
     $ComentarioClass->ComentarioUp();
 
     echo '<script type="text/javascript">'; 
-    echo 'window.location.href = "../NoticiasEntrar_revision.php?id='.$idnews.'";';
+    echo 'window.location.href = "../Noticias_index.php?id='.$idnews.'";';
     echo '</script>';
-
 
 }
 ?>
