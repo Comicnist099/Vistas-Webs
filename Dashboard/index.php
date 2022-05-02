@@ -23,7 +23,7 @@ background-attachment: fixed;
 ">
   <br>
   <div class="ContenedorBus">
-
+    <h1 style="margin-left:400px">NOTICIAS RELEVANTES </h1>
     <div class="Titulo">
       <br>
       <h5>Buscadores </h5>
@@ -31,18 +31,42 @@ background-attachment: fixed;
 
 </html>
 <input class="form-control" type="text" placeholder="Palabras Claves">
-</div>
 
+
+</div>
 </div>
 <br><br><br><br><br><br>
 
 <section class="Reciente">
-  <h1>POPULARES</h1><br><br><br>
-  <div class=ConjuntoNoticias>
-    <span Class="Noticia1">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-    <span Class="Noticia2">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-    <span Class="Noticia3">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-  </div>
+  <h1>POPULARES</h1><br>
+  <?php
+  $Destacados = "SELECT * FROM news where STATE='Aceptada' ORDER BY LIKES DESC;";
+  $DestacadosSql = $mysqli->query($Destacados);
+
+  $contador = 0;
+
+
+  while ($row = mysqli_fetch_assoc($DestacadosSql)) {
+
+    $id_newsDestacada = $row['ID_NEWS'];
+    $Imagenes = "SELECT * FROM gallery_news where FK_NEWS='$id_newsDestacada';";
+    $ImagenesSql = $mysqli->query($Imagenes);
+    $row4 = mysqli_fetch_assoc($ImagenesSql);
+    if ($contador < 3) {
+  ?>
+
+    <div class=card>
+
+        <a href="Noticias_index.php?id=<?php echo $row['ID_NEWS'] ?>"><img src='<?php echo $row4['MULTIMEDIA'] ?>' alt="img"></a>
+        <h1><?php echo $row['TITLE'] ?></h1>
+
+    </div>
+<?php
+      }
+      $contador++;
+
+    }
+?>
 
 </section>
 
@@ -76,7 +100,7 @@ $categorias = $mysqli->query($secciones);
 
       ?>
 
-        <a style=" background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
+        <a href="index_Secciones.php?Seccion=<?php echo $row['NOMBRE'] ?>" style=" color: black; text-decoration: none; background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
       <?php
       }
       $categorias = null;
@@ -97,7 +121,7 @@ $NoticiasShort = $mysqli->query($NewsShorts);
 
 while ($row = mysqli_fetch_assoc($NoticiasShort)) {
 
-  ?>
+?>
 
   <div class="Noticia">
 
@@ -115,24 +139,26 @@ while ($row = mysqli_fetch_assoc($NoticiasShort)) {
         break;
       }
       $NewsShorts = null;
+      $NewsMultimedia = null;
+      $row3 = NULL;
 
       ?>
     </div>
     <section class="Publicaciones">
 
       <div class="Casilla">
-      <?php
-  if (isset($_SESSION["user_id"])) {
-    $idNoticia2 = $row["ID_NEWS"];
+        <?php
+        if (isset($_SESSION["user_id"])) {
+          $idNoticia2 = $row["ID_NEWS"];
 
-    if ($row['FK_REPORTER'] == $_SESSION["user_id"]) {
-?>
+          if ($row['FK_REPORTER'] == $_SESSION["user_id"]) {
+        ?>
 
-      <img style="display:block; margin:auto;   height: 50px; " src="./img/separador2.png" alt="">
-  <?php
-    }
-  }
-  ?>
+            <img style="display:block; margin:auto;   height: 50px; " src="./img/separador2.png" alt="">
+        <?php
+          }
+        }
+        ?>
         <div class=CasillaFecha>
           <a style="font-weight:700">Fecha de Publicacion: </a><a><?php echo $row['DATE_PUBLICACION'] ?></a> <br>
           <a style="font-weight:700">Localización: </a><a><?php echo $row['LOCATION'] ?></a><br>

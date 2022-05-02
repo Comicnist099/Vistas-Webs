@@ -16,15 +16,34 @@ if (isset($_POST["submit"])) {
     $Lugar = $_POST["Lugar"];
     $Fecha_Noticia = $_POST["Fecha_Noticia"];
 
+
+
     $Extension = $_POST["Extension"];
     $Extension2 = $_POST["Extension2"];
-    $Extension3 = $_POST["Extension3"];
-    $Extension4 = $_POST["Extension4"];
+
+    if (!empty($_POST["Extension3"])) {
+        $Extension3 = $_POST["Extension3"];
+    }
+
+    if (!empty($_POST["Extension4"])) {
+
+        $Extension4 = $_POST["Extension4"];
+    }
+
 
     $id = $_POST["id"];
     $id2 = $_POST["id2"];
-    $id3 = $_POST["id3"];
-    $id4 = $_POST["id4"];
+    if (!empty($_POST["id3"])) {
+
+        $id3 = $_POST["id3"];
+    }
+
+    if (!empty($_POST["id3"])) {
+
+        $id4 = $_POST["id4"];
+    }
+
+
 
 
 
@@ -48,25 +67,27 @@ if (isset($_POST["submit"])) {
         $fileNameB = basename($_FILES["uploadedfile3"]["name"]);
         $imageTypeB = strtolower(pathinfo($fileNameB, PATHINFO_EXTENSION));
     } else {
-        $imageTypeB =  strval($Extension3);
+        if (!empty($_POST["Extension3"])) {
+            $imageTypeB =  strval($Extension3);
+        }
     }
     if (!empty($_FILES["uploadedfile4"]["name"])) {
         $fileNameC = basename($_FILES["uploadedfile4"]["name"]);
         $imageTypeC = strtolower(pathinfo($fileNameC, PATHINFO_EXTENSION));
     } else {
-        $imageTypeC = strval($Extension4);
+        if (!empty($_POST["Extension4"])) {
+            $imageTypeC = strval($Extension4);
+        }
     }
 
     $allowedTypes = array("png", "jpg");
     $allowedTypes2 = array('png', 'jpg', 'gif', 'mp4');
     $mp4 = "mp4";
 
-    echo "<script> alert('".$imageTypeA."'); </script>";
-    echo "<script> alert('".$imageTypeB."'); </script>";
-    echo "<script> alert('".$imageTypeC."'); </script>";
 
 
-    if (trim($imageTypeA) =="mp4" ||  trim($imageTypeB) =="mp4"  ||  trim($imageTypeC)== "mp4" ) {
+
+    if (trim($imageTypeA) == "mp4" ||  trim($imageTypeB) == "mp4"  ||  trim($imageTypeC) == "mp4") {
 
         if (strcmp($imageType, "png") || strcmp($imageType, "jpg")) {
 
@@ -77,7 +98,7 @@ if (isset($_POST["submit"])) {
                 echo 'window.location.href = "../Crear_Noticia.php";';
                 echo '</script>';
             } else {
-     
+
 
 
 
@@ -153,12 +174,13 @@ if (isset($_POST["submit"])) {
             $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora, $idNoticia);
 
             $News->NoticiaMejora();
-
-
         } else {
             echo "<script> alert('Es necesario que la portada siga el formato de png, jpg); </script>";
         }
     } else {
         echo "<script> alert('Cada noticia necesita minimo un video'); </script>";
     }
+    echo '<script type="text/javascript">';
+    echo 'window.location.href = "../index.php";';
+    echo '</script>';
 }

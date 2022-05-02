@@ -62,14 +62,23 @@ $(function() {
 
 });
 </script>
+<section class="Reciente">
+    <h1>POPULARES</h1><br>
 
-  <section class="Reciente">
-    <h1>POPULARES</h1><br><br><br>
-    <div class=ConjuntoNoticias>
-      <span Class="Noticia1">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-      <span Class="Noticia2">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-      <span Class="Noticia3">SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</span>
-    </div>
+    <div class=card>
+    <img src="img/marco.png" alt="img">
+    <h1>SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</h1>
+  </div>
+
+  <div class=card>
+    <img src="img/marco.png" alt="img">
+    <h1>SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</h1>
+  </div>
+
+  <div class=card>
+    <img src="img/marco.png" alt="img">
+    <h1>SANTAS CACHUCHAS LO AGARRON CON EL TINNER Y RATA EN MANO</h1>
+  </div>
 
   </section>
 

@@ -122,8 +122,8 @@ background-attachment: fixed;
                         <p class="signup">Ya tienes cuenta?<a href="#" onclick="mialerta();" onclick="toggleForm();
                             ">Entra aqui
                             </a></p>
-<br>
-<br>
+                        <br>
+                        <br>
                         <p class="signup">Entra sin cuenta <a href="./Temp/invitado_inc.php">AQUI</a></p>
                     </form>
                 </div>

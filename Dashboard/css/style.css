@@ -59,7 +59,7 @@ html {
     font-size: 17px;
     margin-bottom: 0px;
     transition: 250ms;
-
+    background-color: rgb(170, 212, 101);
     cursor: pointer;
 }
 
@@ -325,9 +325,43 @@ html {
     position: absolute;
     left: 79%;
     top: 80px;
-    width: 320px;
-    height: 650px;
+    width: 350px;
+    height: auto;
     background-color: rgba(185, 219, 91, 0.562);
+}
+
+.Reciente .card {
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    height: 360px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    background-color: #1a5754b4;
+}
+
+.Reciente .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    animation-duration: 2.2s;
+}
+
+.Reciente .card h1 {
+    color: rgb(11, 17, 12);
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-align: justify;
+    width: 90%;
+}
+
+.Reciente .card img {
+    height: 65%;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .Fot_Copy {
