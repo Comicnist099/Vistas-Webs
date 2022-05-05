@@ -29,13 +29,45 @@ background-attachment: fixed;
       <h5>Buscadores </h5>
 
 
-</html>
+
 <input class="form-control" type="text" placeholder="Palabras Claves">
+<h5>Buscadores </h5>
 
 
+
+<input class="form-control" type="text" placeholder="Palabras Claves">
+<ul style="list-style:none;">
+        <li><p id="Pie">Fecha de Partida</p></li>
+        <li><input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31"></li>
+        <li><p id="Pie">Fecha Final</p></li>
+        <li><input id="medio" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31"></li>
+      
+      </ul>
+      <br>
+      <p id="Pie">SECCIONES</p>
+
+      <select id="Pie" name="select">
+  <option value="value1">Value 1</option>
+  <option value="value2" selected>Value 2</option>
+  <option value="value3">Value 3</option>
+</select>
+
+<select id="Pie" name="select">
+  <option value="value1">Value 1</option>
+  <option value="value2" selected>Value 2</option>
+  <option value="value3">Value 3</option>
+</select>
+
+<select id="Pie" name="select">
+  <option value="value1">Value 1</option>
+  <option value="value2" selected>Value 2</option>
+  <option value="value3">Value 3</option>
+</select>
+      
 </div>
 </div>
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 <section class="Reciente">
   <h1>POPULARES</h1><br>

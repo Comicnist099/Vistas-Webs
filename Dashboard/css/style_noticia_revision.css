@@ -375,7 +375,16 @@ html {
     width: 100px;
     height: 100px;
 }
+#Pie{
+    margin-left: 300px;
+}
+.ContenedorBus ul{
 
+    margin-top:200px;
+}
+.ContenedorBus li{
+    margin-top:-100px;
+}
 .Titulo input {
     margin-top: 60px;
     margin-left: 470px;
