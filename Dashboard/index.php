@@ -96,11 +96,9 @@ $categorias = $mysqli->query($secciones);
     <div class="large-2">
       <?php
       while ($row = mysqli_fetch_assoc($categorias)) {
-
-
       ?>
-
         <a href="index_Secciones.php?Seccion=<?php echo $row['NOMBRE'] ?>" style=" color: black; text-decoration: none; background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
+
       <?php
       }
       $categorias = null;
@@ -173,8 +171,7 @@ while ($row = mysqli_fetch_assoc($NoticiasShort)) {
             $NombreSeccion = $row2['Seccion'];
             $NewsTagColor = " Select * from tag where `NAME` ='$NombreSeccion'";
             $NewstagShortColor = $mysqli->query($NewsTagColor);
-            $row4 = mysqli_fetch_array($NewstagShortColor)
-
+            $row4 = mysqli_fetch_array($NewstagShortColor);
           ?>
             <span style="background-color:<?php echo $row4['COLOR'] ?>"><?php echo $row2['Seccion'] ?></span>
           <?php

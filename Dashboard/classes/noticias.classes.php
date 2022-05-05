@@ -1,6 +1,6 @@
 
 <?php
-
+ 
 include_once("../classes/dbh.classes.php");
 
 class NoticiaUpMy extends Dbh{
@@ -27,7 +27,7 @@ class NoticiaUpMy extends Dbh{
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
         $stmt = $this->connect()->prepare('UPDATE news SET TITLE=?,CONTENIDO=?,KEYWORD=?, SIGN_REPORTER=?,LOCATION=?,NEWS_DATE=?,HORA=?,Comentario=? ,STATE=? WHERE ID_NEWS =?;'); 
-        if(!$stmt->execute(array($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,'',"Revision",$id_Noticia,))){                        
+        if(!$stmt->execute(array($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,'',"Terminada",$id_Noticia,))){                        
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';
@@ -81,6 +81,29 @@ class NoticiaUpMy extends Dbh{
         $stmt = $this->connect()->prepare('call PROC_ELIMINAR_NEWS(?,?)'); 
       
         if(!$stmt->execute(array("Gusta",$id_Noticia))){                        
+            $stmt = null;
+            echo '<script type="text/javascript">'; 
+            echo 'alert("Salio algo mal en la base de datos");';
+            echo 'window.location.href = "../Perfil.php";';
+            echo '</script>';
+            exit();
+        }
+        $stmt = null;
+
+  
+
+
+
+    }
+    
+
+    function NoticiaRevision($id_Noticia){
+        //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
+        //con un STORED PROCEDURE:
+
+        $stmt = $this->connect()->prepare('call PROC_ELIMINAR_NEWS(?,?)'); 
+      
+        if(!$stmt->execute(array("Revision",$id_Noticia))){                        
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';

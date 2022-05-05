@@ -100,8 +100,6 @@ if (isset($_POST["submit"])) {
             } else {
 
 
-
-
                 $NewsSeccion4 = new NoticiasSeccioncontr($seccionUno, $idNoticia);
                 $NewsSeccion4->EliminarSeccion();
 

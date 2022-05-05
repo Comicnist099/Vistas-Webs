@@ -53,7 +53,8 @@ include('./Templates/Nav_Bar.php') ?>
             <h2 style="float:cente">NOTICIAS NO APROBADAS</h2>
             <?php
             $revision = "Bajada";
-            $NewsShorts = "Select *from V_News_short where STATE='$revision'";
+            $revision2 = "Terminada";
+            $NewsShorts = "Select *from V_News_short where STATE='$revision' OR STATE='$revision2'";
             $NoticiasShort = $mysqli->query($NewsShorts);
             $Reportero = $_SESSION["user_id"];
             while ($row = mysqli_fetch_assoc($NoticiasShort)) {
@@ -137,8 +138,10 @@ include('./Templates/Nav_Bar.php') ?>
                                     $row14 = mysqli_fetch_assoc($NewsBtnSql);
                                     if ($row14['USER_TYPE'] == "2" && $user2 == $_SESSION["user_id"]) {
                                     ?>
-                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Temp/eliminar_Noticia.php?idNoticia=<?php echo $idNews ?>">Eliminar</a></span>
-                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md' href="http://localhost/Frontend/Dashboard/Modificar_Noticia.php?idNoticia=<?php echo $idNews ?>">Editar</a></span>
+                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md btn btn-danger' href="http://localhost/Frontend/Dashboard/Temp/eliminar_Noticia.php?idNoticia=<?php echo $idNews ?>">Eliminar</a></span>
+                                        <span> <a style="float:right" class='bx bxs-edit-alt bx-md btn btn-warning' href="http://localhost/Frontend/Dashboard/Modificar_Noticia.php?idNoticia=<?php echo $idNews ?>">Editar</a></span>
+                                        <span> <a style="float:right" class='bx bxs-up-arrow-alt bx-md btn btn-success ' href="http://localhost/Frontend/Dashboard/Temp/Revision_Noticia.php?idNoticia=<?php echo $idNews ?>">Subir</a></span>
+
                                     <?php
                                     }
                                     ?>
