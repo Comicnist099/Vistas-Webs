@@ -25,17 +25,81 @@ background-attachment: fixed;
   <div class="ContenedorBus">
     <h1 style="margin-left:400px">NOTICIAS RELEVANTES </h1>
     <div class="Titulo">
-      <br>
-      <h5>Buscadores </h5>
 
 
-</html>
-<input class="form-control" type="text" placeholder="Palabras Claves">
 
+
+
+
+<form class="form" action="./Temp/FiltrosAvanzados_inc.php" method="post" enctype="multipart/form-data">
+
+  <button class="btn-Avanzado">Filtros Avanzados</button>
+  <br>
+
+  <input style="display:none" id="Letras1" type="text" name="clave" placeholder="Palabras Claves" value="">
+  <p id="Pie3" style="display:none">SECCIONES</p>
+
+
+
+  <select name="Seccion1" style="display:none" id="combo1" name="select">
+  <option value="a"></option>
+
+    <?php
+    $secciones = "select * from V_tag;";
+    $categorias = $mysqli->query($secciones);
+    while ($row = mysqli_fetch_assoc($categorias)) {
+    ?>
+    <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+    <?php
+    }
+    ?>
+  </select>
+
+  <select name="Seccion2" style="display:none" id="combo2" name="select">
+  <option value="a"></option>
+  <?php
+    $secciones = "select * from V_tag;";
+    $categorias = $mysqli->query($secciones);
+    while ($row = mysqli_fetch_assoc($categorias)) {
+    ?>
+    <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+    <?php
+    }
+    ?>
+  </select>
+
+  <select name="Seccion3" style="display:none" id="combo3" name="select">
+  <option value="a"></option>
+  <?php
+    $secciones = "select * from V_tag;";
+    $categorias = $mysqli->query($secciones);
+    while ($row = mysqli_fetch_assoc($categorias)) {
+    ?>
+    <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+    <?php
+    }
+    ?>
+  </select>
+  <button type="submit" name="submit" style="float:right;display:none" class="FiltrarAvanzado bx bxs-edit-alt bxmd btn btn-warning">Filtrar</button>
+
+  <br>
 
 </div>
 </div>
 <br><br><br><br><br><br>
+
+<ul style="list-style:none ;">
+<li>
+<p style="display:none" id="Pie1">Fecha de Partida</p>
+</li>
+<li><input style="display:none" id="start" type="date" name="start" value="2022-01-01"></li>
+<li>
+<p style="display:none" id="Pie2">Fecha Final</p>
+</li>
+<li><input style="display:none" id="medio" type="date" name="medio" value="2022-07-22" ></li>
+
+</ul>
+</form>
 
 <section class="Reciente">
   <h1>POPULARES</h1><br>
@@ -229,6 +293,7 @@ $categorias = null;
 <?php include('./Templates/Footer.php') ?>
 
 
+<script src="js/Avanzado.js"> </script>
 <script src="js/Sidebar.js"> </script>
 </body>
 

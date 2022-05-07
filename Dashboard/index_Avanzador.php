@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<link rel="stylesheet" href="css/style_noticia_revision.css">
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<?php
+require "conection.php";
+
+include('./Templates/Nav_bar.php') ?>
+
+
+
+<script>
+  function mialerta() {
+    alert("Bienvenido, Entra y conoce un mundo nuevo de noticias");
+  }
+</script>
+
+<body style="background-image:  url('./img/bg.jpg'); background-size: 100% 100%; 
+background-attachment: fixed;
+
+">
+  <br>
+  <div class="ContenedorBus">
+    <h1 style="margin-left:400px">NOTICIAS RELEVANTES </h1>
+    <div class="Titulo">
+
+
+
+
+
+
+      <form class="form" action="./Temp/FiltrosAvanzados_inc.php" method="post" enctype="multipart/form-data">
+
+        <button class="btn-Avanzado">Filtros Avanzados</button>
+        <br>
+
+        <input style="display:none" id="Letras1" type="text" name="clave" placeholder="Palabras Claves" value="">
+        <p id="Pie3" style="display:none">SECCIONES</p>
+
+
+
+        <select name="Seccion1" style="display:none" id="combo1" name="select">
+          <option value="a"></option>
+
+          <?php
+          $secciones = "select * from V_tag;";
+          $categorias = $mysqli->query($secciones);
+          while ($row = mysqli_fetch_assoc($categorias)) {
+          ?>
+            <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+          <?php
+          }
+          ?>
+        </select>
+
+        <select name="Seccion2" style="display:none" id="combo2" name="select">
+          <option value="a"></option>
+          <?php
+          $secciones = "select * from V_tag;";
+          $categorias = $mysqli->query($secciones);
+          while ($row = mysqli_fetch_assoc($categorias)) {
+          ?>
+            <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+          <?php
+          }
+          ?>
+        </select>
+
+        <select name="Seccion3" style="display:none" id="combo3" name="select">
+          <option value="a"></option>
+          <?php
+          $secciones = "select * from V_tag;";
+          $categorias = $mysqli->query($secciones);
+          while ($row = mysqli_fetch_assoc($categorias)) {
+          ?>
+            <option value="<?php echo $row['NOMBRE'] ?>"><?php echo $row['NOMBRE'] ?></option>
+          <?php
+          }
+          ?>
+        </select>
+        <button type="submit" name="submit" style="float:right;display:none" class="FiltrarAvanzado bx bxs-edit-alt bxmd btn btn-warning">Filtrar</button>
+
+        <br>
+
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+
+  <ul style="list-style:none ;">
+    <li>
+      <p style="display:none" id="Pie1">Fecha de Partida</p>
+    </li>
+    <li><input style="display:none" id="start" type="date" name="start" value="2022-01-01"></li>
+    <li>
+      <p style="display:none" id="Pie2">Fecha Final</p>
+    </li>
+    <li><input style="display:none" id="medio" type="date" name="medio" value="2022-07-22"></li>
+
+  </ul>
+  </form>
+
+  <section class="Reciente">
+    <h1>POPULARES</h1><br>
+    <?php
+    $Destacados = "SELECT * FROM news where STATE='Aceptada' ORDER BY LIKES DESC;";
+    $DestacadosSql = $mysqli->query($Destacados);
+
+    $contador = 0;
+
+
+    while ($row = mysqli_fetch_assoc($DestacadosSql)) {
+
+      $id_newsDestacada = $row['ID_NEWS'];
+      $Imagenes = "SELECT * FROM gallery_news where FK_NEWS='$id_newsDestacada';";
+      $ImagenesSql = $mysqli->query($Imagenes);
+      $row4 = mysqli_fetch_assoc($ImagenesSql);
+      if ($contador < 3) {
+    ?>
+
+        <div class=card>
+
+          <a href="Noticias_index.php?id=<?php echo $row['ID_NEWS'] ?>"><img src='<?php echo $row4['MULTIMEDIA'] ?>' alt="img"></a>
+          <h1><?php echo $row['TITLE'] ?></h1>
+
+        </div>
+    <?php
+      }
+      $contador++;
+    }
+    ?>
+
+  </section>
+
+
+
+
+  <div id="sidebar">
+    <div class="custom">
+      <div class="toggle-btn">
+        <span>&#9776;</span>
+      </div>
+    </div>
+
+    <h1>SECCIONES</h1><br><br>
+    <a>
+      <div class="Logo_Secciones">
+        <img src="img/ranita.png" style="height:150px" alt="logotipo">
+    </a>
+  </div>
+  <?php
+  $secciones = "select * from V_tag;";
+  $categorias = $mysqli->query($secciones);
+
+  ?>
+  <div class="custom">
+    <div id="front_videos">
+      <div class="large-2">
+        <?php
+        while ($row = mysqli_fetch_assoc($categorias)) {
+        ?>
+          <a href="index_Secciones.php?Seccion=<?php echo $row['NOMBRE'] ?>" style=" color: black; text-decoration: none; background-color: <?php echo $row['color'] ?>;"><?php echo $row['NOMBRE'] ?> <br> </a>
+
+        <?php
+        }
+        $categorias = null;
+
+        ?>
+
+        <div class="force-overflow"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <?php
+  $seccionFiltro = $_GET["Seccion"];
+  $seccionFiltro2 = $_GET["Seccion2"];
+  $seccionFiltro3 = $_GET["Seccion3"];
+  $FechaDos = $_GET["FechaDos"];
+  $FechaUno = $_GET["FechaUno"];
+  $Clave = $_GET["Clave"];
+
+
+
+
+
+
+  $revision = "Aceptada";
+  if ($Clave == "") {
+    $NewsShorts = "Select *from news where STATE='$revision' AND NEWS_DATE BETWEEN '$FechaDos' AND '$FechaUno';";
+  } else {
+    $NewsShorts = "Select *from news where STATE='$revision' AND NEWS_DATE BETWEEN '$FechaDos' AND '$FechaUno' AND TITLE LIKE '$Clave%' OR CONTENIDO LIKE '$Clave%';";
+  }
+  $NoticiasShort = $mysqli->query($NewsShorts);
+
+
+  $contadorB = 0;
+
+  while ($row = mysqli_fetch_assoc($NoticiasShort)) {
+
+    $id_NewsFiltro = $row["ID_NEWS"];
+    $contador = 0;
+    $NewsTag = " Select *from V_News_tag where idNoticia ='$id_NewsFiltro'";
+    $NewstagShort = $mysqli->query($NewsTag);
+
+    $Permitido = 0;
+    $Permitido2 = 0;
+    $Permitido3 = 0;
+
+
+    while ($row5 = mysqli_fetch_assoc($NewstagShort)) {
+
+      if ($seccionFiltro != "a") {
+        if ($Permitido == 0 && $seccionFiltro == $row5["Seccion"]) {
+          echo "<script> alert('" . $row["ID_NEWS"] . "'); </script>";
+
+          $Permitido = 1;
+        }
+      } else {
+        $Permitido = 1;
+      }
+
+      if ($seccionFiltro2 != "a") {
+        if ($Permitido2 == 0 && $seccionFiltro2 == $row5["Seccion"]) {
+          echo "<script> alert('" . $row["ID_NEWS"] . "'); </script>";
+
+          $Permitido2 = 1;
+        }
+      } else {
+        $Permitido2 = 1;
+      }
+      if ($seccionFiltro3 != "a") {
+        if ($Permitido3 == 0 && $seccionFiltro3 == $row5["Seccion"]) {
+          $Permitido3 = 1;
+        }
+      } else {
+        $Permitido3 = 1;
+      }
+    }
+
+
+    if ($Permitido == 1 && $Permitido2 == 1 && $Permitido3 == 1) {
+      $Permitido = 0;
+      $Permitido2 = 0;
+      $Permitido3 = 0;
+
+
+
+  ?>
+      <div class="Noticia">
+
+        <div class="ConjuntoImg">
+          <?php
+          $id_News = $row['ID_NEWS'];
+          $NewsMultimedia = "Select *from v_News_multimedia where idNoticia ='$id_News'";
+          $NewsMultimediaShort = $mysqli->query($NewsMultimedia);
+          $contador = 0;
+          while ($row3 = mysqli_fetch_assoc($NewsMultimediaShort)) {
+            $contadorB++;
+          ?>
+
+            <a href="Noticias_index.php?id=<?php echo $row['ID_NEWS'] ?>" class="imagenPublic"><img src='<?php echo $row3['Multimedia'] ?>' alt="logotipo"></a>
+          <?php
+            break;
+          }
+          $NewsShorts = null;
+          $NewsMultimedia = null;
+          $row3 = NULL;
+
+          ?>
+        </div>
+        <section class="Publicaciones">
+
+          <div class="Casilla">
+            <?php
+            if (isset($_SESSION["user_id"])) {
+              $idNoticia2 = $row["ID_NEWS"];
+
+              if ($row['FK_REPORTER'] == $_SESSION["user_id"]) {
+            ?>
+
+                <img style="display:block; margin:auto;   height: 50px; " src="./img/separador2.png" alt="">
+            <?php
+              }
+            }
+            ?>
+            <div class=CasillaFecha>
+              <a style="font-weight:700">Fecha de Publicacion: </a><a><?php echo $row['DATE_PUBLICACION'] ?></a> <br>
+              <a style="font-weight:700">Localización: </a><a><?php echo $row['LOCATION'] ?></a><br>
+            </div>
+            <div class="large-4">
+              <?php
+              $id_News = $row['ID_NEWS'];
+
+              $NewsTag = " Select *from V_News_tag where idNoticia ='$id_News'";
+              $NewstagShort = $mysqli->query($NewsTag);
+              while ($row2 = mysqli_fetch_assoc($NewstagShort)) {
+                $NombreSeccion = $row2['Seccion'];
+                $NewsTagColor = " Select * from tag where `NAME` ='$NombreSeccion'";
+                $NewstagShortColor = $mysqli->query($NewsTagColor);
+                $row4 = mysqli_fetch_array($NewstagShortColor)
+
+              ?>
+                <span style="background-color:<?php echo $row4['COLOR'] ?>"><?php echo $row2['Seccion'] ?></span>
+              <?php
+
+              }
+              $NewsTag = null;
+              $NewsTagColor = null;
+              ?>
+            </div>
+            <div class="CasillaTitulo">
+              <span> <?php echo $row['TITLE'] ?></span><br>
+
+            </div>
+            <div class="large-3" style="font-weight:700">
+              <a><?php echo $row['CONTENIDO'] ?></a>
+            </div>
+
+            <br><br><br>
+          </div>
+        </section>
+      </div>
+
+
+  <?php
+    }
+  }
+
+  $categorias = null;
+  if($contadorB==0){
+
+  ?>
+
+  <h1>NO HAY NOTICIAS DISPONIBLES</h1>
+  <?php
+
+  }
+  ?>
+
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+  <?php include('./Templates/Footer.php') ?>
+
+  <script src="js/Avanzado.js"> </script>
+  <script src="js/Sidebar.js"> </script>
+</body>
+
+</html>

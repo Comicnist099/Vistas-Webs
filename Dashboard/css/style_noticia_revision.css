@@ -6,7 +6,10 @@
 html {
     height: 100%;
 }
-
+.btn-Avanzado{
+    margin-left: 700px;
+    margin-top: 10px;
+}
 .Publicaciones .scroll {
     background-color: #fed9ff;
     width: 600px;
@@ -369,26 +372,39 @@ html {
     border-radius: 10px;
 }
 
-.ContenedorBus a {
-    margin-top: 60px;
-    background-color: #58b196;
-    width: 100px;
-    height: 100px;
-}
-#Pie{
+
+#start{
     margin-left: 300px;
 }
-.ContenedorBus ul{
+#medio{
+    margin-left: 300px;
+}
+#Pie1{
+    margin-left: 300px;
+}
+#Pie2{
+    margin-left: 300px;
 
-    margin-top:200px;
 }
-.ContenedorBus li{
-    margin-top:-100px;
+#Pie3{
+    margin-left: 300px;
+
 }
-.Titulo input {
+#Letras1{
+    margin-left: 336px;
+}
+.FiltrarAvanzado{
+    width: 400px;
+
+}
+.FiltrarAvanzado{
+    width: 100px;
+}
+#FiltroBasico {
     margin-top: 60px;
     margin-left: 470px;
     width: 400px;
+
 }
 
 .Titulo {

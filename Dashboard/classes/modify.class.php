@@ -58,6 +58,7 @@ class Modify extends Dbh
         $resNew = $mysqli->query($selNew);
         $upNew = "delete from user where ID_USER='$id_User';";
         $resNew3 = $mysqli->query($upNew);
+        
         while ($row = mysqli_fetch_assoc($resNew)) {
             echo '<script type="text/javascript">';
             echo 'alert("' . $id_User . '");';
