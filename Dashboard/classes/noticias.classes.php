@@ -5,14 +5,14 @@ include_once("../classes/dbh.classes.php");
 
 class NoticiaUpMy extends Dbh{
   
-    protected function NoticiaUpB($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora){
+    protected function NoticiaUpB($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,$tipo){
         //$stmt = $this->connect()->prepare('INSERT INTO USERS (EMAIL, PASSWORD) VALUES(?, ?)'); 
         //con un STORED PROCEDURE:
 
         $Reportero= $_SESSION["user_id"];
-        $stmt = $this->connect()->prepare('CALL PROC_NEWS(?, ?, ?, ?, ?, ?, ?, ?, ?,?)'); 
+        $stmt = $this->connect()->prepare('CALL PROC_NEWS(?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)'); 
       
-        if(!$stmt->execute(array('Insertar',null,$Titulo,$Fecha_Noticia,$Lugar,$Contenido,$Reportero,$Palabra,$Firma,$Hora))){                        
+        if(!$stmt->execute(array('Insertar',null,$Titulo,$Fecha_Noticia,$Lugar,$Contenido,$Reportero,$Palabra,$Firma,$Hora,$tipo))){                        
             $stmt = null;
             echo '<script type="text/javascript">'; 
             echo 'alert("Salio algo mal en la base de datos");';

@@ -115,13 +115,15 @@
         <input class="form-control" name="uploadedfile4" type="file" />
         <br>
         <br>
-        <?php
-            $buffer=$_SESSION["Buffer"];
-        
-        ?>  
-      
-        <img  class="a" src='<?php echo $buffer; ?>'/>
-
+     <h3>Tipo de noticia</h3>
+        <select id="Selectores" name="Urgente" class="form-control">
+          
+                <option value="Normal" >Normal </option>
+                <option value="Urgente" >Urgente </option>
+       
+            </select>
+            <br>
+            <br>
         <button type="submit" name="submit" class="btn btn-dark">Aceptar noticia</button>
       </div>
     </div>

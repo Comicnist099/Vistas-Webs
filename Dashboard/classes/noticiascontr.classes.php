@@ -10,12 +10,14 @@ include_once("../classes/noticias.classes.php");
         private $Lugar;
         private $Fecha_Noticia;
         private $Hora;
+        
         private $id_Noticia;
+        private $tipo;
 
 
 
 
-        public function __construct($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,$id_Noticia){
+        public function __construct($Titulo,$Contenido,$Palabra,$Firma,$Lugar,$Fecha_Noticia,$Hora,$id_Noticia,$tipo){
             $this->Titulo=$Titulo;
             $this->Contenido=$Contenido;
             $this->Palabra=$Palabra;
@@ -24,6 +26,8 @@ include_once("../classes/noticias.classes.php");
             $this->Fecha_Noticia=$Fecha_Noticia;
             $this->Hora=$Hora;
             $this->id_Noticia=$id_Noticia;
+            $this->tipo=$tipo;
+
 
         }
         public function Noticiaup(){
@@ -37,7 +41,7 @@ include_once("../classes/noticias.classes.php");
             }   
            
         
-            $this->NoticiaUpB($this->Titulo,$this->Contenido,$this->Palabra,$this->Firma, $this->Lugar,$this->Fecha_Noticia,$this->Hora);
+            $this->NoticiaUpB($this->Titulo,$this->Contenido,$this->Palabra,$this->Firma, $this->Lugar,$this->Fecha_Noticia,$this->Hora,$this->tipo);
 
         }
         public function NoticiaMejora(){
@@ -49,7 +53,7 @@ include_once("../classes/noticias.classes.php");
                 echo '</script>';
                 exit();
             }   
-            $this->NoticiaUpdateSql2($this->id_Noticia,$this->Titulo,$this->Contenido,$this->Palabra,$this->Firma, $this->Lugar,$this->Fecha_Noticia,$this->Hora);
+            $this->NoticiaUpdateSql2($this->id_Noticia,$this->Titulo,$this->Contenido,$this->Palabra,$this->Firma, $this->Lugar,$this->Fecha_Noticia,$this->Hora,$this->tipo);
 
         }
 

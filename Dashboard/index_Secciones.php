@@ -37,7 +37,7 @@ background-attachment: fixed;
   <br>
 
   <input style="display:none" id="Letras1" type="text" name="clave" placeholder="Palabras Claves" value="">
-  <p id="Pie3" style="display:none">SECCIONES</p>
+  <p id="Pie3" style="display:none">SECCIONES</p>s
 
 
 

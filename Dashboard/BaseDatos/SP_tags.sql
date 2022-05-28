@@ -70,22 +70,22 @@ select * FROM tag_car;
 
 ################################
 select *from user;
-select *from tag;
+select *from news;
+SELECT  NAME FROM user WHERE NAME LIKE "%.com%";
+SELECT * FROM news where STATE="Aceptada" ORDER BY LIKES DESC;
 
 ####  BORRAR TAG & TAG HISTORY
 delete from tag;
 delete from tag_history;
+delete from comment;
 delete from gallery_news;
 delete from tag_car;
 delete from news;
 
-UPDATE tag 
+UPDATE user 
 SET 
-NAME=?,
-ALIAS=?,
-CORREO=?,
-PASSWORD=?
-
+    USER_TYPE = 3
 WHERE
-    ID_USER =? ;  
+    CORREO = "marco.ctu@hotmail.com";
+
 

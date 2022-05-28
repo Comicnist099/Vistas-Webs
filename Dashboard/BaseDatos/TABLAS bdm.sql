@@ -19,7 +19,8 @@ CREATE TABLE `user` (
   PRIMARY KEY (`ID_USER`),
   KEY `a` (`USER_TYPE`),
   CONSTRAINT `a` FOREIGN KEY (`USER_TYPE`) REFERENCES `user_type` (`ID_USER_TYPE`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4;
+
 
 
 
@@ -90,3 +91,7 @@ drop table tag;
 drop table news;
 drop table user;
 drop table user_type
+
+select * from user_type;
+
+PROC_USER

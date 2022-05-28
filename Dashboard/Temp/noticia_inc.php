@@ -14,6 +14,8 @@ if (isset($_POST["submit"])) {
     $Firma = $_POST["Firma"];
     $Lugar = $_POST["Lugar"];
     $Fecha_Noticia = $_POST["Fecha_Noticia"];
+    $Tipo = $_POST["Urgente"];
+
 
 
     $Fecha_Noticia1 = substr($Fecha_Noticia, 0, 10);
@@ -46,7 +48,7 @@ if (isset($_POST["submit"])) {
                     echo 'window.location.href = "../Crear_Noticia.php";';
                     echo '</script>';
                 } else {
-                    $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora,null);
+                    $News = new Noticiacontr($Titulo, $Contenido, $Palabra, $Firma, $Lugar, $Fecha_Noticia1, $Hora,null,$Tipo);
                     $News->Noticiaup();
                     if ($seccionUno !== "VACIO") {
                         $NewsSeccion = new NoticiasSeccioncontr($seccionUno,null);

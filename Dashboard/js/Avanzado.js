@@ -4,6 +4,7 @@ const Pie1 = document.getElementById("Pie1");
 const Pie2 = document.getElementById("Pie2");
 const Pie3 = document.getElementById("Pie3");
 
+
 const FiltrarAvanzado = document.querySelector(".FiltrarAvanzado");
 
 
@@ -15,8 +16,12 @@ const combo1 = document.getElementById("combo1");
 const combo2 = document.getElementById("combo2");
 const combo3 = document.getElementById("combo3");
 
-
 const Avanzado = document.querySelector(".btn-Avanzado");
+
+const tipo = document.getElementById("Tipo");
+
+const urgente = document.getElementById("urgente");
+
 
 var flag=true;
 Avanzado.addEventListener("click", (e) => {
@@ -34,6 +39,9 @@ Avanzado.addEventListener("click", (e) => {
   Pie2.style.display = "none";
   FiltrarAvanzado.style.display="none";
   Pie3.style.display = "none";
+  urgente.style.display = "none";
+  tipo.style.display = "none";
+
   flag=false;
   }
   else{
@@ -42,12 +50,14 @@ Avanzado.addEventListener("click", (e) => {
     combo1.style.display = "inline";
     combo2.style.display = "inline";
     combo3.style.display = "inline";
-  
     Letras1.style.display = "inline";
     Fecha2.style.display="inline"
     Pie1.style.display = "inline";
     Pie2.style.display = "inline";
     Pie3.style.display = "inline";
+    urgente.style.display = "inline";
+    tipo.style.display = "inline";
+
     flag=true;
   }
 

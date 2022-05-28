@@ -20,6 +20,7 @@ include('./Templates/Nav_bar.php') ?>
 <body style="background-image:  url('./img/bg.jpg'); background-size: 100% 100%; 
 background-attachment: fixed;">
   <br>
+  
   <div class="ContenedorBus">
     <h1 style="margin-left:400px">NOTICIAS RELEVANTES </h1>
     <div class="Titulo">
@@ -78,12 +79,23 @@ background-attachment: fixed;">
           }
           ?>
         </select>
+        <div  class="Titulo">
+    <h3 id="Tipo" style= "margin-left:1000px;">Tipo de noticia</h3>
+        <select style= "display:none; margin-left:1000px; height:50px; width:200px "id="urgente" name="Urgente" class="form-control">
+               <option value="a" > </option>
+                <option value="Urgente" >Urgente </option>
+                <option value="Normal" >Urgente </option>
+        
+            </select>
+
+  </div>
         <button type="submit" name="submit" style="float:right;display:none" class="FiltrarAvanzado bx bxs-edit-alt bxmd btn btn-warning">Filtrar</button>
 
         <br>
 
     </div>
   </div>
+ 
   <br><br><br><br><br><br>
 
   <ul style="list-style:none ;">

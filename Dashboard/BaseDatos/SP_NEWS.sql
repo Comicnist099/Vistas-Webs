@@ -15,7 +15,7 @@ BEGIN
 IF opcion = 'Insertar'
 THEN
 INSERT INTO news(TITLE,NEWS_DATE,DATE_PUBLICACION,LOCATION,CONTENIDO,LIKES,FK_REPORTER,STATE,KEYWORD,SIGN_REPORTER,HORA,Comentario)
-        VALUES (title,news_date,sysdate(),location,contenido,0,fk_reporter,'Revision',keyword,firma,Hora,'...');
+        VALUES (title,news_date,sysdate(),location,contenido,0,fk_reporter,'Terminada',keyword,firma,Hora,'...');
 
 END IF;
 
@@ -64,7 +64,7 @@ call PROC_NEWS('likeMenos',1,null,null,null,null,null,null,null);
 CREATE VIEW V_news AS select TITLE, NEWS_DATE,DATE_PUBLICACION,LOCATION,CONTENIDO,LIKES from tag INNER JOIN user;
 
 select * from user;
-select * from news;
+select * from gallery_news;
 select * from tag_car;
 select * from tag where `NAME` ="Espectaculos";
 
